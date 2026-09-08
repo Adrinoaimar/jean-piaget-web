@@ -2,101 +2,150 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Galería | I.E.P. Jean Piaget Sullana</title>
-<meta name="description" content="Galería de fotos del I.E.P. Jean Piaget Sullana: instalaciones, actividades y vida escolar.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Instalaciones, aulas y actividades del I.E.P. Jean Piaget Sullana.">
+<meta name="theme-color" content="#315F46">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="I.E.P. Jean Piaget Sullana">
+<meta property="og:title" content="Galería | I.E.P. Jean Piaget Sullana">
+<meta property="og:description" content="Instalaciones, aulas y actividades del I.E.P. Jean Piaget Sullana.">
+<meta property="og:image" content="img/logo.svg">
+<meta name="twitter:card" content="summary">
+<link rel="preload" href="fonts/source-serif-4-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
 <header class="site-header">
-  <nav class="nav">
+  <nav class="nav shell" aria-label="Navegación principal">
     <a class="brand" href="index.html">
-      <img class="brand-mark" src="img/logo.svg" alt="Escudo I.E.P. Jean Piaget Sullana">
-      <span class="brand-text">I.E.P. Jean Piaget<small>Institución educativa particular · Sullana</small></span>
+      <img class="brand__mark" src="img/logo.svg" width="40" height="44" alt="Escudo del I.E.P. Jean Piaget Sullana">
+      <span class="brand__name">I.E.P. Jean Piaget<span>Institución educativa particular</span></span>
     </a>
-    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
-    <ul class="nav-links">
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><i class="ph ph-list" aria-hidden="true"></i></button>
+    <ul class="nav__links" id="menu">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="nosotros.html">Nosotros</a></li>
       <li><a href="niveles.html">Niveles</a></li>
       <li><a href="innovacion.html">Innovación</a></li>
       <li><a href="vida-escolar.html">Vida escolar</a></li>
-      <li><a href="galeria.html" class="active">Galería</a></li>
+      <li><a href="galeria.html" aria-current="page">Galería</a></li>
       <li><a href="admision.html">Admisión</a></li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="admision.html" class="btn btn-primary btn-sm">Postula ahora</a>
-    </div>
+    <a class="btn btn--primary btn--sm" href="admision.html">Postula ahora</a>
   </nav>
 </header>
 
-<section class="page-hero">
-  <div class="container">
-    <span class="eyebrow">Galería</span>
-    <h1>Momentos de nuestra comunidad</h1>
-    <p>Un vistazo a las instalaciones y actividades del colegio. Estos espacios están listos para recibir las fotos reales de la institución.</p>
-  </div>
-</section>
+<main id="contenido">
 
-<section class="section">
-  <div class="container">
-    <div class="gallery-grid">
-      <div class="ph gallery-item"><span class="ph-icon">🏫</span><span class="ph-label">Fachada e instalaciones</span></div>
-      <div class="ph gallery-item"><span class="ph-icon">📚</span><span class="ph-label">Aula de Inicial</span></div>
-      <div class="ph gallery-item"><span class="ph-icon">🧪</span><span class="ph-label">Aula de Primaria</span></div>
-      <div class="ph gallery-item"><span class="ph-icon">🤖</span><span class="ph-label">Taller de robótica</span></div>
-      <div class="ph gallery-item"><span class="ph-icon">⚽</span><span class="ph-label">Educación física</span></div>
-      <div class="ph gallery-item"><span class="ph-icon">🎨</span><span class="ph-label">Taller de arte</span></div>
-      <div class="ph gallery-item"><span class="ph-icon">🎉</span><span class="ph-label">Aniversario institucional</span></div>
-      <div class="ph gallery-item"><span class="ph-icon">👪</span><span class="ph-label">Escuela de familias</span></div>
-      <div class="ph gallery-item"><span class="ph-icon">🔬</span><span class="ph-label">Feria de ciencias</span></div>
+  <section class="page-hero">
+    <div class="shell">
+      <nav class="crumbs" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a>
+        <i class="ph ph-caret-right" aria-hidden="true"></i>
+        <span aria-current="page">Galería</span>
+      </nav>
+      <span class="eyebrow">Galería</span>
+      <h1>Los espacios donde ocurre</h1>
+      <p>Estos marcos están listos para recibir las fotografías reales de la institución. Cada uno indica qué imagen corresponde.</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="notice reveal">
+        <i class="ph ph-image" aria-hidden="true"></i>
+        <p>Para publicar la galería, reemplaza cada marcador por una fotografía real. Si aparecen menores de edad, recuerda contar con la autorización firmada de sus padres o apoderados.</p>
+      </div>
+
+      <div class="gallery stack-top">
+        <div class="media media--wide reveal" role="img" aria-label="Espacio reservado para fotografía de la fachada del colegio">
+          <i class="ph ph-buildings" aria-hidden="true"></i>
+          <span class="media__label">Fachada del colegio</span>
+        </div>
+        <div class="media media--tall reveal" role="img" aria-label="Espacio reservado para fotografía del aula de Inicial">
+          <i class="ph ph-baby" aria-hidden="true"></i>
+          <span class="media__label">Aula de Inicial</span>
+        </div>
+        <div class="media media--square reveal" role="img" aria-label="Espacio reservado para fotografía del taller de robótica">
+          <i class="ph ph-robot" aria-hidden="true"></i>
+          <span class="media__label">Taller de robótica</span>
+        </div>
+        <div class="media media--wide reveal" role="img" aria-label="Espacio reservado para fotografía del patio">
+          <i class="ph ph-soccer-ball" aria-hidden="true"></i>
+          <span class="media__label">Patio y educación física</span>
+        </div>
+        <div class="media media--square reveal" role="img" aria-label="Espacio reservado para fotografía del aula de cómputo">
+          <i class="ph ph-desktop" aria-hidden="true"></i>
+          <span class="media__label">Aula de cómputo</span>
+        </div>
+        <div class="media media--tall reveal" role="img" aria-label="Espacio reservado para fotografía del taller de arte">
+          <i class="ph ph-palette" aria-hidden="true"></i>
+          <span class="media__label">Taller de arte</span>
+        </div>
+        <div class="media media--wide reveal" role="img" aria-label="Espacio reservado para fotografía del aniversario institucional">
+          <i class="ph ph-confetti" aria-hidden="true"></i>
+          <span class="media__label">Aniversario institucional</span>
+        </div>
+        <div class="media media--square reveal" role="img" aria-label="Espacio reservado para fotografía de la feria de ciencias">
+          <i class="ph ph-flask" aria-hidden="true"></i>
+          <span class="media__label">Feria de ciencias</span>
+        </div>
+        <div class="media media--wide reveal" role="img" aria-label="Espacio reservado para fotografía de la biblioteca">
+          <i class="ph ph-books" aria-hidden="true"></i>
+          <span class="media__label">Biblioteca</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
+  <div class="shell">
+    <div class="footer-top">
       <div>
         <h4>I.E.P. Jean Piaget Sullana</h4>
-        <p>Jr. Tacna 456, Sullana, Piura, Perú.<br>Educación inicial y primaria con tradición, aprendizaje y tecnología.</p>
-        <p class="footer-tagline">Más que una escuela, grandes historias.</p>
+        <p>Jr. Tacna 456, Sullana, Piura, Perú.</p>
+        <p class="footer-motto">Más que una escuela, grandes historias.</p>
       </div>
       <div>
-        <h4>Navegación</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
+        <h4>Secciones</h4>
+        <ul class="footer-list">
           <li><a href="niveles.html">Niveles</a></li>
-          <li><a href="innovacion.html">Innovación</a></li>
-          <li><a href="vida-escolar.html">Vida escolar</a></li>
-          <li><a href="galeria.html">Galería</a></li>
           <li><a href="admision.html">Admisión</a></li>
+          <li><a href="galeria.html">Galería</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
       <div>
         <h4>Contacto</h4>
-        <ul>
-          <li>Tel: (073) 502-345</li>
-          <li>WhatsApp: +51 969 123 456</li>
-          <li>info@jeanpiagetsullana.edu.pe</li>
-          <li>Lun. a Vie. 8:00 a 16:00</li>
+        <ul class="footer-list">
+          <li><a href="tel:+5173502345">(073) 502-345</a></li>
+          <li><a href="https://wa.me/51969123456">WhatsApp +51 969 123 456</a></li>
+          <li><a href="mailto:informes@jeanpiagetsullana.edu.pe">informes@jeanpiagetsullana.edu.pe</a></li>
+          <li>Lunes a viernes, 8:00 a 16:00</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 I.E.P. Jean Piaget Sullana. Todos los derechos reservados.</span>
-      <span>Educación con valores para un mejor futuro — contenido de ejemplo</span>
+      <span>© 2026 I.E.P. Jean Piaget Sullana</span>
+      <nav aria-label="Enlaces legales">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Términos</a>
+      </nav>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

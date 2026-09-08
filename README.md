@@ -1,39 +1,58 @@
-# I.E.P. Jean Piaget Sullana — Sitio institucional
+# I.E.P. Jean Piaget Sullana
 
-Sitio web institucional estático (HTML/CSS/JS puro, sin dependencias) para la Institución Educativa Particular Jean Piaget, en Sullana, Piura, Perú.
+Sitio institucional de la Institución Educativa Particular Jean Piaget, en Sullana, Piura, Perú.
 
-Diseño alineado a la guía de marca: paleta verde institucional (`#528C66`), verde profundo (`#315F46`), crema (`#FCF7CE`) y rojo de acento (`#D92525`); tipografía Source Serif 4 para títulos y Montserrat para textos.
+HTML, CSS y JavaScript planos. Sin framework, sin paso de build, sin dependencias que instalar: se publica subiendo los archivos.
 
-## Contenido
+## Estructura
 
-- `index.html` — Inicio
-- `nosotros.html` — Esencia de marca, historia, misión, visión, público
-- `niveles.html` — Nivel Inicial (5 años) y Nivel Primario (1.º a 5.º)
-- `innovacion.html` — Computación, robótica, creatividad digital, aprendizaje práctico
-- `vida-escolar.html` — Actividades y convivencia escolar
-- `galeria.html` — Galería de fotos (con placeholders)
-- `admision.html` — Proceso de admisión, requisitos, vacantes y formulario
-- `contacto.html` — Datos de contacto, mapa y formulario
-- `css/styles.css` — Estilos del sistema de marca
-- `js/main.js` — Menú móvil y formularios
-- `img/logo.svg` — Escudo institucional (versión vectorial recreada)
+| Archivo | Contenido |
+|---|---|
+| `index.html` | Inicio |
+| `nosotros.html` | Historia, misión, visión y esencia de marca |
+| `niveles.html` | Inicial de 5 años y Primaria de 1.º a 5.º |
+| `innovacion.html` | Computación, robótica, creatividad digital |
+| `vida-escolar.html` | Actividades y calendario institucional |
+| `galeria.html` | Galería de instalaciones y actividades |
+| `admision.html` | Proceso, requisitos y formulario de solicitud |
+| `contacto.html` | Datos de contacto, mapa y formulario |
+| `privacidad.html` · `terminos.html` | Textos legales en borrador |
+| `404.html` | Página de error |
 
-> **Notas:**
-> - Todo el contenido (textos, dirección, teléfonos, aranceles, vacantes) es de ejemplo (placeholder) y debe reemplazarse por la información real de la institución.
-> - Las fotografías son marcadores de posición (`.ph`, con ícono y etiqueta) listos para reemplazar por fotos reales de estudiantes e instalaciones.
-> - El logo en `img/logo.svg` es una recreación vectorial aproximada del escudo institucional; si contás con el archivo original en alta calidad, reemplazalo directamente.
+Recursos: `css/styles.css` (sistema de diseño), `css/fonts.css` y `fonts/` (tipografías), `js/main.js`, `img/logo.svg`.
 
-## Cómo verlo localmente
+## Sistema de diseño
 
-Abrí `index.html` en el navegador, o serví la carpeta con cualquier servidor estático:
+Sigue la guía de marca de la institución.
+
+**Color.** Verde institucional `#528C66`, verde profundo `#315F46`, crema `#FCF7CE`, rojo acento `#D92525`, tinta `#1E2B24`. El rojo se reserva para llamados a la acción. Todo se define como variables CSS en `:root`, con modo oscuro bajo `prefers-color-scheme`.
+
+**Tipografía.** Source Serif 4 para títulos y Montserrat para textos, autoalojadas en `fonts/` con `font-display: swap`. No hay pedidos a servidores de terceros para cargar fuentes.
+
+**Iconografía.** Phosphor Icons por CDN. Es la única dependencia externa del sitio.
+
+**Movimiento.** Entradas al hacer scroll mediante IntersectionObserver, sin escuchar el evento de scroll. Todo respeta `prefers-reduced-motion`, y sin JavaScript la página se ve completa.
+
+## Qué falta reemplazar
+
+El contenido es un borrador de trabajo. Antes de publicarlo como sitio oficial:
+
+- **Fotografías.** Cada marcador indica qué imagen corresponde. Si aparecen menores de edad hace falta la autorización firmada del padre, madre o apoderado.
+- **Datos de contacto.** Dirección, teléfonos, correos y horarios son de ejemplo.
+- **Cifras.** Los números de `niveles.html` son de referencia.
+- **Textos legales.** `privacidad.html` y `terminos.html` son borradores que debe revisar un asesor legal según la Ley 29733 de Protección de Datos Personales.
+- **Escudo.** `img/logo.svg` es una recreación vectorial aproximada. Conviene sustituirlo por el archivo original.
+
+Los formularios validan en el navegador pero no envían a ningún lado: el sitio es estático y no tiene backend. Para recibir las solicitudes hace falta conectarlos a un servicio de formularios o a un correo.
+
+## Verlo localmente
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Luego visitá `http://localhost:8000`.
+Luego abrir `http://localhost:8000`.
 
-## Publicar con GitHub Pages
+## Publicación
 
-1. Configuración del repo → Pages → Source: rama `main`, carpeta `/ (root)`.
-2. El sitio quedará disponible en `https://<usuario>.github.io/<repo>/`.
+Publicado con GitHub Pages desde la rama `main`, carpeta raíz.

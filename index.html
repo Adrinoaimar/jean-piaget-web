@@ -2,25 +2,36 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I.E.P. Jean Piaget Sullana | Tradición, aprendizaje y tecnología</title>
-<meta name="description" content="Institución Educativa Particular Jean Piaget, Sullana. Educación inicial y primaria con innovación, tecnología y valores.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I.E.P. Jean Piaget Sullana | Inicial y primaria en Sullana</title>
+<meta name="description" content="Institución Educativa Particular Jean Piaget, Sullana. Educación inicial y primaria que combina tradición, aprendizaje y tecnología.">
+<meta name="theme-color" content="#315F46">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="I.E.P. Jean Piaget Sullana">
+<meta property="og:title" content="I.E.P. Jean Piaget Sullana">
+<meta property="og:description" content="Educación inicial y primaria en Sullana. Tradición, aprendizaje y tecnología.">
+<meta property="og:image" content="img/logo.svg">
+<meta name="twitter:card" content="summary">
+<link rel="preload" href="fonts/source-serif-4-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
 <header class="site-header">
-  <nav class="nav">
+  <nav class="nav shell" aria-label="Navegación principal">
     <a class="brand" href="index.html">
-      <img class="brand-mark" src="img/logo.svg" alt="Escudo I.E.P. Jean Piaget Sullana">
-      <span class="brand-text">I.E.P. Jean Piaget<small>Institución educativa particular · Sullana</small></span>
+      <img class="brand__mark" src="img/logo.svg" width="40" height="44" alt="Escudo del I.E.P. Jean Piaget Sullana">
+      <span class="brand__name">I.E.P. Jean Piaget<span>Institución educativa particular</span></span>
     </a>
-    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Inicio</a></li>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><i class="ph ph-list" aria-hidden="true"></i></button>
+    <ul class="nav__links" id="menu">
+      <li><a href="index.html" aria-current="page">Inicio</a></li>
       <li><a href="nosotros.html">Nosotros</a></li>
       <li><a href="niveles.html">Niveles</a></li>
       <li><a href="innovacion.html">Innovación</a></li>
@@ -29,175 +40,176 @@
       <li><a href="admision.html">Admisión</a></li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="admision.html" class="btn btn-primary btn-sm">Postula ahora</a>
-    </div>
+    <a class="btn btn--primary btn--sm" href="admision.html">Postula ahora</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <div>
-      <span class="eyebrow">Institución educativa particular · Sullana</span>
-      <h1>Aprender, crear y avanzar</h1>
-      <p class="lead">Tradición, aprendizaje y tecnología. En el I.E.P. Jean Piaget formamos hoy a los líderes del mañana, con una educación cercana, moderna e innovadora para familias de Sullana.</p>
-      <div class="hero-actions">
-        <a href="nosotros.html" class="btn btn-primary">Conoce nuestra institución</a>
-        <a href="admision.html" class="btn btn-outline-white">Ver proceso de admisión</a>
-      </div>
-    </div>
-    <div class="hero-photo">
-      <div>
-        <div class="ph-icon">🎓</div>
-        <div class="ph-label">FOTOGRAFÍA DE ESTUDIANTES — REEMPLAZAR</div>
-      </div>
-    </div>
-  </div>
-</section>
+<main id="contenido">
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Niveles educativos</span>
-      <h2>Un camino de aprendizaje desde los primeros pasos</h2>
-    </div>
-    <div class="grid grid-3">
-      <div class="card level-card">
-        <div class="ph level-photo"><span class="ph-icon">🧸</span></div>
-        <h3>Inicial</h3>
-        <p>5 años. Primeros pasos, grandes descubrimientos: estimulación temprana y bases de la lectoescritura.</p>
-        <a href="niveles.html#inicial" class="btn btn-outline btn-sm">Conoce más</a>
-      </div>
-      <div class="card level-card">
-        <div class="ph level-photo"><span class="ph-icon">📘</span></div>
-        <h3>Primaria</h3>
-        <p>1.º a 5.º grado. Bases sólidas para un gran futuro, con foco en pensamiento lógico y creatividad.</p>
-        <a href="niveles.html#primaria" class="btn btn-outline btn-sm">Conoce más</a>
-      </div>
-      <div class="card level-card">
-        <div class="ph level-photo"><span class="ph-icon">🤖</span></div>
-        <h3>Innovación</h3>
-        <p>Tecnología hoy para un mejor mañana: computación, robótica y creatividad digital en todos los niveles.</p>
-        <a href="innovacion.html" class="btn btn-outline btn-sm">Conoce más</a>
+  <section class="hero">
+    <div class="shell">
+      <div class="hero__grid">
+        <div class="reveal">
+          <span class="eyebrow">Sullana, Piura</span>
+          <h1>Aprender, crear y avanzar</h1>
+          <p class="hero__lead">Educación inicial y primaria que une tradición, aprendizaje y tecnología.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="admision.html">Postula ahora</a>
+            <a class="btn btn--ghost" href="nosotros.html">Conoce el colegio</a>
+          </div>
+        </div>
+        <div class="media media--hero reveal" style="--reveal-delay:120ms" role="img" aria-label="Espacio reservado para fotografía de estudiantes del colegio">
+          <i class="ph ph-student" aria-hidden="true"></i>
+          <span class="media__label">Fotografía de estudiantes pendiente</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section section--alt">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Esencia de marca</span>
-      <h2>Por qué las familias de Sullana eligen Jean Piaget</h2>
-    </div>
-    <div class="grid grid-4">
-      <div class="card">
-        <div class="icon">C</div>
-        <h3>Cercana</h3>
-        <p>Acompañamos a cada familia con trato humano y comunicación constante.</p>
+  <section class="section">
+    <div class="shell">
+      <div class="section-lead reveal">
+        <h2>Dos niveles, un mismo acompañamiento</h2>
+        <p>Recibimos a los niños en Inicial y los acompañamos hasta el final de la Primaria, con tecnología integrada al aula desde el primer día.</p>
       </div>
-      <div class="card">
-        <div class="icon">F</div>
-        <h3>Formativa</h3>
-        <p>Educación integral que forma personas, no solo estudiantes.</p>
-      </div>
-      <div class="card">
-        <div class="icon">C</div>
-        <h3>Confiable</h3>
-        <p>Tradición e institucionalidad respaldadas por años de trayectoria.</p>
-      </div>
-      <div class="card">
-        <div class="icon">M</div>
-        <h3>Moderna</h3>
-        <p>Metodologías activas e innovación permanente en el aula.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="band">
-  <div class="container">
-    <blockquote>
-      “Más que una escuela, grandes historias.”
-    </blockquote>
-    <cite>I.E.P. Jean Piaget Sullana</cite>
-  </div>
-</section>
+      <div class="bento">
+        <article class="bento__cell c-2 reveal" data-reveal-group="niveles">
+          <h3>Inicial</h3>
+          <p>Cinco años. Primeros pasos, grandes descubrimientos: juego, lenguaje y bases de la lectoescritura.</p>
+          <a class="link-arrow" href="niveles.html#inicial">Ver el nivel <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Áreas clave</span>
-      <h2>Aprendizaje práctico con tecnología</h2>
-    </div>
-    <div class="grid grid-4">
-      <div class="card" style="text-align:center;">
-        <div class="icon" style="margin:0 auto 16px;">💻</div>
-        <h3>Computación</h3>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div class="icon" style="margin:0 auto 16px;">🤖</div>
-        <h3>Robótica</h3>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div class="icon" style="margin:0 auto 16px;">🎨</div>
-        <h3>Creatividad digital</h3>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div class="icon" style="margin:0 auto 16px;">⚙️</div>
-        <h3>Aprendizaje práctico</h3>
-      </div>
-    </div>
-  </div>
-</section>
+        <article class="bento__cell bento__cell--cream c-2 reveal" data-reveal-group="niveles">
+          <h3>Primaria</h3>
+          <p>De 1.º a 5.º grado. Bases sólidas en lengua, matemática y ciencias, con robótica desde primer grado.</p>
+          <a class="link-arrow" href="niveles.html#primaria">Ver el nivel <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
 
-<section class="section section--alt">
-  <div class="container" style="text-align:center;">
-    <span class="eyebrow">Admisión 2027</span>
-    <h2>Sumate a la comunidad Jean Piaget</h2>
-    <p style="color:var(--gray-600); max-width:560px; margin:0 auto 28px;">Vacantes limitadas para Inicial y Primaria. Conocé nuestro proceso de admisión y agendá una visita guiada por la institución.</p>
-    <a href="admision.html" class="btn btn-primary">Postula ahora</a>
-  </div>
-</section>
+        <article class="bento__cell bento__cell--leaf c-2 reveal" data-reveal-group="niveles">
+          <h3>Innovación</h3>
+          <p>Computación, robótica y creatividad digital como parte del aprendizaje diario, no como taller aparte.</p>
+          <a class="link-arrow" href="innovacion.html">Ver el área <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
+
+        <div class="bento__cell bento__cell--media c-4 reveal" role="img" aria-label="Espacio reservado para fotografía del taller de robótica">
+          <div class="media media--wide">
+            <i class="ph ph-robot" aria-hidden="true"></i>
+            <span class="media__label">Fotografía del taller de robótica pendiente</span>
+          </div>
+        </div>
+
+        <article class="bento__cell c-2 reveal">
+          <h3>Grupos reducidos</h3>
+          <p>Menos estudiantes por aula significa que cada docente conoce a cada niño por su nombre y su ritmo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sunken">
+    <div class="shell">
+      <div class="section-lead reveal">
+        <span class="eyebrow">Esencia de marca</span>
+        <h2>Por qué las familias de Sullana nos eligen</h2>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar reveal">
+          <i class="ph ph-users-three pillar__icon" aria-hidden="true"></i>
+          <h3>Cercana</h3>
+          <p>La dirección atiende sin cita previa y cada familia tiene comunicación directa con los docentes de su hijo.</p>
+        </article>
+        <article class="pillar reveal">
+          <i class="ph ph-chalkboard-teacher pillar__icon" aria-hidden="true"></i>
+          <h3>Formativa</h3>
+          <p>Formamos personas antes que estudiantes. Los valores se trabajan en la convivencia diaria, no solo en clase de tutoría.</p>
+        </article>
+        <article class="pillar reveal">
+          <i class="ph ph-shield-check pillar__icon" aria-hidden="true"></i>
+          <h3>Confiable</h3>
+          <p>Años de trayectoria en Sullana y un equipo docente estable que acompaña a las promociones completas.</p>
+        </article>
+        <article class="pillar reveal">
+          <i class="ph ph-lightbulb pillar__icon" aria-hidden="true"></i>
+          <h3>Moderna</h3>
+          <p>Metodologías activas y tecnología con propósito, elegida porque sirve al aprendizaje y no porque esté de moda.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--invert quote">
+    <div class="shell">
+      <figure>
+        <blockquote>Más que una escuela, grandes historias.</blockquote>
+        <figcaption>I.E.P. Jean Piaget Sullana</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="split">
+        <div class="split__body reveal">
+          <h2>Admisión 2027 abierta</h2>
+          <p>Las vacantes de Inicial y Primaria son limitadas porque mantenemos grupos pequeños. El proceso toma cinco pasos y empieza con una visita al colegio.</p>
+          <ul class="spec">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span>Visita guiada por las instalaciones</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span>Entrevista con la dirección y la familia</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span>Confirmación de vacante y matrícula</span></li>
+          </ul>
+          <p class="stack-top">
+            <a class="btn btn--primary" href="admision.html">Postula ahora</a>
+          </p>
+        </div>
+        <div class="media media--wide reveal" style="--reveal-delay:100ms" role="img" aria-label="Espacio reservado para fotografía de la fachada del colegio">
+          <i class="ph ph-buildings" aria-hidden="true"></i>
+          <span class="media__label">Fotografía de la fachada pendiente</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
+  <div class="shell">
+    <div class="footer-top">
       <div>
         <h4>I.E.P. Jean Piaget Sullana</h4>
-        <p>Jr. Tacna 456, Sullana, Piura, Perú.<br>Educación inicial y primaria con tradición, aprendizaje y tecnología.</p>
-        <p class="footer-tagline">Más que una escuela, grandes historias.</p>
+        <p>Jr. Tacna 456, Sullana, Piura, Perú.</p>
+        <p class="footer-motto">Más que una escuela, grandes historias.</p>
       </div>
       <div>
-        <h4>Navegación</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
+        <h4>Secciones</h4>
+        <ul class="footer-list">
           <li><a href="niveles.html">Niveles</a></li>
-          <li><a href="innovacion.html">Innovación</a></li>
-          <li><a href="vida-escolar.html">Vida escolar</a></li>
-          <li><a href="galeria.html">Galería</a></li>
           <li><a href="admision.html">Admisión</a></li>
+          <li><a href="galeria.html">Galería</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
       <div>
         <h4>Contacto</h4>
-        <ul>
-          <li>Tel: (073) 502-345</li>
-          <li>WhatsApp: +51 969 123 456</li>
-          <li>info@jeanpiagetsullana.edu.pe</li>
-          <li>Lun. a Vie. 8:00 a 16:00</li>
+        <ul class="footer-list">
+          <li><a href="tel:+5173502345">(073) 502-345</a></li>
+          <li><a href="https://wa.me/51969123456">WhatsApp +51 969 123 456</a></li>
+          <li><a href="mailto:informes@jeanpiagetsullana.edu.pe">informes@jeanpiagetsullana.edu.pe</a></li>
+          <li>Lunes a viernes, 8:00 a 16:00</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 I.E.P. Jean Piaget Sullana. Todos los derechos reservados.</span>
-      <span>Educación con valores para un mejor futuro — contenido de ejemplo</span>
+      <span>© 2026 I.E.P. Jean Piaget Sullana</span>
+      <nav aria-label="Enlaces legales">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Términos</a>
+      </nav>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
