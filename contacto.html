@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Colegio Jean Piaget</title>
+<meta name="description" content="Contactate con el Colegio Jean Piaget: dirección, teléfono, email y formulario de consultas.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">JP</span>
+      <span class="brand-text">Colegio Jean Piaget<small>Educación con excelencia</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="niveles.html">Niveles educativos</a></li>
+      <li><a href="admisiones.html">Admisiones</a></li>
+      <li><a href="contacto.html" class="active">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Contacto</span>
+    <h1>Estamos para ayudarte</h1>
+    <p>Escribinos tu consulta o acercate a la institución. Nuestro equipo de Secretaría te responderá a la brevedad.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Información de contacto</h2>
+        <dl>
+          <dt>Dirección</dt>
+          <dd>Av. de los Constituyentes 1234, Ciudad Autónoma, Argentina</dd>
+
+          <dt>Teléfono</dt>
+          <dd>(011) 4555-0192</dd>
+
+          <dt>Email</dt>
+          <dd>info@jeanpiaget.edu.ar</dd>
+
+          <dt>Secretaría de Admisiones</dt>
+          <dd>admisiones@jeanpiaget.edu.ar</dd>
+
+          <dt>Horario de atención</dt>
+          <dd>Lunes a viernes de 8:00 a 17:00 hs</dd>
+        </dl>
+
+        <div class="map-frame" style="margin-top:24px;">
+          <iframe
+            title="Ubicación del Colegio Jean Piaget"
+            src="https://www.google.com/maps?q=Buenos+Aires,Argentina&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div>
+        <h2>Enviar una consulta</h2>
+        <form class="contact-form">
+          <div>
+            <label for="nombre">Nombre y apellido</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono">
+          </div>
+          <div>
+            <label for="nivel">Nivel de interés</label>
+            <select id="nivel" name="nivel">
+              <option value="inicial">Nivel Inicial</option>
+              <option value="primario">Nivel Primario</option>
+              <option value="secundario">Nivel Secundario</option>
+              <option value="otro">Otra consulta</option>
+            </select>
+          </div>
+          <div>
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar consulta</button>
+          <p class="form-note" style="min-height:1.2em; font-size:0.9rem;"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Colegio Jean Piaget</h4>
+        <p>Av. de los Constituyentes 1234, Ciudad Autónoma, Argentina.<br>Educación inicial, primaria y secundaria desde 1985.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="niveles.html">Niveles educativos</a></li>
+          <li><a href="admisiones.html">Admisiones</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>Tel: (011) 4555-0192</li>
+          <li>info@jeanpiaget.edu.ar</li>
+          <li>Lun. a Vie. 8:00 a 17:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Colegio Jean Piaget. Todos los derechos reservados.</span>
+      <span>Sitio institucional — contenido de ejemplo</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
