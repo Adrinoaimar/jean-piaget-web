@@ -897,8 +897,40 @@ p:last-child { margin-bottom: 0; }
 .form__status {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--leaf);
+  line-height: 1.45;
   min-height: 1.3em;
+  margin: 0;
+}
+
+.form__status[data-kind="ok"] { color: var(--leaf); }
+.form__status[data-kind="error"] { color: var(--accent); }
+.form__status[data-kind="info"] { color: var(--text-muted); }
+
+/* Estado de envio: el boton se bloquea y muestra puntos animados */
+.btn[data-loading="true"] {
+  opacity: 0.75;
+  cursor: progress;
+}
+
+.btn[data-loading="true"]::after {
+  content: "";
+  width: 0.9em;
+  display: inline-block;
+  text-align: left;
+  animation: dots 1.2s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0% { content: ""; }
+  25% { content: "."; }
+  50% { content: ".."; }
+  75% { content: "..."; }
+}
+
+.btn:disabled { pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn[data-loading="true"]::after { animation: none; content: "..."; }
 }
 
 /* ---------- 16. Pie ------------------------------------------------------ */

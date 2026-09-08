@@ -2,6 +2,33 @@
 (function () {
   "use strict";
 
+  /* =======================================================================
+     CONFIGURACION DEL ENVIO DE FORMULARIOS
+
+     El sitio es estatico y no tiene servidor propio, asi que los formularios
+     se envian a traves de Web3Forms, que reenvia cada mensaje al correo de
+     la institucion.
+
+     Para activarlo:
+       1. Entra a https://web3forms.com
+       2. Escribe el correo donde quieres recibir los mensajes
+          (por ejemplo informes@jeanpiagetsullana.edu.pe)
+       3. Te llega una clave de acceso por correo
+       4. Pega esa clave entre las comillas de ACCESS_KEY, aqui abajo
+
+     Mientras la clave este vacia, el formulario no se rompe: le muestra al
+     visitante el correo y el WhatsApp para escribir directamente.
+
+     La clave de acceso no es secreta, es publica por diseno. Solo autoriza a
+     enviar mensajes a ese correo, no da acceso a ninguna cuenta.
+     ======================================================================= */
+  var FORM = {
+    ACCESS_KEY: "",
+    ENDPOINT: "https://api.web3forms.com/submit",
+    EMAIL: "informes@jeanpiagetsullana.edu.pe",
+    WHATSAPP: "https://wa.me/51969123456"
+  };
+
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* --- Navegacion movil ------------------------------------------------- */
@@ -92,9 +119,27 @@
       return ok;
     }
 
+    function setStatus(el, text, kind) {
+      if (!el) return;
+      el.textContent = text;
+      el.dataset.kind = kind || "info";
+    }
+
+    function clearErrors(fields) {
+      fields.forEach(function (input) {
+        input.setAttribute("aria-invalid", "false");
+        var slot = document.getElementById(input.id + "-error");
+        if (slot) slot.textContent = "";
+      });
+    }
+
     forms.forEach(function (form) {
-      var fields = form.querySelectorAll("input, select, textarea");
+      var fields = Array.prototype.slice.call(
+        form.querySelectorAll("input, select, textarea")
+      );
       var status = form.querySelector(".form__status");
+      var submit = form.querySelector('button[type="submit"]');
+      var submitLabel = submit ? submit.textContent : "";
 
       fields.forEach(function (input) {
         // Validar al salir del campo, y en vivo solo si ya estaba en error
@@ -104,33 +149,79 @@
         });
       });
 
+      function setBusy(busy) {
+        if (!submit) return;
+        submit.disabled = busy;
+        submit.dataset.loading = busy ? "true" : "false";
+        submit.textContent = busy ? "Enviando" : submitLabel;
+      }
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
+
         var firstBad = null;
         fields.forEach(function (input) {
           if (!validate(input) && !firstBad) firstBad = input;
         });
 
         if (firstBad) {
-          if (status) {
-            status.textContent = "Revisa los campos marcados antes de enviar.";
-            status.style.color = "var(--accent)";
-          }
+          setStatus(status, "Revisa los campos marcados antes de enviar.", "error");
           firstBad.focus();
           return;
         }
 
-        // El sitio es estatico: no hay backend todavia.
-        if (status) {
-          status.textContent = "Gracias por escribirnos. Te responderemos dentro de las próximas 48 horas hábiles.";
-          status.style.color = "var(--leaf)";
+        // Sin clave configurada no se simula un envio: se dice la verdad
+        // y se le da al visitante una via real de contacto.
+        if (!FORM.ACCESS_KEY) {
+          setStatus(
+            status,
+            "El envío automático todavía no está activo. Escríbenos a " +
+              FORM.EMAIL + " o por WhatsApp y te respondemos.",
+            "error"
+          );
+          return;
         }
-        form.reset();
-        fields.forEach(function (input) {
-          input.setAttribute("aria-invalid", "false");
-          var slot = document.getElementById(input.id + "-error");
-          if (slot) slot.textContent = "";
-        });
+
+        var payload = new FormData(form);
+        payload.append("access_key", FORM.ACCESS_KEY);
+        payload.append("subject", form.dataset.subject || "Mensaje desde la web del colegio");
+        payload.append("from_name", "Web I.E.P. Jean Piaget Sullana");
+
+        setBusy(true);
+        setStatus(status, "Enviando tu mensaje.", "info");
+
+        fetch(FORM.ENDPOINT, {
+          method: "POST",
+          body: payload
+        })
+          .then(function (res) { return res.json().catch(function () { return {}; }); })
+          .then(function (data) {
+            setBusy(false);
+            if (data && data.success) {
+              setStatus(
+                status,
+                "Recibimos tu mensaje. Te respondemos dentro de las próximas 48 horas hábiles.",
+                "ok"
+              );
+              form.reset();
+              clearErrors(fields);
+            } else {
+              setStatus(
+                status,
+                "No pudimos enviar el mensaje. Escríbenos a " + FORM.EMAIL + " o por WhatsApp.",
+                "error"
+              );
+            }
+          })
+          .catch(function () {
+            setBusy(false);
+            setStatus(
+              status,
+              "No pudimos enviar el mensaje. Revisa tu conexión, o escríbenos a " +
+                FORM.EMAIL + ".",
+              "error"
+            );
+          });
       });
     });
   }
