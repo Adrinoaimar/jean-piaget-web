@@ -20,7 +20,17 @@ HTML, CSS y JavaScript planos. Sin framework, sin paso de build, sin dependencia
 | `privacidad.html` · `terminos.html` | Textos legales en borrador |
 | `404.html` | Página de error |
 
-Recursos: `css/styles.css` (sistema de diseño), `css/fonts.css` y `fonts/` (tipografías), `js/main.js`, `img/logo.svg`.
+Recursos: `css/styles.css` (sistema de diseño), `css/fonts.css` y `fonts/` (tipografías), `js/main.js`, `img/`.
+
+## Imágenes
+
+| Archivo | Origen |
+|---|---|
+| `img/escudo.png` | Escudo oficial de la institución, con el fondo blanco recortado y transparencia |
+| `img/favicon.png` | El mismo escudo, reducido para la pestaña del navegador |
+| `img/og-image.jpg` | Tarjeta para redes sociales, escudo sobre el verde institucional |
+| `img/jean-piaget.jpg` | Retrato de Jean Piaget en Ann Arbor, 1967. Dominio público, anuario Ensian de la Universidad de Michigan, vía Wikimedia Commons |
+| `img/logo.svg` | Recreación vectorial anterior al escudo oficial. Ya no se usa en el sitio |
 
 ## Sistema de diseño
 
@@ -42,7 +52,7 @@ El contenido es un borrador de trabajo. Antes de publicarlo como sitio oficial:
 - **Datos de contacto.** Dirección, teléfonos, correos y horarios son de ejemplo.
 - **Cifras.** Los números de `niveles.html` son de referencia.
 - **Textos legales.** `privacidad.html` y `terminos.html` son borradores que debe revisar un asesor legal según la Ley 29733 de Protección de Datos Personales.
-- **Escudo.** `img/logo.svg` es una recreación vectorial aproximada. Conviene sustituirlo por el archivo original.
+- **Escudo.** Ya está el oficial en `img/escudo.png`. Si aparece una versión vectorial o en mayor resolución, conviene reemplazarla: el escudo tiene texto fino que se lee mejor cuanto mayor sea el original.
 
 ## Activar el envío de los formularios
 
