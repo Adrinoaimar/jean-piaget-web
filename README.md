@@ -4,12 +4,14 @@ Sitio institucional de la Institución Educativa Particular Jean Piaget, en Sull
 
 HTML, CSS y JavaScript planos. Sin framework, sin paso de build, sin dependencias que instalar: se publica subiendo los archivos.
 
+Lema institucional: **Dios, labor y lealtad**.
+
 ## Estructura
 
 | Archivo | Contenido |
 |---|---|
 | `index.html` | Inicio |
-| `nosotros.html` | Historia, misión, visión y esencia de marca |
+| `nosotros.html` | Historia, misión, visión y identidad institucional |
 | `niveles.html` | Inicial de 5 años y Primaria de 1.º a 5.º |
 | `innovacion.html` | Computación, robótica, creatividad digital |
 | `vida-escolar.html` | Actividades y calendario institucional |
