@@ -6,6 +6,10 @@ HTML, CSS y JavaScript planos. Sin framework, sin paso de build, sin dependencia
 
 Lema institucional: **Dios, labor y lealtad**.
 
+## Paleta institucional
+
+Verdes `#216055`, `#0A332B`; amarillos `#F8B815`, `#F8D200`; neutros `#F8F7F4`, `#EBEBDF`. Degradados circulares para verdes, amarillos y neutros; lineales para verdes y amarillos. Colores proporcionados por el usuario.
+
 ## Estructura
 
 | Archivo | Contenido |
