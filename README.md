@@ -23,6 +23,7 @@ Para separar los uniformes blancos, los recortes usan escenarios verdes con degr
 | `niveles.html` | Inicial de 5 años y Primaria de 1.º a 5.º |
 | `innovacion.html` | Computación, robótica, creatividad digital |
 | `vida-escolar.html` | Actividades y calendario institucional |
+| `taller-familiar.html` | Landing del taller familiar y consulta por WhatsApp |
 | `galeria.html` | Galería de instalaciones y actividades |
 | `admision.html` | Proceso, requisitos y formulario de solicitud |
 | `contacto.html` | Datos de contacto, mapa y formulario |
@@ -30,7 +31,7 @@ Para separar los uniformes blancos, los recortes usan escenarios verdes con degr
 | `privacidad.html` · `terminos.html` | Textos legales en borrador |
 | `404.html` | Página de error |
 
-Recursos: `css/styles.css` (base), `css/creative.css` (dirección visual y movimiento), `css/fonts.css` y `fonts/` (tipografías), `js/main.js`, `img/`.
+Recursos: `css/styles.css` (base), `css/creative.css` (dirección visual y movimiento), `css/family-landing.css` (landing del taller), `css/fonts.css` y `fonts/` (tipografías), `js/main.js`, `js/family-landing.js`, `img/`.
 
 ## Imágenes
 
