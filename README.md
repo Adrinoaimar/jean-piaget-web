@@ -20,7 +20,7 @@ HTML, CSS y JavaScript planos. Sin framework, sin paso de build, sin dependencia
 | `privacidad.html` · `terminos.html` | Textos legales en borrador |
 | `404.html` | Página de error |
 
-Recursos: `css/styles.css` (sistema de diseño), `css/fonts.css` y `fonts/` (tipografías), `js/main.js`, `img/`.
+Recursos: `css/styles.css` (base), `css/creative.css` (dirección visual y movimiento), `css/fonts.css` y `fonts/` (tipografías), `js/main.js`, `img/`.
 
 ## Imágenes
 
@@ -38,13 +38,15 @@ Recursos: `css/styles.css` (sistema de diseño), `css/fonts.css` y `fonts/` (tip
 
 Sigue la guía de marca de la institución.
 
+La capa `css/creative.css` incorpora degradados de verde profundo, lima y dorado, marcos orgánicos para los recortes y una navegación flotante.
+
 **Color.** Verde institucional `#528C66`, verde profundo `#315F46`, crema `#FCF7CE`, rojo acento `#D92525`, tinta `#1E2B24`. El rojo se reserva para llamados a la acción. Todo se define como variables CSS en `:root`, con modo oscuro bajo `prefers-color-scheme`.
 
-**Tipografía.** Source Serif 4 para títulos y Montserrat para textos, autoalojadas en `fonts/` con `font-display: swap`. No hay pedidos a servidores de terceros para cargar fuentes.
+**Tipografía.** Montserrat para títulos y textos, Source Serif 4 para firmas y citas, autoalojadas en `fonts/` con `font-display: swap`. No hay pedidos a servidores de terceros para cargar fuentes.
 
 **Iconografía.** Phosphor Icons por CDN. Es la única dependencia externa del sitio.
 
-**Movimiento.** Entradas al hacer scroll mediante IntersectionObserver, sin escuchar el evento de scroll. Todo respeta `prefers-reduced-motion`, y sin JavaScript la página se ve completa.
+**Movimiento.** Entradas al hacer scroll mediante IntersectionObserver, sin escuchar el evento de scroll. Las cabeceras coordinan la entrada de texto, fotografías y marcos. Todo respeta `prefers-reduced-motion`, y sin JavaScript la página se ve completa. La galería incorpora un visor ampliado con botones, flechas de teclado y cierre con Escape.
 
 ## Qué falta reemplazar
 
