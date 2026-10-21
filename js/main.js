@@ -69,7 +69,7 @@
       replaceByLabel("actividades deportivas", photos.vida);
     } else if (page === "galeria.html") {
       var gallery = document.querySelector(".gallery");
-      if (gallery) {
+      if (gallery && !gallery.querySelector("img")) {
         gallery.innerHTML = [
           '<figure class="media media--tall media--photo"><img src="img/portada-estudiante.webp" alt="Estudiante del I.E.P. Jean Piaget en una actividad escolar." loading="lazy" decoding="async" style="object-position:center 42%"></figure>',
           '<figure class="media media--wide media--photo"><img src="img/aula-aprendizaje.webp" alt="Estudiantes durante una actividad de aprendizaje guiado." loading="lazy" decoding="async" style="object-position:center 43%"></figure>',

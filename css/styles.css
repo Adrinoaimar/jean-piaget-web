@@ -609,6 +609,11 @@ p:last-child { margin-bottom: 0; }
   z-index: var(--z-base);
   inset-inline: 1rem;
   bottom: 1rem;
+  width: fit-content;
+  max-width: calc(100% - 2rem);
+  padding: 0.4rem 0.55rem;
+  border-radius: 0.35rem;
+  background: rgba(17, 30, 22, 0.72);
   color: #fff;
   font-size: 0.78rem;
   font-weight: 600;
