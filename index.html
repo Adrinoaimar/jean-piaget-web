@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/source-serif-4-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=20261021-visual2">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -49,7 +49,7 @@
 
 <main id="contenido">
 
-  <section class="hero">
+  <section class="hero hero--portraits">
     <div class="shell">
       <div class="hero__grid">
         <div class="reveal">
@@ -61,9 +61,7 @@
             <a class="btn btn--ghost" href="nosotros.html">Conoce el colegio</a>
           </div>
         </div>
-        <figure class="media media--hero media--photo reveal" style="--reveal-delay:120ms">
-          <img src="img/fotos/estudiantes-jean-piaget.webp" width="2000" height="1333" alt="Grupo de estudiantes del I.E.P. Jean Piaget con sus uniformes escolares" fetchpriority="high" decoding="async">
-        </figure>
+        <figure class="cutout cutout--hero reveal"><img src="img/recortes/grupo.webp" width="1018" height="1058" alt="Cinco estudiantes del colegio con sus uniformes escolares" fetchpriority="high" decoding="async"></figure>
       </div>
     </div>
   </section>
@@ -77,29 +75,27 @@
 
       <div class="bento">
         <article class="bento__cell c-2 reveal" data-reveal-group="niveles">
+          <figure class="cutout card-portrait"><img src="img/recortes/pequena.webp" width="566" height="1400" alt="Niña de Inicial con uniforme deportivo" loading="lazy" decoding="async"></figure>
           <h3>Inicial</h3>
           <p>Cinco años. Primeros pasos, grandes descubrimientos: juego, lenguaje y bases de la lectoescritura.</p>
           <a class="link-arrow" href="niveles.html#inicial">Ver el nivel <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </article>
 
         <article class="bento__cell bento__cell--cream c-2 reveal" data-reveal-group="niveles">
+          <figure class="cutout card-portrait"><img src="img/recortes/primaria.webp" width="804" height="1400" alt="Estudiante de Primaria con uniforme y brazos cruzados" loading="lazy" decoding="async"></figure>
           <h3>Primaria</h3>
           <p>De 1.º a 5.º grado. Bases sólidas en lengua, matemática y ciencias, con robótica desde primer grado.</p>
           <a class="link-arrow" href="niveles.html#primaria">Ver el nivel <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </article>
 
         <article class="bento__cell bento__cell--leaf c-2 reveal" data-reveal-group="niveles">
+          <figure class="cutout card-portrait"><img src="img/recortes/estudiante.webp" width="583" height="1400" alt="Estudiante con uniforme escolar y brazos cruzados" loading="lazy" decoding="async"></figure>
           <h3>Innovación</h3>
           <p>Computación, robótica y creatividad digital como parte del aprendizaje diario, no como taller aparte.</p>
           <a class="link-arrow" href="innovacion.html">Ver el área <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </article>
 
-        <div class="bento__cell bento__cell--media c-4 reveal" role="img" aria-label="Espacio reservado para fotografía del taller de robótica">
-          <div class="media media--wide">
-            <i class="ph ph-robot" aria-hidden="true"></i>
-            <span class="media__label">Fotografía del taller de robótica pendiente</span>
-          </div>
-        </div>
+        <figure class="cutout cutout--panel bento__cell c-4 reveal"><img src="img/recortes/proyectos.webp" width="1146" height="1267" alt="Docente y estudiantes presentan maquetas sobre ahorro de energía" loading="lazy" decoding="async"></figure>
 
         <article class="bento__cell c-2 reveal">
           <h3>Grupos reducidos</h3>
@@ -165,13 +161,60 @@
             <a class="btn btn--primary" href="admision.html">Postula ahora</a>
           </p>
         </div>
-        <figure class="media media--tall media--photo reveal" style="--reveal-delay:100ms">
-          <img src="img/fotos/companeras-jean-piaget.webp" width="1333" height="2000" alt="Dos estudiantes sonríen y hacen un gesto de aprobación" loading="lazy" decoding="async">
-        </figure>
+        <figure class="cutout cutout--panel reveal"><img src="img/recortes/inicial.webp" width="738" height="1400" alt="Dos niñas de Inicial sonríen y levantan el pulgar" loading="lazy" decoding="async"></figure>
       </div>
     </div>
   </section>
 
+<section class="section">
+  <div class="shell">
+    <div class="section-lead reveal">
+      <h2>Así se vive Jean Piaget</h2>
+      <p>Rostros, aprendizajes y proyectos que forman parte de nuestra comunidad.</p>
+    </div>
+    <div class="photo-strip">
+      <figure class="photo-card reveal">
+        <img src="img/fotos/expo-proyectos.webp" width="1200" height="1600" alt="Grupo de estudiantes y docente con trabajos elaborados en clase" loading="lazy" decoding="async">
+        <figcaption>Aprendemos juntos</figcaption>
+      </figure>
+      <figure class="photo-card reveal">
+        <img src="img/recortes/alimentacion.webp" width="1063" height="1346" alt="Tres estudiantes presentan sus trabajos sobre alimentación saludable" loading="lazy" decoding="async">
+        <figcaption>Ideas que compartimos</figcaption>
+      </figure>
+      <figure class="photo-card reveal">
+        <img src="img/recortes/amistad.webp" width="813" height="1400" alt="Tres compañeros de Primaria posan juntos" loading="lazy" decoding="async">
+        <figcaption>Amistades que crecen</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<section class="section section--sunken">
+  <div class="shell">
+    <div class="section-lead">
+      <h2>Conoce a nuestra comunidad</h2>
+      <p>Cada estudiante aporta una forma distinta de mirar el mundo.</p>
+    </div>
+    <div class="community-row">
+      <figure class="cutout ">
+        <img src="img/recortes/pequena.webp" width="566" height="1400" alt="Niña de Inicial con uniforme deportivo" loading="lazy" decoding="async">
+      </figure>
+      <figure class="cutout ">
+        <img src="img/recortes/estudiante.webp" width="583" height="1400" alt="Estudiante con uniforme escolar y brazos cruzados" loading="lazy" decoding="async">
+      </figure>
+      <figure class="cutout ">
+        <img src="img/recortes/primaria.webp" width="804" height="1400" alt="Estudiante de Primaria con uniforme y brazos cruzados" loading="lazy" decoding="async">
+      </figure>
+      <figure class="cutout ">
+        <img src="img/recortes/inicial.webp" width="738" height="1400" alt="Dos niñas de Inicial sonríen y levantan el pulgar" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <p class="stack-top">
+      <a class="link-arrow" href="galeria.html">Ver todas las fotografías <i class="ph ph-arrow-right" aria-hidden="true">
+        </i>
+      </a>
+    </p>
+  </div>
+</section>
 </main>
 
 <footer class="site-footer">
@@ -212,6 +255,6 @@
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=20261021-visual2" defer></script>
 </body>
 </html>
