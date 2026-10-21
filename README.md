@@ -30,6 +30,8 @@ Recursos: `css/styles.css` (sistema de diseño), `css/fonts.css` y `fonts/` (tip
 | `img/favicon.png` | El mismo escudo, reducido para la pestaña del navegador |
 | `img/og-image.jpg` | Tarjeta para redes sociales, escudo sobre el verde institucional |
 | `img/jean-piaget.jpg` | Retrato de Jean Piaget en Ann Arbor, 1967. Dominio público, anuario Ensian de la Universidad de Michigan, vía Wikimedia Commons |
+| `img/recortes/*.webp` | Ocho recortes con transparencia derivados de las fotografías proporcionadas para el sitio |
+| `img/fotos/*.webp` | Fotografías optimizadas de estudiantes, aula y proyectos escolares |
 | `img/logo.svg` | Recreación vectorial anterior al escudo oficial. Ya no se usa en el sitio |
 
 ## Sistema de diseño
@@ -48,7 +50,7 @@ Sigue la guía de marca de la institución.
 
 El contenido es un borrador de trabajo. Antes de publicarlo como sitio oficial:
 
-- **Fotografías.** Cada marcador indica qué imagen corresponde. Si aparecen menores de edad hace falta la autorización firmada del padre, madre o apoderado.
+- **Fotografías.** El sitio integra retratos con transparencia y fotografías de aula y proyectos. Las imágenes se declaran directamente en el HTML; la galería reúne trece imágenes. Si aparecen menores de edad hace falta la autorización firmada del padre, madre o apoderado.
 - **Datos de contacto.** Dirección, teléfonos, correos y horarios son de ejemplo.
 - **Cifras.** Los números de `niveles.html` son de referencia.
 - **Textos legales.** `privacidad.html` y `terminos.html` son borradores que debe revisar un asesor legal según la Ley 29733 de Protección de Datos Personales.

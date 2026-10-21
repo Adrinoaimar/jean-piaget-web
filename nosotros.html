@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/source-serif-4-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=20261021-visual2">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -49,8 +49,9 @@
 
 <main id="contenido">
 
-  <section class="page-hero">
-    <div class="shell">
+  <section class="page-hero page-hero--visual">
+    <div class="shell page-hero__grid">
+      <div class="page-hero__copy">
       <nav class="crumbs" aria-label="Ruta de navegación">
         <a href="index.html">Inicio</a>
         <i class="ph ph-caret-right" aria-hidden="true"></i>
@@ -59,6 +60,8 @@
       <span class="eyebrow">Nosotros</span>
       <h1>Más que una escuela, grandes historias</h1>
       <p>Un colegio de Sullana que combina la tradición de quien ya acompañó a varias generaciones con la tecnología que sus estudiantes van a necesitar.</p>
+      </div>
+      <figure class="cutout cutout--header"><img src="img/recortes/grupo.webp" width="1018" height="1058" alt="Cinco estudiantes del colegio con sus uniformes escolares" fetchpriority="high" decoding="async"></figure>
     </div>
   </section>
 
@@ -74,10 +77,7 @@
             <a class="link-arrow" href="jean-piaget.html">Quién fue Jean Piaget y por qué llevamos su nombre <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
           </p>
         </div>
-        <div class="media media--wide reveal" role="img" aria-label="Espacio reservado para fotografía histórica del colegio">
-          <i class="ph ph-buildings" aria-hidden="true"></i>
-          <span class="media__label">Fotografía institucional pendiente</span>
-        </div>
+        <figure class="cutout cutout--panel reveal"><img src="img/recortes/amistad.webp" width="813" height="1400" alt="Tres compañeros de Primaria posan juntos" loading="lazy" decoding="async"></figure>
       </div>
     </div>
   </section>
@@ -142,6 +142,28 @@
     </div>
   </section>
 
+<section class="section">
+  <div class="shell">
+    <div class="section-lead reveal">
+      <h2>Una comunidad que acompaña</h2>
+      <p>Estudiantes y docentes construimos juntos la experiencia de aprender.</p>
+    </div>
+    <div class="photo-strip">
+      <figure class="photo-card reveal">
+        <img src="img/fotos/expo-proyectos.webp" width="1200" height="1600" alt="Grupo de estudiantes y docente con trabajos elaborados en clase" loading="lazy" decoding="async">
+        <figcaption>Con el acompañamiento de nuestros docentes</figcaption>
+      </figure>
+      <figure class="photo-card reveal">
+        <img src="img/recortes/alimentacion.webp" width="1063" height="1346" alt="Tres estudiantes presentan sus trabajos sobre alimentación saludable" loading="lazy" decoding="async">
+        <figcaption>Aprendizajes para la vida</figcaption>
+      </figure>
+      <figure class="photo-card reveal">
+        <img src="img/recortes/inicial.webp" width="738" height="1400" alt="Dos niñas de Inicial sonríen y levantan el pulgar" loading="lazy" decoding="async">
+        <figcaption>Primeras amistades</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="site-footer">
@@ -182,6 +204,6 @@
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=20261021-visual2" defer></script>
 </body>
 </html>

@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/source-serif-4-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=20261021-visual2">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -49,8 +49,9 @@
 
 <main id="contenido">
 
-  <section class="page-hero">
-    <div class="shell">
+  <section class="page-hero page-hero--visual">
+    <div class="shell page-hero__grid">
+      <div class="page-hero__copy">
       <nav class="crumbs" aria-label="Ruta de navegación">
         <a href="index.html">Inicio</a>
         <i class="ph ph-caret-right" aria-hidden="true"></i>
@@ -59,6 +60,8 @@
       <span class="eyebrow">Innovación</span>
       <h1>Tecnología hoy para un mejor mañana</h1>
       <p>Cuatro áreas que atraviesan todos los grados y convierten la pantalla en una herramienta para crear, no solo para mirar.</p>
+      </div>
+      <figure class="cutout cutout--header"><img src="img/recortes/proyectos.webp" width="1146" height="1267" alt="Docente y estudiantes presentan maquetas sobre ahorro de energía" fetchpriority="high" decoding="async"></figure>
     </div>
   </section>
 
@@ -69,12 +72,7 @@
           <h3>Computación</h3>
           <p>Uso responsable y creativo de la tecnología desde Inicial, con herramientas adecuadas a cada edad.</p>
         </article>
-        <div class="bento__cell bento__cell--media c-3 reveal" role="img" aria-label="Espacio reservado para fotografía del aula de computación">
-          <div class="media media--wide">
-            <i class="ph ph-desktop" aria-hidden="true"></i>
-            <span class="media__label">Fotografía del aula de cómputo pendiente</span>
-          </div>
-        </div>
+        <figure class="cutout cutout--panel bento__cell c-3 reveal"><img src="img/recortes/alimentacion.webp" width="1063" height="1346" alt="Tres estudiantes presentan sus trabajos sobre alimentación saludable" loading="lazy" decoding="async"></figure>
         <article class="bento__cell c-2 reveal" data-reveal-group="areas">
           <h3>Robótica</h3>
           <p>Kits de robótica educativa para desarrollar lógica, secuencia y trabajo en equipo.</p>
@@ -94,10 +92,7 @@
   <section class="section section--sunken">
     <div class="shell">
       <div class="split">
-        <div class="media media--wide reveal" role="img" aria-label="Espacio reservado para fotografía del taller de robótica">
-          <i class="ph ph-robot" aria-hidden="true"></i>
-          <span class="media__label">Fotografía del taller de robótica pendiente</span>
-        </div>
+        <figure class="photo-card reveal"><img src="img/fotos/ahorro-energia.webp" width="1200" height="1600" alt="Estudiantes y docente presentan maquetas de electrodomésticos y ahorro de energía" loading="lazy" decoding="async"><figcaption>Proyectos sobre el cuidado de la energía</figcaption></figure>
         <div class="split__body reveal">
           <span class="eyebrow">Nuestro criterio</span>
           <h2>Tecnología con propósito</h2>
@@ -117,6 +112,28 @@
     </div>
   </section>
 
+<section class="section">
+  <div class="shell">
+    <div class="section-lead reveal">
+      <h2>Ideas que toman forma</h2>
+      <p>Aprendemos al investigar, construir y explicar nuestros propios proyectos.</p>
+    </div>
+    <div class="photo-strip">
+      <figure class="photo-card reveal">
+        <img src="img/fotos/expo-proyectos.webp" width="1200" height="1600" alt="Grupo de estudiantes y docente con trabajos elaborados en clase" loading="lazy" decoding="async">
+        <figcaption>Compartimos lo aprendido</figcaption>
+      </figure>
+      <figure class="photo-card reveal">
+        <img src="img/fotos/alimentacion-saludable.webp" width="1200" height="1600" alt="Docente y estudiantes muestran un plato saludable y sus trabajos de alimentación" loading="lazy" decoding="async">
+        <figcaption>Hábitos saludables</figcaption>
+      </figure>
+      <figure class="photo-card reveal">
+        <img src="img/recortes/proyectos.webp" width="1146" height="1267" alt="Docente y estudiantes presentan maquetas sobre ahorro de energía" loading="lazy" decoding="async">
+        <figcaption>Creatividad en equipo</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="site-footer">
@@ -157,6 +174,6 @@
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=20261021-visual2" defer></script>
 </body>
 </html>

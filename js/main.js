@@ -11,81 +11,6 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function initPhotos() {
-    var page = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
-    var style = document.createElement("style");
-    style.textContent =
-      ".media.media--photo{padding:0;overflow:hidden;background:var(--surface-sunken)}" +
-      ".media.media--photo::after{display:none}" +
-      ".media.media--photo img{display:block;width:100%;height:100%;object-fit:cover}";
-    document.head.appendChild(style);
-
-    var photos = {
-      hero: { src: "img/portada-estudiante.webp", alt: "Estudiante del I.E.P. Jean Piaget Sullana participando en una actividad escolar.", position: "center 42%", eager: true },
-      aula: { src: "img/aula-aprendizaje.webp", alt: "Estudiantes del I.E.P. Jean Piaget Sullana durante una actividad de aprendizaje guiado.", position: "center 43%" },
-      comunidad: { src: "img/comunidad-piaget.webp", alt: "Comunidad educativa del I.E.P. Jean Piaget Sullana durante una actividad institucional.", position: "center 42%" },
-      inicial: { src: "img/inicial-arte.webp", alt: "Estudiante del nivel Inicial desarrollando una actividad artística.", position: "center 40%" },
-      proyecto: { src: "img/proyecto-estudiantes.webp", alt: "Estudiantes del I.E.P. Jean Piaget participando en una actividad práctica y colaborativa.", position: "center 42%" },
-      vida: { src: "img/vida-escolar.webp", alt: "Estudiante del I.E.P. Jean Piaget participando en una actividad de vida escolar.", position: "center 40%" }
-    };
-
-    function replaceByLabel(fragment, photo) {
-      var labels = Array.prototype.slice.call(document.querySelectorAll("[aria-label]"));
-      var target = labels.find(function (el) {
-        return (el.getAttribute("aria-label") || "").toLowerCase().indexOf(fragment) !== -1;
-      });
-      if (!target) return;
-      var media = target.classList.contains("media") ? target : target.querySelector(".media");
-      if (!media) return;
-
-      target.removeAttribute("role");
-      target.removeAttribute("aria-label");
-      media.removeAttribute("role");
-      media.removeAttribute("aria-label");
-      media.classList.add("media--photo");
-      media.innerHTML = "";
-
-      var img = document.createElement("img");
-      img.src = photo.src;
-      img.alt = photo.alt;
-      img.decoding = "async";
-      img.loading = photo.eager ? "eager" : "lazy";
-      img.style.objectPosition = photo.position || "center";
-      if (photo.eager) img.setAttribute("fetchpriority", "high");
-      media.appendChild(img);
-    }
-
-    if (page === "index.html") {
-      replaceByLabel("estudiantes del colegio", photos.hero);
-      replaceByLabel("taller de robótica", photos.proyecto);
-      replaceByLabel("fachada del colegio", photos.comunidad);
-    } else if (page === "niveles.html") {
-      replaceByLabel("aula de inicial", photos.inicial);
-      replaceByLabel("aula de primaria", photos.aula);
-    } else if (page === "innovacion.html") {
-      replaceByLabel("aula de cómputo", photos.aula);
-      replaceByLabel("taller de robótica", photos.proyecto);
-    } else if (page === "vida-escolar.html") {
-      replaceByLabel("actividades deportivas", photos.vida);
-    } else if (page === "galeria.html") {
-      var gallery = document.querySelector(".gallery");
-      if (gallery && !gallery.querySelector("img")) {
-        gallery.innerHTML = [
-          '<figure class="media media--tall media--photo"><img src="img/portada-estudiante.webp" alt="Estudiante del I.E.P. Jean Piaget en una actividad escolar." loading="lazy" decoding="async" style="object-position:center 42%"></figure>',
-          '<figure class="media media--wide media--photo"><img src="img/aula-aprendizaje.webp" alt="Estudiantes durante una actividad de aprendizaje guiado." loading="lazy" decoding="async" style="object-position:center 43%"></figure>',
-          '<figure class="media media--wide media--photo"><img src="img/comunidad-piaget.webp" alt="Comunidad educativa del I.E.P. Jean Piaget en una actividad institucional." loading="lazy" decoding="async" style="object-position:center 42%"></figure>',
-          '<figure class="media media--tall media--photo"><img src="img/inicial-arte.webp" alt="Estudiante del nivel Inicial realizando una actividad artística." loading="lazy" decoding="async" style="object-position:center 40%"></figure>',
-          '<figure class="media media--square media--photo"><img src="img/proyecto-estudiantes.webp" alt="Estudiantes participando en una actividad práctica y colaborativa." loading="lazy" decoding="async" style="object-position:center 42%"></figure>',
-          '<figure class="media media--tall media--photo"><img src="img/vida-escolar.webp" alt="Estudiante participando en una actividad de vida escolar." loading="lazy" decoding="async" style="object-position:center 40%"></figure>'
-        ].join("");
-      }
-      var heroText = document.querySelector(".page-hero p");
-      if (heroText) heroText.textContent = "Una selección de momentos reales que muestran el aprendizaje, la creatividad y la vida escolar de nuestra comunidad educativa.";
-      var noticeText = document.querySelector(".notice p");
-      if (noticeText) noticeText.textContent = "Fotografías seleccionadas para representar de forma natural las experiencias y actividades de nuestros estudiantes.";
-    }
-  }
-
   function initNav() {
     var toggle = document.querySelector(".nav__toggle");
     var links = document.querySelector(".nav__links");
@@ -221,7 +146,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    initPhotos();
     initNav();
     initReveal();
     initForms();
