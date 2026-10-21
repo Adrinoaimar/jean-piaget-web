@@ -10,6 +10,8 @@ Lema institucional: **Dios, labor y lealtad**.
 
 Verdes `#216055`, `#0A332B`; amarillos `#F8B815`, `#F8D200`; neutros `#F8F7F4`, `#EBEBDF`. Degradados circulares para verdes, amarillos y neutros; lineales para verdes y amarillos. Colores proporcionados por el usuario.
 
+El marfil domina las superficies, el verde establece jerarquía y el amarillo se reserva para la acción principal y detalles pequeños. En móvil: menú desplazable, controles de 44 px o más, títulos y retratos compactos, galería en una columna.
+
 ## Estructura
 
 | Archivo | Contenido |
