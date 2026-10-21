@@ -12,6 +12,8 @@ Verdes `#216055`, `#0A332B`; amarillos `#F8B815`, `#F8D200`; neutros `#F8F7F4`, 
 
 El marfil domina las superficies, el verde establece jerarquía y el amarillo se reserva para la acción principal y detalles pequeños. En móvil: menú desplazable, controles de 44 px o más, títulos y retratos compactos, galería en una columna.
 
+Para separar los uniformes blancos, los recortes usan escenarios verdes con degradado de luminosidad y sombras que siguen la transparencia. El marfil se reserva para lectura; el amarillo permanece en detalles y acción principal.
+
 ## Estructura
 
 | Archivo | Contenido |

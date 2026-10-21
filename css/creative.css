@@ -302,3 +302,41 @@ main { overflow-x: clip; }
   .hero-photo-note { color: #0A332B; }
   .nav .btn--primary { border-color: rgba(235,235,223,.3); }
 }
+
+/* Contraste de luminosidad: uniforme blanco sobre verdes de marca.
+   La sombra sigue el alfa del recorte, sin oscurecer la fotografía. */
+:root {
+  --portrait-stage: radial-gradient(ellipse at 45% 30%, #216055 0%, #0A332B 85%);
+  --portrait-shadow: drop-shadow(0 2px 2px rgba(10,51,43,.32)) drop-shadow(0 12px 10px rgba(10,51,43,.22));
+}
+.cutout > img,
+.portrait-card img,
+.talent-card > figure > img,
+.photo-card > img[src*="/recortes/"],
+.gallery-dialog__image[src*="/recortes/"] { filter: var(--portrait-shadow); }
+.cutout--hero::before, .cutout--header::before {
+  background: radial-gradient(ellipse at 45% 30%, #216055 15%, #0A332B 95%);
+  box-shadow: inset 0 0 0 1px rgba(235,235,223,.18), 0 18px 35px rgba(10,51,43,.22);
+}
+.school-levels .card-portrait::before,
+.community-row .cutout::before,
+.student-pair .cutout::before { background: var(--portrait-stage); }
+.cutout--panel { background: var(--portrait-stage); box-shadow: inset 0 1px 0 rgba(235,235,223,.2), 0 14px 28px -18px rgba(10,51,43,.4); }
+.cutout--panel::before { background: rgba(235,235,223,.06); }
+.student-pair { background: linear-gradient(145deg, rgba(33,96,85,.1), #EBEBDF); }
+.talent-duo .cutout::before { background: var(--portrait-stage); }
+.talent-card > figure,
+.talent-card:nth-child(2n) > figure,
+.photo-card > img[src*="/recortes/"],
+.portrait-card .photo-open,
+.portrait-card > img { background: var(--portrait-stage); }
+.portrait-card { background: var(--surface-raised); border: 1px solid var(--line); border-bottom: 3px solid rgba(248,184,21,.4); box-shadow: 0 8px 22px -16px rgba(10,51,43,.35); }
+.portrait-card:nth-child(3n+2), .portrait-card:nth-child(3n) { background: var(--surface-raised); }
+.portrait-card .photo-open { overflow: hidden; box-shadow: inset 0 1px 0 rgba(235,235,223,.2); }
+.portrait-card figcaption { color: var(--text-strong); }
+.talent-card { box-shadow: 0 10px 25px -18px rgba(10,51,43,.35); }
+.gallery-dialog__stage { background: var(--portrait-stage); }
+@media (max-width: 600px) {
+  .cutout > img, .portrait-card img, .talent-card > figure > img { filter: drop-shadow(0 2px 2px rgba(10,51,43,.3)) drop-shadow(0 7px 6px rgba(10,51,43,.2)); }
+  .portrait-card { padding: .75rem .75rem 0; }
+}
