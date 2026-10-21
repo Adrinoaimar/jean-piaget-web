@@ -61,6 +61,86 @@
     });
   }
 
+  function initDesign() {
+    document.querySelectorAll('.split').forEach(function (split) {
+      split.querySelectorAll(':scope > .reveal').forEach(function (el, i) {
+        el.dataset.reveal = i === 0 ? 'left' : 'right';
+      });
+    });
+    document.querySelectorAll('.gallery .reveal').forEach(function (el, i) {
+      el.dataset.reveal = 'scale';
+      el.style.setProperty('--reveal-delay', (i % 3) * 80 + 'ms');
+    });
+    var header = document.querySelector('.site-header');
+    if (header && 'IntersectionObserver' in window) {
+      var sentinel = document.createElement('div');
+      sentinel.setAttribute('aria-hidden', 'true');
+      sentinel.style.cssText = 'position:absolute;top:0;width:1px;height:1px;pointer-events:none';
+      document.body.prepend(sentinel);
+      new IntersectionObserver(function (entries) {
+        header.classList.toggle('is-scrolled', !entries[0].isIntersecting);
+      }).observe(sentinel);
+    }
+  }
+
+  function initGallery() {
+    var images = Array.prototype.slice.call(document.querySelectorAll('.gallery img'));
+    if (!images.length || typeof HTMLDialogElement === 'undefined') return;
+    var dialog = document.createElement('dialog');
+    if (typeof dialog.showModal !== 'function') return;
+    dialog.className = 'gallery-dialog';
+    dialog.setAttribute('aria-labelledby', 'gallery-dialog-title');
+    dialog.setAttribute('aria-describedby', 'gallery-dialog-caption');
+    dialog.innerHTML = '<div class="gallery-dialog__bar"><h2 id="gallery-dialog-title">Nuestra galería</h2><button type="button" class="gallery-dialog__close" aria-label="Cerrar fotografía">×</button></div>' +
+      '<div class="gallery-dialog__stage"><button type="button" class="gallery-dialog__arrow gallery-dialog__arrow--prev" aria-label="Fotografía anterior">‹</button><img class="gallery-dialog__image" alt=""><button type="button" class="gallery-dialog__arrow gallery-dialog__arrow--next" aria-label="Fotografía siguiente">›</button></div>' +
+      '<p class="gallery-dialog__caption" id="gallery-dialog-caption" aria-live="polite"></p>';
+    document.body.appendChild(dialog);
+    var selected = 0;
+    var opener = null;
+    var preview = dialog.querySelector('.gallery-dialog__image');
+    var caption = dialog.querySelector('.gallery-dialog__caption');
+    var title = dialog.querySelector('#gallery-dialog-title');
+    var close = dialog.querySelector('.gallery-dialog__close');
+    function show(index) {
+      selected = (index + images.length) % images.length;
+      var source = images[selected];
+      preview.src = source.currentSrc || source.src;
+      preview.alt = source.alt;
+      var label = source.closest('figure').querySelector('figcaption');
+      caption.textContent = label ? label.textContent : source.alt;
+      title.textContent = 'Fotografía ' + (selected + 1) + ' de ' + images.length;
+    }
+    images.forEach(function (img, index) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'photo-open';
+      button.setAttribute('aria-label', 'Ampliar: ' + img.alt);
+      img.before(button);
+      button.appendChild(img);
+      button.addEventListener('click', function () {
+        opener = button;
+        show(index);
+        dialog.showModal();
+        document.body.classList.add('gallery-is-open');
+        close.focus();
+      });
+    });
+    close.addEventListener('click', function () { dialog.close(); });
+    dialog.querySelector('.gallery-dialog__arrow--prev').addEventListener('click', function () { show(selected - 1); });
+    dialog.querySelector('.gallery-dialog__arrow--next').addEventListener('click', function () { show(selected + 1); });
+    dialog.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        show(selected + (event.key === 'ArrowRight' ? 1 : -1));
+      }
+    });
+    dialog.addEventListener('click', function (event) { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', function () {
+      document.body.classList.remove('gallery-is-open');
+      if (opener) opener.focus({ preventScroll: true });
+    });
+  }
+
   function initForms() {
     var forms = document.querySelectorAll("form.form");
     if (!forms.length) return;
@@ -147,7 +227,9 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initNav();
+    initDesign();
     initReveal();
+    initGallery();
     initForms();
   });
 })();

@@ -1047,7 +1047,7 @@ p:last-child { margin-bottom: 0; }
 .footer-bottom a:hover { color: var(--brand-cream); }
 
 /* ---------- 17. Movimiento ------------------------------------------------ */
-/* MOTION_INTENSITY 4: entradas al hacer scroll y estados hover. Nada mas. */
+/* Movimiento base. La dirección visual se completa en creative.css. */
 
 /* El contenido solo se oculta si JS esta activo. Sin JS, la pagina se ve
    completa: el movimiento es una mejora, nunca un requisito para leer. */
