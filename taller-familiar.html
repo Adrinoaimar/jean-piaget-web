@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="css/styles.css?v=20261021-palette1">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-<link rel="stylesheet" href="css/family-landing.css?v=20261021-reference4">
+<link rel="stylesheet" href="css/family-landing.css?v=20261021-reference7">
 </head>
 <body class="family-page">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -36,6 +36,16 @@
       <a href="#informacion">Información</a>
       <a href="#preguntas">Preguntas</a>
     </nav>
+    <button class="family-menu-toggle" type="button" aria-expanded="false" aria-controls="family-mobile-menu" aria-label="Abrir menú">
+      <i class="ph ph-list" aria-hidden="true"></i>
+    </button>
+    <nav class="family-mobile-menu" id="family-mobile-menu" aria-label="Menú móvil" hidden>
+      <a href="#inicio">Inicio</a>
+      <a href="#actividades">Actividades</a>
+      <a href="#informacion">Información</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#reservar">Quiero participar <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    </nav>
     <a class="family-button family-button--small" href="#reservar">Quiero participar <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
   </div>
 </header>
@@ -43,21 +53,22 @@
   <section class="family-hero" id="inicio" aria-labelledby="hero-title">
     <div class="family-shell family-hero__grid">
       <div class="family-hero__copy">
-        <p class="family-kicker"><i class="ph ph-sparkle" aria-hidden="true"></i> Un encuentro para compartir</p>
-        <h1 id="hero-title">Una experiencia<br>diferente <span>en familia</span></h1>
+        <h1 id="hero-title"><span class="family-title-white">Una experiencia</span><span class="family-title-white">diferente</span><span class="family-title-yellow">en familia</span></h1>
         <p class="family-brush">Juegos, creatividad y conexión <i class="ph ph-heart" aria-hidden="true"></i></p>
-        <p class="family-hero__intro">Una mañana para jugar, aprender y crear recuerdos juntos. Un espacio donde cada familia puede compartir, descubrir y disfrutar.</p>
+        <p class="family-hero__intro">Un taller para compartir, aprender y crear grandes recuerdos juntos.</p>
         <ul class="family-highlights" aria-label="Actividades del taller">
           <li><i class="ph ph-puzzle-piece" aria-hidden="true"></i><span>Juegos<br>en familia</span></li>
           <li><i class="ph ph-lightbulb" aria-hidden="true"></i><span>Talleres<br>creativos</span></li>
           <li><i class="ph ph-heart" aria-hidden="true"></i><span>Momentos<br>especiales</span></li>
         </ul>
         <a class="family-button family-button--gold" href="#reservar">Quiero participar <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-        <p class="family-motto"><span aria-hidden="true"></span>Dios, labor y lealtad</p>
       </div>
       <figure class="family-hero__photo">
-        <img src="img/taller-familiar/hero.jpg" width="1536" height="1024" alt="Una familia prepara junta una manualidad durante un taller" fetchpriority="high" decoding="async">
-        <figcaption>Compartir también es aprender <i class="ph ph-heart" aria-hidden="true"></i></figcaption>
+        <picture>
+          <source media="(max-width: 640px)" srcset="img/taller-familiar/hero.jpg" type="image/jpeg">
+          <img src="img/taller-familiar/family-hero.webp" width="1672" height="940" alt="Una familia peruana comparte un proyecto creativo" fetchpriority="high" decoding="async">
+        </picture>
+        <figcaption><i class="ph ph-heart" aria-hidden="true"></i> Compartir también es aprender</figcaption>
       </figure>
     </div>
     <div class="family-wave" aria-hidden="true"></div>
@@ -106,7 +117,7 @@
         <figcaption>Crear juntos también es crecer <i class="ph ph-heart" aria-hidden="true"></i></figcaption>
       </figure>
       <div class="family-form-wrap">
-        <div class="family-form__heading"><p class="family-kicker family-kicker--dark">Nos encantará recibirte</p><h2 id="signup-title">Consulta tu participación</h2><p>Déjanos estos datos y te ayudaremos a confirmar la próxima fecha y disponibilidad.</p></div>
+        <div class="family-form__heading"><p class="family-kicker family-kicker--dark">Nos encantará recibirte</p><h2 id="signup-title">Reserva tu participación</h2><p>Déjanos tus datos para consultar la próxima fecha y disponibilidad.</p></div>
         <form class="family-form" id="family-form">
           <label for="adulto">Nombre de la persona adulta</label>
           <input id="adulto" name="adulto" autocomplete="name" maxlength="80" required>
@@ -147,17 +158,24 @@
         <details><summary>¿Cuándo y dónde será?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>La fecha, el horario y la sede se confirmarán por WhatsApp. Déjanos tu consulta en el formulario.</p></details>
         <details><summary>¿Tiene algún costo?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Consulta el costo y los materiales al confirmar la próxima edición del taller.</p></details>
       </div>
+      <aside class="family-limited" aria-label="Invitación al taller familiar">
+        <div class="family-limited__copy"><span>Momentos</span><strong>para compartir</strong><small>¡Te esperamos!</small></div>
+        <img src="img/taller-familiar/family-painting.webp" width="1312" height="1199" alt="Niña sonriente muestra sus manos llenas de pintura de colores" loading="lazy" decoding="async">
+      </aside>
     </div>
   </section>
 </main>
 <footer class="family-footer">
+  <div class="family-shell family-footer__callout">
+    <p>Una experiencia para toda la <span>familia</span></p>
+    <a class="family-button family-button--gold" href="#reservar">Quiero participar <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+  </div>
   <div class="family-shell family-footer__inner">
     <a class="family-brand family-brand--footer" href="index.html"><img src="img/escudo.png" width="354" height="426" alt=""><span>Organizado por<strong>I.E.P. Jean Piaget Sullana</strong></span></a>
     <p>Dios, labor y lealtad</p>
     <small>Imágenes ilustrativas generadas para esta página. <a href="vida-escolar.html">Conoce la vida escolar</a></small>
   </div>
 </footer>
-<a class="family-mobile-cta" href="#reservar">Quiero participar <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-<script src="js/family-landing.js?v=20261021-reference4" defer></script>
+<script src="js/family-landing.js?v=20261021-reference7" defer></script>
 </body>
 </html>

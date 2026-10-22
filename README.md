@@ -43,6 +43,8 @@ Recursos: `css/styles.css` (base), `css/creative.css` (dirección visual y movim
 | `img/jean-piaget.jpg` | Retrato de Jean Piaget en Ann Arbor, 1967. Dominio público, anuario Ensian de la Universidad de Michigan, vía Wikimedia Commons |
 | `img/recortes/*.webp` | Doce recortes con transparencia derivados de las fotografías proporcionadas para el sitio |
 | `img/fotos/*.webp` | Fotografías optimizadas de estudiantes, aula y proyectos escolares |
+| `img/taller-familiar/*.jpg` | Fotografías promocionales ilustrativas generadas para la landing, no corresponden a estudiantes reales |
+| `img/taller-familiar/family-*.webp` | Recortes transparentes generados para el hero y la invitación final del taller |
 | `img/logo.svg` | Recreación vectorial anterior al escudo oficial. Ya no se usa en el sitio |
 
 ## Sistema de diseño
