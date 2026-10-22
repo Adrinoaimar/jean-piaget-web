@@ -1,7 +1,6 @@
 (function () {
   "use strict";
 
-  var form = document.getElementById("family-form");
   var menuToggle = document.querySelector(".family-menu-toggle");
   var mobileMenu = document.getElementById("family-mobile-menu");
 
@@ -44,7 +43,7 @@
   }
 
   var revealItems = document.querySelectorAll(
-    ".family-activity, .family-info-band__grid > div, .family-signup__photo, .family-form-wrap, .family-benefits article, .family-questions details, .family-limited"
+    ".family-activity, .family-info-band__grid > div, .family-signup__photo, .family-contact-wrap, .family-benefits article, .family-questions details, .family-limited"
   );
   if (revealItems.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     revealItems.forEach(function (item, index) {
@@ -60,21 +59,4 @@
     }, { threshold: 0.14, rootMargin: "0px 0px -18px 0px" });
     revealItems.forEach(function (item) { revealObserver.observe(item); });
   }
-
-  if (!form) return;
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-
-    var data = new FormData(form);
-    var message = [
-      "Hola, quisiera recibir información sobre el próximo taller familiar del I.E.P. Jean Piaget Sullana.",
-      "Nombre de la persona adulta: " + data.get("adulto"),
-      "Personas que asistirían: " + data.get("grupo"),
-      "¿Podrían confirmarme fecha, sede, horario y disponibilidad?"
-    ].join("\n");
-    var status = document.getElementById("family-form-status");
-    if (status) status.textContent = "WhatsApp abrirá un mensaje para revisar antes de enviarlo.";
-    window.open("https://wa.me/51969123456?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
-  });
 }());
