@@ -69,6 +69,7 @@
 .family-wave::after { background: var(--family-paper); clip-path: ellipse(75% 68% at 50% 108%); transform: translateY(2px); animation: family-wave-shift 9s -2s ease-in-out infinite alternate-reverse; }
 .family-section { padding: 2rem 0 1.8rem; }
 .family-section__heading { position: relative; margin: 0 auto .95rem; text-align: center; }
+.family-experiences .family-section__heading > .family-kicker { width: fit-content; max-width: none; margin-inline: auto; }
 .family-kicker { margin: 0 0 .25rem; font-size: .6rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .family-kicker--dark { color: var(--family-green-mid); }
 .family-kicker--dark::before, .family-kicker--dark::after { display: inline-block; width: 21px; height: 2px; margin: 0 .48rem .18rem; background: var(--family-yellow); content: ""; }
@@ -84,7 +85,7 @@
 .family-experiences__doodles > i { position: absolute; top: 1.25rem; filter: drop-shadow(0 2px 2px rgba(10,51,43,.1)); }
 .family-experiences__star { left: 1rem; color: var(--family-yellow); font-size: 2.45rem; transform: rotate(-12deg); animation: family-star-wiggle 5.8s ease-in-out infinite; }
 .family-experiences__plane { right: 1rem; color: var(--family-green-mid); font-size: 2.25rem; transform: rotate(-25deg); animation: family-experience-plane 8s -1s ease-in-out infinite; }
-.family-activities { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .68rem; }
+.family-activities { display: grid; width: min(100%,1160px); grid-template-columns: repeat(4,minmax(0,1fr)); gap: .68rem; margin-inline: auto; }
 .family-activity { position: relative; min-width: 0; overflow: hidden; border: 1px solid rgba(10,51,43,.1); border-radius: 13px; background: #fff; box-shadow: 0 10px 23px -16px rgba(10,51,43,.68), 0 3px 9px rgba(10,51,43,.06); transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease; }
 .family-activity:hover { transform: translateY(-4px) rotate(-.25deg); box-shadow: 0 16px 26px -16px rgba(10,51,43,.65), 0 7px 14px rgba(10,51,43,.1); }
 .family-activity > img { display: block; width: 100%; height: clamp(122px, 12vw, 150px); object-fit: cover; object-position: center; transition: transform .55s cubic-bezier(.2,.7,.2,1); }
