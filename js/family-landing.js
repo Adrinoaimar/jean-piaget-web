@@ -43,12 +43,12 @@
   }
 
   var revealItems = document.querySelectorAll(
-    ".family-activity, .family-info-band__grid > div, .family-signup__photo, .family-contact-wrap, .family-benefits article, .family-questions details, .family-limited"
+    ".family-section__heading, .family-activity, .family-info-band__grid > div, .family-signup__photo, .family-contact-wrap, .family-benefits article, .family-questions details, .family-limited"
   );
   if (revealItems.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     revealItems.forEach(function (item, index) {
       item.classList.add("family-reveal");
-      item.style.setProperty("--family-delay", (index % 4) * 65 + "ms");
+      item.style.setProperty("--family-delay", (index % 4) * 90 + "ms");
     });
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
