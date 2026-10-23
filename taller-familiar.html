@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="css/styles.css?v=20261021-palette1">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-<link rel="stylesheet" href="css/family-landing.css?v=20261023-form2">
+<link rel="stylesheet" href="css/family-landing.css?v=20261023-flight1">
 </head>
 <body class="family-page">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -57,6 +57,26 @@
       <i class="ph ph-heart family-hero__spark family-hero__spark--two"></i>
       <i class="ph ph-paper-plane-tilt family-hero__plane"></i>
     </div>
+    <svg class="family-flightpath" viewBox="0 0 1240 560" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="family-flightpath__route" id="family-flight-route" d="M510 370 C548 350 548 321 578 302 C607 283 625 288 644 260 S674 230 700 212"></path>
+      <circle class="family-flightpath__node" cx="510" cy="370" r="3.8"></circle>
+      <circle class="family-flightpath__node" cx="541" cy="347" r="3.8"></circle>
+      <circle class="family-flightpath__node" cx="564" cy="319" r="3.8"></circle>
+      <circle class="family-flightpath__node" cx="583" cy="299" r="3.8"></circle>
+      <circle class="family-flightpath__node" cx="611" cy="286" r="3.8"></circle>
+      <circle class="family-flightpath__node" cx="640" cy="264" r="3.8"></circle>
+      <circle class="family-flightpath__node" cx="668" cy="235" r="3.8"></circle>
+      <circle class="family-flightpath__node" cx="700" cy="212" r="3.8"></circle>
+      <g class="family-flightpath__plane">
+        <animateMotion dur="8.5s" calcMode="paced" rotate="auto" repeatCount="indefinite">
+          <mpath href="#family-flight-route"></mpath>
+        </animateMotion>
+        <path class="family-flightpath__plane-mark" d="M12 0 -10 -8 -4 0 -10 8 12 0 M-4 0 2 -1"></path>
+      </g>
+      <g class="family-flightpath__plane-static" transform="translate(510 370) rotate(-28)">
+        <path class="family-flightpath__plane-mark" d="M12 0 -10 -8 -4 0 -10 8 12 0 M-4 0 2 -1"></path>
+      </g>
+    </svg>
     <div class="family-shell family-hero__grid">
       <div class="family-hero__copy">
         <h1 id="hero-title"><span class="family-title-white">Una experiencia</span><span class="family-title-white">diferente</span><span class="family-title-yellow">en familia</span></h1>
