@@ -33,7 +33,7 @@ Para separar los uniformes blancos, los recortes usan escenarios verdes con degr
 
 Recursos: `css/styles.css` (base), `css/creative.css` (dirección visual y movimiento), `css/family-landing.css` (landing del taller), `css/fonts.css` y `fonts/` (tipografías), `js/main.js`, `js/family-landing.js`, `img/`.
 
-La landing del taller no recoge datos en el sitio. Sus botones abren un mensaje editable en WhatsApp; la familia decide si enviarlo.
+La landing del taller ofrece un formulario breve que abre un mensaje editable en WhatsApp; la página no guarda las respuestas y la familia decide si enviar el mensaje.
 
 ## Imágenes
 
