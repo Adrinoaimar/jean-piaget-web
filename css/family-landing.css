@@ -118,14 +118,22 @@
 .family-contact__heading .family-kicker::before, .family-contact__heading .family-kicker::after { display: none; }
 .family-contact__heading h2 { margin: 0 0 .2rem; color: #fff; font-size: clamp(1.45rem,2.3vw,1.9rem); letter-spacing: .025em; text-shadow: 1px 2px 0 rgba(0,0,0,.17); }
 .family-contact__heading > p:last-child { max-width: 44ch; color: rgba(248,247,244,.9); font-size: .63rem; }
-.family-contact { display: grid; justify-items: stretch; gap: .58rem; padding: .8rem .92rem .9rem; background: linear-gradient(145deg,#fff,#f8f6ec); }
-.family-contact__steps { display: grid; gap: .35rem; margin: 0; padding: 0; list-style: none; }
-.family-contact__steps li { display: flex; min-height: 36px; align-items: center; gap: .48rem; padding: .27rem .48rem; border: 1px solid rgba(10,51,43,.1); border-radius: 8px; background: #fff; color: var(--family-ink); box-shadow: inset 0 1px 3px rgba(10,51,43,.045); font-size: .61rem; }
-.family-contact__steps i { display: grid; width: 26px; height: 26px; flex: 0 0 26px; place-items: center; border-radius: 50%; background: #e8f0eb; color: var(--family-green-mid); font-size: 1rem; }
-.family-contact__steps span { flex: 1; font-weight: 600; }
-.family-contact__steps strong { color: #61756d; font-size: .58rem; font-weight: 500; text-align: right; }
-.family-contact .family-button { width: 100%; min-height: 41px; }
-.family-contact > small { color: #52685f; font-size: .57rem; line-height: 1.4; text-align: center; }
+.family-registration-form { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .62rem; padding: .8rem .92rem .9rem; background: linear-gradient(145deg,#fff,#f8f6ec); }
+.family-registration-field { display: grid; min-width: 0; gap: .27rem; }
+.family-registration-field--full, .family-registration-form > .family-button, .family-registration-note, .family-registration-status { grid-column: 1 / -1; }
+.family-registration-field label { color: var(--family-ink); font-size: .72rem; font-weight: 700; line-height: 1.3; }
+.family-registration-field label span { color: #61756d; font-size: .65rem; font-weight: 500; }
+.family-registration-field input, .family-registration-field select, .family-registration-field textarea { width: 100%; min-width: 0; min-height: 40px; padding: .5rem .62rem; border: 1px solid rgba(10,51,43,.18); border-radius: 8px; background: #fff; color: var(--family-ink); font: 500 .78rem/1.35 "Poppins", Arial, sans-serif; box-shadow: inset 0 1px 3px rgba(10,51,43,.045); transition: border-color .18s ease, box-shadow .18s ease; }
+.family-registration-field textarea { min-height: 64px; resize: vertical; }
+.family-registration-field input::placeholder, .family-registration-field textarea::placeholder { color: #71847d; opacity: 1; }
+.family-registration-field input:focus, .family-registration-field select:focus, .family-registration-field textarea:focus { border-color: var(--family-green-mid); outline: 0; box-shadow: 0 0 0 3px rgba(33,96,85,.15); }
+.family-registration-field input:focus-visible, .family-registration-field select:focus-visible, .family-registration-field textarea:focus-visible { outline: 2px solid var(--family-green-mid); outline-offset: 1px; }
+.family-registration-form .family-button { width: 100%; min-height: 42px; }
+.family-registration-note, .family-registration-status, .family-registration-noscript { margin: 0; color: #52685f; font-size: .62rem; line-height: 1.45; text-align: center; }
+.family-registration-status:empty { display: none; }
+.family-registration-status:not(:empty) { padding: .42rem .55rem; border-radius: 7px; background: #e8f0eb; color: var(--family-green); }
+.family-registration-noscript { padding: .7rem; }
+.family-registration-noscript a { color: var(--family-green-mid); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
 .family-why { position: relative; isolation: isolate; padding: .65rem 0 1.7rem; background: radial-gradient(ellipse at 3% 55%,rgba(33,96,85,.1),transparent 24rem),radial-gradient(ellipse at 97% 30%,rgba(248,184,21,.13),transparent 21rem),linear-gradient(180deg,#fffdfa,var(--family-paper)); }
 .family-why::before { position: absolute; z-index: -1; top: 10%; left: -5.5rem; width: 13rem; aspect-ratio: 1; border: 1px solid rgba(33,96,85,.12); border-radius: 50%; box-shadow: 0 0 0 12px rgba(33,96,85,.025),0 0 0 25px rgba(33,96,85,.02); pointer-events: none; content: ""; }
 .family-why > .family-shell { position: relative; z-index: 1; }
@@ -289,11 +297,14 @@
   .family-contact__heading { padding: .66rem .78rem .6rem; }
   .family-contact__heading h2 { max-width: none; font-size: 1.5rem; }
   .family-contact__heading > p:last-child { font-size: .59rem; }
-  .family-contact { gap: .45rem; padding: .62rem .7rem .72rem; }
-  .family-contact__steps li { min-height: 34px; font-size: .58rem; }
-  .family-contact__steps i { width: 23px; height: 23px; flex-basis: 23px; font-size: .9rem; }
-  .family-contact__steps strong { font-size: .54rem; }
-  .family-contact > small { font-size: .53rem; }
+  .family-registration-form { gap: .45rem; padding: .62rem .7rem .72rem; }
+  .family-registration-field { gap: .22rem; }
+  .family-registration-field label { font-size: .69rem; }
+  .family-registration-field label span { font-size: .61rem; }
+  .family-registration-field input, .family-registration-field select { min-height: 42px; padding: .48rem .5rem; font-size: 16px; }
+  .family-registration-field textarea { min-height: 68px; font-size: 16px; }
+  .family-registration-form .family-button { min-height: 40px; font-size: .7rem; }
+  .family-registration-note, .family-registration-status, .family-registration-noscript { font-size: .59rem; }
   .family-why { padding: .38rem 0 1.1rem; }
   .family-why .family-section__heading { margin-bottom: .58rem; }
   .family-benefits { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .4rem; }

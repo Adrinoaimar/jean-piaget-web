@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="css/styles.css?v=20261021-palette1">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-<link rel="stylesheet" href="css/family-landing.css?v=20261023-center1">
+<link rel="stylesheet" href="css/family-landing.css?v=20261023-form2">
 </head>
 <body class="family-page">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -124,16 +124,44 @@
         <figcaption>Crear juntos también es crecer <i class="ph ph-heart" aria-hidden="true"></i></figcaption>
       </figure>
       <div class="family-contact-wrap">
-        <div class="family-contact__heading"><p class="family-kicker family-kicker--dark">Un espacio para compartir</p><h2 id="signup-title">Reserva tu participación</h2><p>Escríbenos para confirmar el horario y reservar tu espacio.</p></div>
-        <div class="family-contact">
-          <ul class="family-contact__steps" aria-label="Información para participar">
-            <li><i class="ph ph-calendar-check" aria-hidden="true"></i><span>Fecha</span><strong>Sábado 31 de octubre · horario por confirmar</strong></li>
-            <li><i class="ph ph-map-pin" aria-hidden="true"></i><span>Lugar</span><strong>Av. José de Lama 489</strong></li>
-            <li><i class="ph ph-users-three" aria-hidden="true"></i><span>Participantes</span><strong>Familias</strong></li>
-          </ul>
-          <a class="family-button family-button--gold" href="https://wa.me/51969123456?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20el%20taller%20familiar%20del%20I.E.P.%20Jean%20Piaget%20Sullana%20del%20s%C3%A1bado%2031%20de%20octubre%20en%20Av.%20Jos%C3%A9%20de%20Lama%20489.%20%C2%BFPueden%20confirmarme%20el%20horario%20y%20la%20disponibilidad%3F" target="_blank" rel="noopener noreferrer">Quiero participar <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <small>Se abrirá WhatsApp con un mensaje que podrás revisar antes de enviarlo.</small>
-        </div>
+        <div class="family-contact__heading"><p class="family-kicker family-kicker--dark">Un espacio para compartir</p><h2 id="signup-title">Reserva tu participación</h2><p>Cuéntanos quiénes asistirán. Te confirmaremos horario y disponibilidad.</p></div>
+        <form class="family-registration-form" id="family-registration-form" action="https://wa.me/51969123456" method="get" target="_blank" rel="noopener noreferrer" aria-labelledby="signup-title">
+          <input type="hidden" id="family-wa-text" name="text" value="Hola, quiero información sobre el taller familiar del sábado 31 de octubre en Av. José de Lama 489.">
+          <div class="family-registration-field family-registration-field--full">
+            <label for="family-parent-name">Nombre del padre, madre o apoderado</label>
+            <input id="family-parent-name" type="text" autocomplete="name" maxlength="90" required>
+          </div>
+          <div class="family-registration-field family-registration-field--full">
+            <label for="family-contact-phone">Teléfono o WhatsApp</label>
+            <input id="family-contact-phone" type="tel" autocomplete="tel" maxlength="24" required>
+          </div>
+          <div class="family-registration-field">
+            <label for="family-children-count">Niñas y niños</label>
+            <select id="family-children-count" required>
+              <option value="">Selecciona</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3 o más">3 o más</option>
+            </select>
+          </div>
+          <div class="family-registration-field">
+            <label for="family-adults-count">Adultos</label>
+            <select id="family-adults-count" required>
+              <option value="">Selecciona</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3 o más">3 o más</option>
+            </select>
+          </div>
+          <div class="family-registration-field family-registration-field--full">
+            <label for="family-registration-question">Consulta o comentario <span>(opcional)</span></label>
+            <textarea id="family-registration-question" rows="2" maxlength="240" placeholder="¿Qué te gustaría saber sobre el taller?"></textarea>
+          </div>
+          <button class="family-button family-button--gold" type="submit">Continuar por WhatsApp <i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+          <p class="family-registration-note" id="family-registration-note">Se abrirá WhatsApp con tus respuestas para que revises y envíes el mensaje. Esta página no guarda tus datos.</p>
+          <p class="family-registration-status" id="family-registration-status" role="status" aria-live="polite"></p>
+        </form>
+        <noscript><p class="family-registration-noscript">Para incluir tus respuestas, activa JavaScript o escríbenos por WhatsApp al <a href="https://wa.me/51969123456">+51 969 123 456</a>.</p></noscript>
       </div>
     </div>
   </section>
@@ -176,6 +204,6 @@
     <small>Imágenes ilustrativas generadas para esta página. <a href="vida-escolar.html">Conoce la vida escolar</a></small>
   </div>
 </footer>
-<script src="js/family-landing.js?v=20261023-motion1" defer></script>
+<script src="js/family-landing.js?v=20261023-form1" defer></script>
 </body>
 </html>

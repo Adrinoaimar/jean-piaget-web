@@ -42,6 +42,27 @@
     });
   }
 
+  var familyRegistrationForm = document.getElementById("family-registration-form");
+  if (familyRegistrationForm) {
+    familyRegistrationForm.addEventListener("submit", function () {
+      var value = function (id) { return document.getElementById(id).value.trim(); };
+      var message = [
+        "Hola, quiero reservar un espacio para el taller familiar del I.E.P. Jean Piaget Sullana.",
+        "Nombre del apoderado: " + value("family-parent-name"),
+        "Teléfono o WhatsApp: " + value("family-contact-phone"),
+        "Niñas y niños: " + value("family-children-count"),
+        "Adultos: " + value("family-adults-count"),
+        "Fecha: sábado 31 de octubre.",
+        "Lugar: Av. José de Lama 489.",
+        value("family-registration-question") ? "Consulta: " + value("family-registration-question") : "",
+        "¿Pueden confirmarme el horario y la disponibilidad?"
+      ].filter(Boolean).join("\n");
+
+      document.getElementById("family-wa-text").value = message;
+      document.getElementById("family-registration-status").textContent = "WhatsApp se abrió con tu solicitud. Revisa el mensaje y pulsa Enviar.";
+    });
+  }
+
   var revealItems = document.querySelectorAll(
     ".family-section__heading, .family-activity, .family-info-band__grid > div, .family-signup__photo, .family-contact-wrap, .family-benefits article, .family-questions details, .family-limited"
   );
