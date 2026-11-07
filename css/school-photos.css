@@ -1,0 +1,76 @@
+/* Fotografías de Sullana: proporciones propias, sin heredar el tratamiento de recortes. */
+.talent-grid--photos {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+.talent-card--photo { display: flex; flex-direction: column; }
+.talent-card--photo > figure {
+  flex-shrink: 0;
+  display: block;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  padding: 0;
+  overflow: hidden;
+  background: var(--surface-raised);
+}
+.talent-card--photo > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+}
+.talent-card--photo .talent-card__body { flex: 1; padding: 1.2rem; }
+.talent-card--photo h3 { font-size: 1.1rem; text-wrap: balance; }
+.talent-card--photo p { font-size: .9rem; text-wrap: pretty; }
+.gallery--school {
+  columns: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+.gallery--school-talent { max-width: 54rem; margin-inline: auto; }
+.gallery--school > * { margin-bottom: 0; }
+.photo-card--school > img,
+.photo-card--school > .photo-open {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  overflow: hidden;
+}
+.photo-card--landscape > img,
+.photo-card--landscape > .photo-open { aspect-ratio: 3 / 2; }
+.photo-card--portrait > img,
+.photo-card--portrait > .photo-open { aspect-ratio: 3 / 4; }
+.photo-card--school .photo-open img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+}
+.school-community {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+.school-community .photo-card > img { aspect-ratio: 1; object-fit: cover; }
+.school-community .section-lead { margin-bottom: 0; }
+.school-community .section-lead p { text-wrap: pretty; }
+@media (max-width: 1020px) {
+  .talent-grid--photos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .school-community { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .gallery--school { grid-template-columns: 1fr; }
+  .gallery--school-talent { max-width: 30rem; }
+}
+@media (max-width: 600px) {
+  .talent-grid--photos { grid-template-columns: 1fr; }
+}

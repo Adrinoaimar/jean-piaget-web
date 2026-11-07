@@ -104,7 +104,7 @@
     function show(index) {
       selected = (index + images.length) % images.length;
       var source = images[selected];
-      preview.src = source.currentSrc || source.src;
+      preview.src = source.dataset.full || source.currentSrc || source.src;
       preview.alt = source.alt;
       var label = source.closest('figure').querySelector('figcaption');
       caption.textContent = label ? label.textContent : source.alt;
