@@ -18,11 +18,11 @@
 <link rel="preload" href="fonts/source-serif-4-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css?v=20261021-palette1">
-<link rel="stylesheet" href="css/creative.css?v=20261021-contrast1">
+<link rel="stylesheet" href="css/creative.css?v=20261106-visual2">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <script>document.documentElement.classList.add("js");</script>
 </head>
-<body>
+<body class="home-page">
 
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
@@ -55,12 +55,13 @@
       <div class="hero__grid">
         <div class="reveal">
           <span class="eyebrow">Sullana, Piura</span>
-          <h1>Aprender, crear y avanzar</h1>
+          <h1>Aprender,<br><em>crear</em> y avanzar.</h1>
           <p class="hero__lead">Educación inicial y primaria que une tradición, aprendizaje y tecnología.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="admision.html">Postula ahora</a>
             <a class="btn btn--ghost" href="nosotros.html">Conoce el colegio</a>
           </div>
+          <p class="hero__levels"><span>Inicial · 5 años</span><span>Educación primaria</span></p>
         </div>
         <figure class="cutout cutout--hero reveal"><img src="img/recortes/grupo.webp" width="1018" height="1058" alt="Cinco estudiantes del colegio con sus uniformes escolares" fetchpriority="high" decoding="async"><figcaption class="hero-photo-note"><i class="ph ph-sparkle" aria-hidden="true"></i>Dios, labor y lealtad</figcaption></figure>
       </div>
@@ -70,6 +71,7 @@
   <section class="section">
     <div class="shell">
       <div class="section-lead reveal">
+        <span class="eyebrow">Nuestra propuesta educativa</span>
         <h2>Dos niveles, un mismo acompañamiento</h2>
         <p>Recibimos a los niños en Inicial y los acompañamos hasta el final de la Primaria, con tecnología integrada al aula desde el primer día.</p>
       </div>
@@ -151,6 +153,7 @@
     <div class="shell">
       <div class="split">
         <div class="split__body reveal">
+          <span class="eyebrow">Un nuevo comienzo</span>
           <h2>Admisión 2027 abierta</h2>
           <p>Las vacantes de Inicial y Primaria son limitadas porque mantenemos grupos pequeños. El proceso toma cinco pasos y empieza con una visita al colegio.</p>
           <ul class="spec">
@@ -205,31 +208,17 @@
     </div>
   </div>
 </section>
-<section class="section section--sunken">
-  <div class="shell">
-    <div class="section-lead">
-      <h2>Conoce a nuestra comunidad</h2>
-      <p>Cada estudiante aporta una forma distinta de mirar el mundo.</p>
+<section class="section home-next" aria-labelledby="home-next-title">
+  <div class="shell home-next__grid">
+    <div>
+      <span class="eyebrow">El siguiente paso</span>
+      <h2 id="home-next-title">Ven a conocernos.</h2>
+      <p>Descubre nuestra propuesta para Inicial y Primaria y conoce el proceso de admisión.</p>
     </div>
-    <div class="community-row">
-      <figure class="cutout ">
-        <img src="img/recortes/pequena.webp" width="566" height="1400" alt="Niña de Inicial con uniforme deportivo" loading="lazy" decoding="async">
-      </figure>
-      <figure class="cutout ">
-        <img src="img/recortes/estudiante.webp" width="583" height="1400" alt="Estudiante con uniforme escolar y brazos cruzados" loading="lazy" decoding="async">
-      </figure>
-      <figure class="cutout ">
-        <img src="img/recortes/primaria.webp" width="804" height="1400" alt="Estudiante de Primaria con uniforme y brazos cruzados" loading="lazy" decoding="async">
-      </figure>
-      <figure class="cutout ">
-        <img src="img/recortes/inicial.webp" width="738" height="1400" alt="Dos niñas de Inicial sonríen y levantan el pulgar" loading="lazy" decoding="async">
-      </figure>
+    <div class="home-next__actions">
+      <a class="btn btn--primary" href="admision.html">Conocer admisión <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      <a class="home-next__link" href="galeria.html">Explorar la galería</a>
     </div>
-    <p class="stack-top">
-      <a class="link-arrow" href="galeria.html">Ver todas las fotografías <i class="ph ph-arrow-right" aria-hidden="true">
-        </i>
-      </a>
-    </p>
   </div>
 </section>
 </main>

@@ -340,3 +340,64 @@ main { overflow-x: clip; }
   .cutout > img, .portrait-card img, .talent-card > figure > img { filter: drop-shadow(0 2px 2px rgba(10,51,43,.3)) drop-shadow(0 7px 6px rgba(10,51,43,.2)); }
   .portrait-card { padding: .75rem .75rem 0; }
 }
+
+/* Sullana: jerarquía editorial y menos repeticiones en la portada. */
+.home-page h1, .home-page h2, .home-page h3 { text-wrap: balance; }
+.home-page p { text-wrap: pretty; }
+.home-page .hero--portraits { padding-block: clamp(2.5rem, 5vw, 4.75rem) 2rem; }
+.home-page .hero__grid { grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); }
+.home-page .hero h1 { max-width: 12ch; font-size: clamp(3.4rem, 5.9vw, 5.7rem); line-height: 1.04; margin-block: 1.25rem; }
+.home-page .hero h1 em { font-family: "Source Serif 4", Georgia, serif; color: var(--sunshine); font-weight: 700; }
+.home-page .hero__lead { max-width: 37ch; }
+.home-page .hero__levels { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(235,235,223,.25); color: #EBEBDF; font-size: .78rem; }
+.home-page .hero__levels span { display: inline-flex; align-items: center; gap: .5rem; }
+.home-page .hero__levels span::before { content: ""; width: .3rem; height: .3rem; border-radius: 50%; background: var(--sunshine); }
+.home-page .hero-photo-note { border-radius: 14px; transform: none; right: 0; bottom: 5%; font-size: 1.1rem; box-shadow: none; }
+.home-page .section-lead { margin-bottom: clamp(2rem, 4vw, 3rem); }
+.home-page .section-lead .eyebrow, .home-page .split__body > .eyebrow { display: block; margin-bottom: .85rem; }
+.home-page .section-lead h2 { max-width: 22ch; }
+.home-page .school-levels > :nth-child(2) { margin-block: 0; transform: none; }
+.home-page .school-levels .bento__cell { box-shadow: none; border: 1px solid var(--line); border-radius: 18px; }
+.home-page .school-levels > :last-child { border-radius: 0; border-width: 1px 0 0; background: none; padding-inline: 0; }
+.home-page .pillars { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2.5rem 4rem; }
+.home-page .pillar { grid-template-columns: 2.25rem 1fr; gap: .6rem 1rem; border-top: 1px solid var(--line-strong); padding-top: 1.5rem; }
+.home-page .pillar p { grid-column: 2; max-width: 45ch; }
+.home-page .pillar__icon { color: var(--brand-green); font-size: 1.5rem; }
+.home-page .quote { padding-block: clamp(2.5rem,5vw,4rem); }
+.home-page .quote blockquote { font-size: clamp(2rem,3.5vw,3.3rem); }
+.home-page .photo-strip { align-items: stretch; gap: 1.5rem; }
+.home-page .photo-strip > :nth-child(n) { margin-top: 0; box-shadow: none; border: 1px solid var(--line); border-radius: 16px; }
+.home-page .photo-strip .photo-card > img { height: auto; width: 100%; aspect-ratio: 4/5; }
+.home-page .photo-strip .photo-card > img[src*="/recortes/"] { object-fit: contain; object-position: center bottom; }
+.home-page .photo-strip figcaption { padding: 1.15rem 1.2rem; font-size: .9rem; }
+.home-next { background: var(--brand-green-deep); color: #F8F7F4; }
+.home-next__grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
+.home-next h2 { color: #F8F7F4; margin-block: 1rem; }
+.home-next p { color: #EBEBDF; max-width: 48ch; }
+.home-next .eyebrow { color: var(--sunshine); }
+.home-next__actions { display: grid; justify-items: start; gap: 1rem; }
+.home-next .btn--primary { background: var(--sunshine); color: #0A332B; box-shadow: none; }
+.home-next__link { display: inline-flex; align-items: center; min-height: 44px; color: #F8F7F4; text-decoration: underline; text-underline-offset: .3em; font-size: .9rem; }
+.home-next + .site-footer { border-top: 1px solid rgba(235,235,223,.2); }
+@media (max-width: 1020px) {
+  .home-page .hero__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .home-page .hero h1 { max-width: 15ch; }
+  .home-page .hero__lead { max-width: 48ch; }
+  .home-page .hero .cutout--hero { width: min(100%,30rem); margin-inline: auto; }
+  .home-page .pillars { gap: 2rem; }
+}
+@media (max-width: 640px) {
+  .home-page .hero--portraits { padding-top: 2rem; }
+  .home-page .hero h1 { font-size: clamp(2.6rem,11vw,3.6rem); max-width: 14ch; }
+  .home-page .hero__levels { margin-top: 1.5rem; font-size: .73rem; }
+  .home-page .hero .cutout--hero { max-width: 23rem; }
+  .home-page .hero-photo-note { max-width: 8.5rem; padding: .8rem; font-size: .95rem; }
+  .home-page .pillars { grid-template-columns: 1fr; gap: 1.75rem; }
+  .home-page .pillar { padding-top: 1.25rem; }
+  .home-page .photo-strip { grid-template-columns: 1fr; gap: 1.5rem; }
+  .home-page .photo-strip .photo-card > img { aspect-ratio: 5/4; }
+  .home-page .photo-strip .photo-card:first-child > img { object-position: center; }
+  .home-next__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .home-next__actions { width: 100%; }
+  .home-next__actions .btn { width: 100%; }
+}
