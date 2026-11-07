@@ -49,6 +49,12 @@ La landing del taller ofrece un formulario breve que abre un mensaje editable en
 | `img/taller-familiar/family-*.webp` | Recortes transparentes generados para el hero y la invitación final del taller |
 | `img/logo.svg` | Recreación vectorial anterior al escudo oficial. Ya no se usa en el sitio |
 
+## Selección de fotos de Sullana — noviembre de 2026
+
+Diez fotografías aportadas por el usuario se distribuyen entre Niveles, Vida escolar y Galería. Cada archivo nuevo se usa una sola vez en estas páginas; se eliminaron retratos y tomas similares de la galería para evitar repeticiones. El lote de Tambogrande permanece fuera de este sitio.
+
+Los derivados están en `img/fotos/sullana/`, con anchos de 480, 960 y 1440 píxeles, orientación corregida y sin metadatos EXIF. Los originales se conservan fuera del repositorio. `srcset` y `sizes` ajustan la descarga a la pantalla; el visor abre la versión de 1440 píxeles. La selección y los encuadres se documentan en `docs/fotos-sullana.md`.
+
 ## Sistema de diseño
 
 Sigue la guía de marca de la institución.
@@ -67,7 +73,7 @@ La capa `css/creative.css` incorpora degradados de verde profundo, lima y dorado
 
 El contenido es un borrador de trabajo. Antes de publicarlo como sitio oficial:
 
-- **Fotografías.** El sitio integra retratos con transparencia y fotografías de aula y proyectos. Las imágenes se declaran directamente en el HTML; la galería reúne diecisiete imágenes. Si aparecen menores de edad hace falta la autorización firmada del padre, madre o apoderado.
+- **Fotografías.** El sitio integra retratos con transparencia y fotografías de aula y proyectos. Las imágenes se declaran directamente en el HTML; la galería reúne ocho imágenes ampliables. Si aparecen menores de edad hace falta la autorización firmada del padre, madre o apoderado.
 - **Datos de contacto.** Dirección, teléfonos, correos y horarios son de ejemplo.
 - **Cifras.** Los números de `niveles.html` son de referencia.
 - **Textos legales.** `privacidad.html` y `terminos.html` son borradores que debe revisar un asesor legal según la Ley 29733 de Protección de Datos Personales.
