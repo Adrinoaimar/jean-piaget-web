@@ -31,6 +31,9 @@
     toggle.addEventListener("click", function () {
       setOpen(links.getAttribute("data-open") !== "true");
     });
+    links.addEventListener("click", function (event) {
+      if (event.target.closest('a[href^="#"]')) setOpen(false);
+    });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && links.getAttribute("data-open") === "true") {
         setOpen(false);

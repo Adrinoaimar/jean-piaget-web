@@ -24,7 +24,8 @@ Para separar los uniformes blancos, los recortes usan escenarios verdes con degr
 | `innovacion.html` | Computación, robótica, creatividad digital |
 | `vida-escolar.html` | Actividades y calendario institucional |
 | `taller-familiar.html` | Landing del taller familiar y consulta por WhatsApp |
-| `galeria.html` | Galería de instalaciones y actividades |
+| `galeria.html` | Galería de instalaciones y actividades de Sullana |
+| `tambogrande.html` | Página propia de Jean Piaget Tambogrande: aprendizaje, comunidad y galería |
 | `admision.html` | Proceso, requisitos y formulario de solicitud |
 | `contacto.html` | Datos de contacto, mapa y formulario |
 | `jean-piaget.html` | Quién fue Jean Piaget y por qué el colegio lleva su nombre |
@@ -51,9 +52,17 @@ La landing del taller ofrece un formulario breve que abre un mensaje editable en
 
 ## Selección de fotos de Sullana — noviembre de 2026
 
-Diez fotografías aportadas por el usuario se distribuyen entre Niveles, Vida escolar y Galería. Cada archivo nuevo se usa una sola vez en estas páginas; se eliminaron retratos y tomas similares de la galería para evitar repeticiones. El lote de Tambogrande permanece fuera de este sitio.
+Diez fotografías aportadas por el usuario se distribuyen entre Niveles, Vida escolar y Galería. Cada archivo nuevo se usa una sola vez en estas páginas; se eliminaron retratos y tomas similares de la galería para evitar repeticiones. El lote de Tambogrande se presenta únicamente en su página propia, `tambogrande.html`; las fotografías de ambas localidades se mantienen identificadas y separadas.
 
 Los derivados están en `img/fotos/sullana/`, con anchos de 480, 960 y 1440 píxeles, orientación corregida y sin metadatos EXIF. Los originales se conservan fuera del repositorio. `srcset` y `sizes` ajustan la descarga a la pantalla; el visor abre la versión de 1440 píxeles. La selección y los encuadres se documentan en `docs/fotos-sullana.md`.
+
+## Fotografías de Tambogrande — noviembre de 2026
+
+La página `tambogrande.html` integra ocho recortes con transparencia sobre escenarios verdes. Cada imagen aparece una sola vez: un grupo en la portada, tres escenas de aprendizaje, un retrato en comunidad y tres grupos en la galería ampliable. Los derivados WebP están en `img/recortes/tambogrande/`, con anchos de 480 y 960 píxeles; `srcset` y `sizes` seleccionan el tamaño de descarga.
+
+Inicio y Galería de Sullana ofrecen entradas textuales a Tambogrande, sin repetir fotografías. La página de Tambogrande usa navegación y pie propios, con enlaces de regreso identificados como Sullana. No atribuye a Tambogrande los datos de contacto, admisión, niveles o estadísticas de Sullana, ni afirma una relación legal entre ambas instituciones.
+
+La distribución y los archivos se documentan en [Fotografías de Tambogrande](docs/fotos-tambogrande.md). Su estilo específico se encuentra en `css/tambogrande.css`; reutiliza `js/main.js` para navegación, entradas y visor.
 
 ## Sistema de diseño
 
