@@ -20,11 +20,12 @@ Para separar los uniformes blancos, los recortes usan escenarios verdes con degr
 |---|---|
 | `index.html` | Inicio |
 | `nosotros.html` | Historia, misión, visión y identidad institucional |
-| `niveles.html` | Inicial de 5 años y Primaria de 1.º a 5.º |
+| `niveles.html` | Inicial de 3 a 5 años y Primaria de 1.º a 6.º |
 | `innovacion.html` | Computación, robótica, creatividad digital |
 | `vida-escolar.html` | Actividades y calendario institucional |
 | `taller-familiar.html` | Landing del taller familiar y consulta por WhatsApp |
 | `galeria.html` | Galería de instalaciones y actividades |
+| `tambogrande.html` | Página propia de la sede de Tambogrande, con logo y galería |
 | `admision.html` | Proceso, requisitos y formulario de solicitud |
 | `contacto.html` | Datos de contacto, mapa y formulario |
 | `jean-piaget.html` | Quién fue Jean Piaget y por qué el colegio lleva su nombre |
@@ -51,7 +52,7 @@ La landing del taller ofrece un formulario breve que abre un mensaje editable en
 
 ## Selección de fotos de Sullana — noviembre de 2026
 
-Diez fotografías aportadas por el usuario se distribuyen entre Niveles, Vida escolar y Galería. Cada archivo nuevo se usa una sola vez en estas páginas; se eliminaron retratos y tomas similares de la galería para evitar repeticiones. El lote de Tambogrande permanece fuera de este sitio.
+Diez fotografías aportadas por el usuario se distribuyen entre Niveles, Vida escolar y Galería. Cada archivo nuevo se usa una sola vez en estas páginas; se eliminaron retratos y tomas similares de la galería para evitar repeticiones. Tambogrande cuenta con una página propia, `tambogrande.html`, enlazada desde Inicio; sus fotografías se identifican por sede.
 
 Los derivados están en `img/fotos/sullana/`, con anchos de 480, 960 y 1440 píxeles, orientación corregida y sin metadatos EXIF. Los originales se conservan fuera del repositorio. `srcset` y `sizes` ajustan la descarga a la pantalla; el visor abre la versión de 1440 píxeles. La selección y los encuadres se documentan en `docs/fotos-sullana.md`.
 
@@ -74,8 +75,7 @@ La capa `css/creative.css` incorpora degradados de verde profundo, lima y dorado
 El contenido es un borrador de trabajo. Antes de publicarlo como sitio oficial:
 
 - **Fotografías.** El sitio integra retratos con transparencia y fotografías de aula y proyectos. Las imágenes se declaran directamente en el HTML; la galería reúne ocho imágenes ampliables. Si aparecen menores de edad hace falta la autorización firmada del padre, madre o apoderado.
-- **Datos de contacto.** Dirección, teléfonos, correos y horarios son de ejemplo.
-- **Cifras.** Los números de `niveles.html` son de referencia.
+- **Datos confirmados por el usuario (2026-11-09).** Inicial de 3 a 5 años; Primaria de 1.º a 6.º; Av. José de Lama #489, Sullana; consultas +51 959 425 312; horario escolar de 7:20 a. m. a 1:50 p. m. Los correos electrónicos y el horario de atención administrativa siguen pendientes de confirmación.
 - **Textos legales.** `privacidad.html` y `terminos.html` son borradores que debe revisar un asesor legal según la Ley 29733 de Protección de Datos Personales.
 - **Escudo.** Ya está el oficial en `img/escudo.png`. Si aparece una versión vectorial o en mayor resolución, conviene reemplazarla: el escudo tiene texto fino que se lee mejor cuanto mayor sea el original.
 
@@ -110,3 +110,7 @@ Luego abrir `http://localhost:8000`.
 ## Publicación
 
 Publicado con GitHub Pages desde la rama `main`, carpeta raíz.
+
+## Actualización institucional — noviembre de 2026
+
+Admisión incluye copia del DNI de ambos padres para Inicial y Primaria, entrevista con Dirección y entrevista con Psicología. El selector ofrece las tres edades de Inicial y los seis grados de Primaria. Se sustituye la sección de cifras de ejemplo por una explicación de cada etapa. El lema se presenta en este orden: identificación institucional, «Dios, labor y lealtad» y Sullana. La página propia de Tambogrande no hereda los datos de contacto o niveles confirmados únicamente para Sullana.

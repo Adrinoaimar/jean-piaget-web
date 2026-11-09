@@ -1,29 +1,43 @@
-/* Fotografías de Sullana: proporciones propias, sin heredar el tratamiento de recortes. */
+/* Fotografías de Sullana: encuadres completos y ritmo editorial. */
 .talent-grid--photos {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.25rem;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 1.4rem 2rem;
+  align-items: start;
 }
-.talent-card--photo { display: flex; flex-direction: column; }
-.talent-card--photo > figure {
-  flex-shrink: 0;
-  display: block;
-  height: auto;
-  aspect-ratio: 3 / 4;
-  padding: 0;
-  overflow: hidden;
+.talent-card--photo {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1fr);
+  align-items: center;
+  border-radius: 18px;
   background: var(--surface-raised);
 }
+.talent-card--photo:first-child { grid-row: span 3; display: block; }
+.talent-card--photo > figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background: var(--portrait-stage);
+}
 .talent-card--photo > figure > img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center;
   filter: none;
 }
-.talent-card--photo .talent-card__body { flex: 1; padding: 1.2rem; }
-.talent-card--photo h3 { font-size: 1.1rem; text-wrap: balance; }
-.talent-card--photo p { font-size: .9rem; text-wrap: pretty; }
+.talent-card--photo:first-child > figure { padding: 0; }
+.talent-card--photo:first-child > figure > img { width: 100%; max-height: none; }
+.talent-card--photo .talent-card__body { padding: 1.2rem; }
+.talent-card--photo:first-child .talent-card__body { padding: 1.6rem; border-top: 3px solid rgba(248,184,21,.65); }
+.talent-card--photo h3 { font-size: 1.08rem; text-wrap: balance; }
+.talent-card--photo:first-child h3 { font-size: 1.5rem; }
+.talent-card--photo p { font-size: .85rem; line-height: 1.65; text-wrap: pretty; }
+.talent-card--photo:first-child p { font-size: .95rem; }
 .gallery--school {
   columns: auto;
   display: grid;
@@ -31,46 +45,81 @@
   gap: 1.5rem;
   align-items: start;
 }
-.gallery--school-talent { max-width: 54rem; margin-inline: auto; }
 .gallery--school > * { margin-bottom: 0; }
+.photo-card--school { border-radius: 18px; box-shadow: 0 12px 26px -22px rgba(10,51,43,.35); }
 .photo-card--school > img,
 .photo-card--school > .photo-open {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: auto;
   border-radius: 0;
   overflow: hidden;
+  background: var(--portrait-stage);
 }
-.photo-card--landscape > img,
-.photo-card--landscape > .photo-open { aspect-ratio: 3 / 2; }
-.photo-card--portrait > img,
-.photo-card--portrait > .photo-open { aspect-ratio: 3 / 4; }
+.photo-card--school > img,
 .photo-card--school .photo-open img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   object-position: center;
   filter: none;
 }
+.photo-card--school figcaption { padding: 1.1rem 1.3rem; font-size: .95rem; font-weight: 600; border-top: 2px solid rgba(248,184,21,.5); }
+.gallery-school-heading { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: end; margin-bottom: 2rem; }
+.gallery-school-heading h2 { margin-block: .7rem 0; }
+.gallery-school-heading p { max-width: 37ch; margin: 0; }
+.gallery--school-community > :nth-child(2) { margin-top: 3rem; }
+.gallery-school-talent-layout { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 3rem; align-items: center; }
+.gallery-school-talent-layout .section-lead { margin-bottom: 0; }
+.gallery-school-talent-layout .section-lead p { font-size: .95rem; }
+.gallery--school-talent { width: 100%; gap: 1.25rem; }
+.gallery--school-talent > :nth-child(2) { margin-top: 2.5rem; }
+.gallery--school-talent .photo-card--school figcaption { font-size: .85rem; padding: 1rem; }
+.gallery-school-moments.gallery--moments { columns: 2; column-gap: 1.5rem; }
+.gallery-school-moments.gallery--moments .photo-card > img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
+.gallery-school-moments.gallery--moments .photo-card figcaption { font-size: .9rem; }
 .school-community {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
-.school-community .photo-card > img { aspect-ratio: 1; object-fit: cover; }
+.school-community .photo-card > img { height: auto; aspect-ratio: auto; object-fit: contain; }
 .school-community .section-lead { margin-bottom: 0; }
 .school-community .section-lead p { text-wrap: pretty; }
+@media (hover: hover) {
+  .talent-card--photo:hover img, .photo-card--school:hover img { transform: none; }
+}
 @media (max-width: 1020px) {
-  .talent-grid--photos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .talent-grid--photos { gap: 1.2rem; }
+  .talent-card--photo { grid-template-columns: .85fr 1fr; }
+  .talent-card--photo .talent-card__body { padding: 1rem; }
+  .talent-card--photo p { font-size: .8rem; }
+  .gallery-school-talent-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .gallery--school-talent { max-width: 44rem; margin-inline: auto; }
 }
 @media (max-width: 800px) {
   .school-community { grid-template-columns: 1fr; }
+  .talent-grid--photos { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .talent-card--photo { display: block; }
+  .talent-card--photo:first-child { grid-row: auto; }
+  .talent-card--photo:first-child > figure { padding: 0; }
+  .talent-card--photo:first-child > figure > img { width: 100%; max-height: none; }
+  .talent-card--photo:first-child h3 { font-size: 1.08rem; }
+  .talent-card--photo:first-child .talent-card__body { padding: 1rem; border-top: none; }
+  .talent-card--photo:first-child p, .talent-card--photo p { font-size: .9rem; }
+  .gallery-school-heading { grid-template-columns: 1fr; gap: 1rem; }
 }
 @media (max-width: 700px) {
   .gallery--school { grid-template-columns: 1fr; }
-  .gallery--school-talent { max-width: 30rem; }
+  .gallery--school-community > :nth-child(2), .gallery--school-talent > :nth-child(2) { margin-top: 0; }
+  .gallery--school-talent { max-width: 26rem; }
+  .gallery-school-moments.gallery--moments { columns: 1; }
 }
 @media (max-width: 600px) {
-  .talent-grid--photos { grid-template-columns: 1fr; }
+  .talent-grid--photos { grid-template-columns: 1fr; gap: 1.5rem; max-width: 28rem; margin-inline: auto; }
+  .talent-card--photo .talent-card__body, .talent-card--photo:first-child .talent-card__body { padding: 1.3rem; }
 }
