@@ -93,7 +93,7 @@ var FORM = {
   ...
 ```
 
-Hasta que la clave esté puesta, el formulario no simula un envío falso: valida los campos y, al enviar, le muestra al visitante el correo y el WhatsApp para escribir directamente.
+Hasta que la clave esté puesta, el formulario valida los campos y abre WhatsApp con un mensaje editable que contiene la consulta. La familia revisa el mensaje y decide enviarlo. Un enlace visible permite abrir el mismo mensaje si el navegador bloquea la nueva pestaña.
 
 La clave de acceso es pública por diseño y solo autoriza a enviar mensajes a ese correo. No da acceso a ninguna cuenta, así que no hay problema en que esté en el repositorio.
 

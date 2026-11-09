@@ -193,7 +193,28 @@
           return;
         }
         if (!FORM.ACCESS_KEY) {
-          setStatus(status, "El envío automático todavía no está activo. Escríbenos a " + FORM.EMAIL + " o por WhatsApp y te respondemos.", "error");
+          var subject = form.dataset.subject || "Consulta desde la web";
+          var lines = ["Hola, envío mi " + subject.toLowerCase() + " (I.E.P. Jean Piaget Sullana):"];
+          fields.forEach(function (input) {
+            var val = input.tagName === "SELECT" && input.selectedOptions && input.selectedOptions[0]
+              ? input.selectedOptions[0].textContent.trim()
+              : (input.value || "").trim();
+            if (!val) return;
+            var labelEl = form.querySelector('label[for="' + input.id + '"]');
+            var label = labelEl ? labelEl.textContent.trim() : input.name;
+            lines.push("• " + label + ": " + val);
+          });
+          var waUrl = FORM.WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n"));
+          window.open(waUrl, "_blank", "noopener,noreferrer");
+          setStatus(status, "Revisa el mensaje en WhatsApp y pulsa Enviar para completar tu consulta. Si no se abre, ", "info");
+          if (status) {
+            var waLink = document.createElement("a");
+            waLink.href = waUrl;
+            waLink.target = "_blank";
+            waLink.rel = "noopener noreferrer";
+            waLink.textContent = "abre WhatsApp desde aquí";
+            status.appendChild(waLink);
+          }
           return;
         }
 

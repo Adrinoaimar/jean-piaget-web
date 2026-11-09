@@ -29,7 +29,7 @@ h1 { font-size: clamp(2.7rem, 5.1vw, 5.1rem); line-height: 1.06; }
 h2 { font-size: clamp(2rem, 3.5vw, 3.25rem); line-height: 1.13; }
 h3 { letter-spacing: -0.025em; line-height: 1.25; }
 body { background: var(--surface); }
-.eyebrow { text-transform: none; letter-spacing: 0.025em; font-size: 0.82rem; }
+.eyebrow { text-transform: none; letter-spacing: 0.025em; font-size: 0.82rem; color: var(--brand-green); }
 .section-lead { max-width: 56ch; }
 .section-lead p { margin-top: 1.1rem; }
 .section--sunken {
@@ -106,7 +106,7 @@ body { background: var(--surface); }
 .school-levels .card-portrait { height: 14rem; }
 .school-levels .card-portrait::before { border-radius: 47% 53% 28% 72%; background: linear-gradient(140deg, #F8F7F4, #EBEBDF); }
 .school-levels > :nth-child(2) { transform: translateY(1.5rem); }
-.school-levels > :nth-child(4) { background: linear-gradient(150deg, #F8F7F4, #EBEBDF); }
+.school-levels > :nth-child(4) { background: var(--portrait-stage); }
 .school-levels > :last-child { background: repeating-linear-gradient(transparent 0 31px, rgba(10, 51, 43, .05) 32px), #F8F7F4; justify-content: center; }
 .cutout--panel { border-radius: 32px 32px 90px 32px; background: linear-gradient(135deg, #F8F7F4, #EBEBDF); }
 .cutout--panel::before { background: linear-gradient(145deg, #EBEBDF, #EBEBDF50); border-radius: 40% 60% 60% 40%; }
@@ -197,12 +197,17 @@ body { background: var(--surface); }
   .gallery-dialog__image { height: 58dvh; }
   .gallery-dialog__stage { padding-inline: 2.7rem; }
 }
+.step::before { color: var(--brand-green); }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --surface: #0A332B; --surface-raised: #0A332B; --surface-sunken: #0A332B; --text-strong: #EBEBDF; --text: #EBEBDF; --text-muted: #EBEBDF; --leaf-soft: #0A332B; --line: #216055; }
-  .section--sunken { background: radial-gradient(at 5% 15%, #0A332B, transparent 65%), #0A332B; }
+  :root:not([data-theme="light"]) { --surface: #0A332B; --surface-raised: #124037; --surface-sunken: #0A332B; --text-strong: #F8F7F4; --text: #EBEBDF; --text-muted: #EBEBDF; --leaf: #F8B815; --leaf-soft: #124037; --line: #216055; --line-strong: #2E7A6C; }
+  .section--sunken { background: radial-gradient(at 5% 15%, #124037, transparent 65%), #0A332B; }
   .site-header { background: rgba(10, 51, 43, .92); }
-  .school-levels > :first-child, .school-levels > :last-child { background: linear-gradient(140deg, #216055, #0A332B); }
-  .school-levels > :nth-child(2) { color: #0A332B; }
+  .eyebrow, .step::before { color: var(--sunshine); }
+  .btn--primary { border-color: rgba(235, 235, 223, 0.28); }
+  .bento__cell--cream, .school-levels > :first-child, .school-levels > :nth-child(2), .school-levels > :last-child { background: linear-gradient(140deg, #164940, #0E3B32); border-color: #216055; color: #EBEBDF; --text-strong: #F8F7F4; --text: #EBEBDF; --text-muted: #EBEBDF; --leaf: #F8B815; }
+  .bento__cell--cream h3, .bento__cell--cream p, .bento__cell--cream .spec li { color: #EBEBDF; }
+  .bento__cell--cream .link-arrow, .bento__cell--cream .spec i { color: var(--sunshine); }
+  .school-levels > :nth-child(4) { background: var(--portrait-stage); }
   .photo-card > img[src*="/recortes/"] { background: linear-gradient(140deg, #216055, #0A332B); }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -226,17 +231,19 @@ main { overflow-x: clip; }
 }
 .gallery--portraits > * { margin-bottom: 0; }
 .school-levels > :last-child { grid-column: 1 / -1; }
+.school-levels > :nth-child(3) .card-portrait { overflow: hidden; border-radius: 16px; background: var(--portrait-stage); margin: 0 0 0.5rem; }
+.school-levels > :nth-child(3) .card-portrait::before { content: none; }
 @media (min-width: 1021px) {
   .school-levels { grid-template-columns: repeat(12, minmax(0, 1fr)); }
-  .school-levels > :nth-child(1), .school-levels > :nth-child(2) { grid-column: span 6; min-height: 24rem; padding-right: 46%; }
+  .school-levels > :nth-child(1), .school-levels > :nth-child(2) { grid-column: span 6; min-height: 24rem; padding-right: 46%; overflow: hidden; }
   .school-levels > :nth-child(2) { transform: none; margin-top: 1.5rem; margin-bottom: -1.5rem; }
-  .school-levels > :nth-child(-n+2) .card-portrait { position: absolute; right: 0; bottom: 0; width: 46%; height: 90%; margin: 0; }
+  .school-levels > :nth-child(-n+2) .card-portrait { position: absolute; right: 0; bottom: 0; width: 46%; height: 92%; margin: 0; }
   .school-levels > :nth-child(3) { grid-column: span 4; }
   .school-levels > :nth-child(4) { grid-column: span 8; }
   .school-levels > :last-child { display: grid; grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr); align-items: center; }
 }
 @media (min-width: 1021px) {
-  .school-levels > :nth-child(-n+2) .card-portrait::before { width: 100%; height: auto; aspect-ratio: 1; }
+  .school-levels > :nth-child(-n+2) .card-portrait::before { width: 106%; height: auto; aspect-ratio: 1; bottom: -8%; }
 }
 
 /* Las tarjetas de texto no heredan la altura del retrato. */
@@ -253,7 +260,6 @@ main { overflow-x: clip; }
   .activities-grid > article { padding: 1.35rem; gap: 0.65rem; }
 }
 
-.school-levels > :nth-child(2), .school-levels > :nth-child(4) { --text-strong: #0A332B; --text-muted: #216055; --text: #216055; }
 .footer-motto { color: #F8D200; }
 
 /* La identidad se concentra en verde y marfil; amarillo como acento. */
@@ -413,9 +419,10 @@ main { overflow-x: clip; }
 }
 
 /* Lema institucional: identificación, lema y localidad en ese orden. */
-.quote .institutional-motto__label { margin: 0 0 1.2rem; font-size: .76rem; line-height: 1.6; text-transform: uppercase; color: var(--text-on-invert-muted); }
+.quote .institutional-motto { margin: 0 auto; }
+.quote .institutional-motto__label { margin: 0 auto 1.2rem; font-size: .76rem; line-height: 1.6; text-transform: uppercase; color: var(--text-on-invert-muted); }
 .quote .institutional-motto blockquote { margin-block: 0; }
-.quote .institutional-motto__city { margin: 1.1rem 0 0; color: var(--sunshine); font-size: .82rem; font-weight: 600; text-transform: uppercase; }
+.quote .institutional-motto__city { margin: 1.1rem auto 0; max-width: none; color: var(--sunshine); font-size: .82rem; font-weight: 600; text-transform: uppercase; }
 .home-next__actions { max-width: 27rem; }
 .home-next__actions .btn { width: 100%; justify-content: space-between; gap: 1rem; white-space: normal; text-align: left; min-height: 48px; line-height: 1.5; }
 
@@ -446,7 +453,7 @@ main { overflow-x: clip; }
   .home-page .hero h1 { font-size: clamp(2.35rem, 10.5vw, 3.5rem); }
   .home-page .hero__levels { display: grid; gap: .5rem; }
   .step { grid-template-columns: 2rem minmax(0,1fr); gap: .75rem; padding-block: 1.35rem; }
-  .step::before { font-size: 1.25rem; color: var(--brand-green); }
+  .step::before { font-size: 1.25rem; }
   .step h3 { font-size: 1.05rem; line-height: 1.4; }
   .step p { font-size: .9rem; line-height: 1.75; }
   .form { padding: 1.15rem; min-width: 0; }
