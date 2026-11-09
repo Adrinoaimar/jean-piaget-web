@@ -41,3 +41,9 @@ Una segunda pasada solicita corregir únicamente la máscara alfa: eliminar halo
 ## Recuperación del 9 de noviembre de 2026
 
 La página, sus estilos, este documento y las dieciséis variantes WebP se recuperan del commit `557393f`. Se conserva el retorno «Inicio · Sullana» y la marca Tambogrande visible también en móvil. Las dimensiones declaradas corresponden a los archivos recuperados; cada uno de los ocho motivos aparece una sola vez. Los elementos de aula útiles para comprender la escena se conservan deliberadamente. Esta recuperación no incorpora nuevas generaciones ni modifica los originales. La revisión del navegador y la publicación quedan a cargo de la integración principal.
+
+## Retiro de docentes — 9 de noviembre de 2026
+
+Por solicitud del usuario se retiran únicamente las dos profesoras de la escena `acompanamiento-en-aula`. Se conserva el grupo de tres estudiantes, la mesa y los útiles, con fondo transparente. Edición con image_gen integrado; exportación WebP a 480/960 px conservando alfa. Se actualizan dimensiones, versión de recurso, texto alternativo y descripción de la tarjeta.
+
+Prompt: retirar completamente a las dos mujeres con vestidos grises situadas detrás de la mesa; conservar los tres estudiantes, sus rasgos, uniformes, poses y objetos; completar mínimamente bordes ocultos, sin inventar personas, fondo, texto, brillo ni sombras. Mantener transparencia alfa real.
