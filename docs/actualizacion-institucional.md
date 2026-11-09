@@ -24,4 +24,4 @@ La URL prevista al publicar es `https://adrinoaimar.github.io/jean-piaget-web/ta
 
 ## Revisión y estado
 
-Revisión de código y contenido por un agente independiente; se corrige el cierre del menú móvil al activar enlaces internos. Capturas de Inicio, Admisión, Niveles y Tambogrande en escritorio y móvil. No se añaden ni ejecutan pruebas automatizadas. Cambios preparados en PR 20; publicación pendiente de autorización.
+Revisión de código y contenido por un agente independiente; se corrige el cierre del menú móvil al activar enlaces internos. Capturas de Inicio, Admisión, Niveles y Tambogrande en escritorio y móvil. No se añaden ni ejecutan pruebas automatizadas. Publicación de ambas sedes autorizada expresamente por el usuario el 9 de noviembre; integración mediante PR 20.

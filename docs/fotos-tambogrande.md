@@ -16,8 +16,8 @@ Cada imagen aparece una sola vez: un grupo en portada, tres escenas de aprendiza
 | acompanamiento-en-aula | IMG_9731.JPG | Aprendizaje |
 | confianza-para-crecer | IMG_9741.JPG | Comunidad |
 | ideas-en-clase | IMG_9913.JPG | Galería |
-| encuentro-en-patio | DJI_20261019080238_0023_D.JPG | Galería |
-| participacion-compartida | IMG_9592.JPG | Galería |
+| amistad-escolar | IMG_9816.JPG | Galería |
+| aprender-con-dedicacion | IMG_9903.JPG | Galería |
 
 ## Edición y prompts
 
@@ -47,3 +47,11 @@ La página, sus estilos, este documento y las dieciséis variantes WebP se recup
 Por solicitud del usuario se retiran únicamente las dos profesoras de la escena `acompanamiento-en-aula`. Se conserva el grupo de tres estudiantes, la mesa y los útiles, con fondo transparente. Edición con image_gen integrado; exportación WebP a 480/960 px conservando alfa. Se actualizan dimensiones, versión de recurso, texto alternativo y descripción de la tarjeta.
 
 Prompt: retirar completamente a las dos mujeres con vestidos grises situadas detrás de la mesa; conservar los tres estudiantes, sus rasgos, uniformes, poses y objetos; completar mínimamente bordes ocultos, sin inventar personas, fondo, texto, brillo ni sombras. Mantener transparencia alfa real.
+
+## Sustitución y logo — 9 de noviembre de 2026
+
+El usuario solicita sustituir las dos formaciones y publicar ambas páginas. Se reemplazan por `amistad-escolar` (IMG_9816.JPG, cinco compañeros) y `aprender-con-dedicacion` (IMG_9903.JPG, estudiante escribiendo). Permanecen ocho motivos distintos y dieciséis variantes WebP. Los cuatro recursos antiguos se retiran del árbol final.
+
+Edición mediante image_gen integrado con transparencia real: conservar los cinco estudiantes, sus rostros, poses, uniformes y zapatos; retirar pared, escaleras, barandillas, puerta y suelo. En la segunda escena conservar a la estudiante de primer plano con lentes, trenza, manos, lápiz, mesa, silla, cuaderno y útiles; retirar a la persona distante, dispensador y aula. No añadir personas, texto, bordes ni sombras. La exportación conserva el alfa generado.
+
+El logo PNG adjunto se copia sin redibujarlo a `img/escudo-tambogrande.png`, usado en cabecera y favicon. Publicación autorizada expresamente para Sullana y Tambogrande mediante el mismo despliegue de GitHub Pages, con rutas independientes.

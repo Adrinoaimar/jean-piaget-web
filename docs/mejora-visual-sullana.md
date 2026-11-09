@@ -15,4 +15,4 @@ Portada, Vida escolar y Galería. Se conserva la paleta verde, marfil y dorado, 
 
 Capturas de las tres páginas a 1440 y 390 px, con carga de imágenes y revisión visual de proporciones, texto y composición. Revisión estática independiente sin hallazgos accionables. No se añadieron ni ejecutaron pruebas automatizadas; git diff --check revisa formato del cambio.
 
-Estado: propuesta local para revisión del usuario; publicación pendiente.
+Estado: publicación autorizada por el usuario el 9 de noviembre para Sullana y Tambogrande, mediante PR 20.

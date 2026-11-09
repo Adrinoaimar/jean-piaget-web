@@ -25,6 +25,7 @@ Para separar los uniformes blancos, los recortes usan escenarios verdes con degr
 | `vida-escolar.html` | Actividades y calendario institucional |
 | `taller-familiar.html` | Landing del taller familiar y consulta por WhatsApp |
 | `galeria.html` | Galería de instalaciones y actividades |
+| `tambogrande.html` | Página propia de la sede de Tambogrande, con logo y galería |
 | `admision.html` | Proceso, requisitos y formulario de solicitud |
 | `contacto.html` | Datos de contacto, mapa y formulario |
 | `jean-piaget.html` | Quién fue Jean Piaget y por qué el colegio lleva su nombre |

@@ -81,3 +81,8 @@
 @media (prefers-reduced-motion: reduce) {
   .tambogrande-page *, .tambogrande-page *::before, .tambogrande-page *::after { animation: none !important; transition: none !important; }
 }
+/* Identidad de Tambogrande proporcionada por el usuario. */
+.tb-brand .brand__mark { width: auto; height: 54px; object-fit: contain; flex: 0 0 auto; }
+@media (max-width: 600px) {
+  .tb-brand .brand__mark { height: 44px; }
+}
