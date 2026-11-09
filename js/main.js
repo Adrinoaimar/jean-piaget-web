@@ -235,4 +235,35 @@
     initGallery();
     initForms();
   });
+
+  function initAmbientControl() {
+    if ('IntersectionObserver' in window) {
+      var ambientObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          entry.target.classList.toggle('ambient-offscreen', !entry.isIntersecting);
+        });
+      });
+      document.querySelectorAll('.hero, .page-hero, .tb-hero').forEach(function (section) {
+        ambientObserver.observe(section);
+      });
+    }
+    document.addEventListener('visibilitychange', function () {
+      document.documentElement.classList.toggle('ambient-hidden', document.hidden);
+    });
+    var footer = document.querySelector('.site-footer');
+    if (!footer || reduceMotion) return;
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'motion-toggle';
+    button.textContent = 'Pausar fondo';
+    button.setAttribute('aria-pressed', 'false');
+    button.addEventListener('click', function () {
+      var paused = document.documentElement.classList.toggle('motion-paused');
+      button.setAttribute('aria-pressed', String(paused));
+      button.textContent = paused ? 'Activar fondo' : 'Pausar fondo';
+    });
+    var container = footer.querySelector('.shell') || footer;
+    container.appendChild(button);
+  }
+  initAmbientControl();
 })();
