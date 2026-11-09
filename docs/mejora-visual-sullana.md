@@ -2,7 +2,7 @@
 
 ## Alcance
 
-Portada, Vida escolar y Galería. Se conserva la paleta verde, marfil y dorado, las fuentes locales, la navegación, el visor y la selección fotográfica publicada. Tambogrande continúa fuera del sitio.
+Portada, Vida escolar y Galería. Se conserva la paleta verde, marfil y dorado, las fuentes locales, la navegación, el visor y la selección fotográfica publicada. Una solicitud posterior incorpora la sede de Tambogrande en su página propia, con fotografías identificadas por sede.
 
 ## Decisiones
 

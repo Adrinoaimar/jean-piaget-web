@@ -401,3 +401,11 @@ main { overflow-x: clip; }
   .home-next__actions { width: 100%; }
   .home-next__actions .btn { width: 100%; }
 }
+
+/* Lema institucional: identificación, lema y localidad en ese orden. */
+.quote .institutional-motto__label { margin: 0 0 1.2rem; font-size: .76rem; line-height: 1.6; text-transform: uppercase; color: var(--text-on-invert-muted); }
+.quote .institutional-motto blockquote { margin-block: 0; }
+.quote .institutional-motto__city { margin: 1.1rem 0 0; color: var(--sunshine); font-size: .82rem; font-weight: 600; text-transform: uppercase; }
+.home-next__actions { max-width: 27rem; }
+.home-next__actions .btn { white-space: normal; text-align: left; }
+.home-next .btn--ghost { color: #F8F7F4; }
