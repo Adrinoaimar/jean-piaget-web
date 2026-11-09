@@ -419,8 +419,8 @@ main { overflow-x: clip; }
 }
 
 /* Lema institucional: identificación, lema y localidad en ese orden. */
-.quote { padding-block: clamp(3rem, 6vw, 5rem); background: #0A332B; }
-.quote::before { background: radial-gradient(ellipse at 50% 45%, rgba(33, 96, 85, .7), transparent 72%); }
+.quote.quote--institutional { padding-block: clamp(3rem, 6vw, 5rem); background: #0A332B; }
+.quote.quote--institutional::before { background: radial-gradient(ellipse at 50% 45%, rgba(33, 96, 85, .7), transparent 72%); }
 .quote .institutional-motto { margin: 0 auto; max-width: 62rem; }
 .quote .institutional-motto__label { display: inline-flex; align-items: center; gap: .9rem; margin: 0 auto 1.8rem; text-align: left; line-height: 1.5; text-transform: none; letter-spacing: normal; color: #F8F7F4; }
 .institutional-motto__crest { display: block; width: 56px; height: 64px; object-fit: contain; flex: none; }
