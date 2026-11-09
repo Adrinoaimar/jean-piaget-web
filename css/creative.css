@@ -409,3 +409,45 @@ main { overflow-x: clip; }
 .home-next__actions { max-width: 27rem; }
 .home-next__actions .btn { white-space: normal; text-align: left; }
 .home-next .btn--ghost { color: #F8F7F4; }
+
+/* Fondo ambiental: solo transform y opacidad; pausa disponible y movimiento reducido. */
+@keyframes school-ambient-drift {
+  from { transform: translate3d(-1%, -1%, 0) rotate(-5deg) scale(1.02); }
+  to { transform: translate3d(3%, 3%, 0) rotate(2deg) scale(1.07); }
+}
+@keyframes school-ambient-orbit {
+  from { transform: translate3d(0, 0, 0) scale(.94); opacity: .3; }
+  to { transform: translate3d(-2rem, 2rem, 0) scale(1.08); opacity: .55; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero::before, .page-hero::before, .tb-hero::before { animation: school-ambient-drift 22s ease-in-out infinite alternate; }
+  .hero::after, .page-hero::after, .tb-hero::after { animation: school-ambient-orbit 18s ease-in-out infinite alternate; }
+}
+.motion-paused .hero::before, .motion-paused .hero::after,
+.motion-paused .page-hero::before, .motion-paused .page-hero::after,
+.motion-paused .tb-hero::before, .motion-paused .tb-hero::after { animation-play-state: paused; }
+.motion-toggle { display: inline-flex; align-items: center; min-height: 44px; margin-top: 1rem; padding: .5rem .8rem; border: 1px solid currentColor; border-radius: 8px; background: transparent; color: inherit; font: inherit; font-size: .75rem; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { .motion-toggle { display: none; } }
+@media (max-width: 600px) {
+  .nav { column-gap: .6rem; }
+  .nav__links[data-open="true"] { padding-block: .4rem; }
+  .nav__links a { padding: .85rem .5rem; font-size: .95rem; }
+  .hero__actions { display: grid; grid-template-columns: minmax(0,1fr); }
+  .hero__actions .btn { width: 100%; justify-content: center; text-align: center; white-space: normal; }
+  .home-page .hero h1 { font-size: clamp(2.35rem, 10.5vw, 3.5rem); }
+  .home-page .hero__levels { display: grid; gap: .5rem; }
+  .step { grid-template-columns: 2rem minmax(0,1fr); gap: .75rem; padding-block: 1.35rem; }
+  .step::before { font-size: 1.25rem; color: var(--brand-green); }
+  .step h3 { font-size: 1.05rem; line-height: 1.4; }
+  .step p { font-size: .9rem; line-height: 1.75; }
+  .form { padding: 1.15rem; min-width: 0; }
+  .field input, .field select, .field textarea { font-size: 16px; min-height: 48px; }
+  .form .btn { width: 100%; justify-content: center; white-space: normal; }
+  .contact-grid > *, .split > * { min-width: 0; }
+  .contact-item, .site-footer a { overflow-wrap: anywhere; }
+}
+
+.ambient-offscreen::before, .ambient-offscreen::after,
+.ambient-hidden .hero::before, .ambient-hidden .hero::after,
+.ambient-hidden .page-hero::before, .ambient-hidden .page-hero::after,
+.ambient-hidden .tb-hero::before, .ambient-hidden .tb-hero::after { animation-play-state: paused; }
