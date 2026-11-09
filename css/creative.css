@@ -419,10 +419,23 @@ main { overflow-x: clip; }
 }
 
 /* Lema institucional: identificación, lema y localidad en ese orden. */
-.quote .institutional-motto { margin: 0 auto; }
-.quote .institutional-motto__label { margin: 0 auto 1.2rem; font-size: .76rem; line-height: 1.6; text-transform: uppercase; color: var(--text-on-invert-muted); }
-.quote .institutional-motto blockquote { margin-block: 0; }
-.quote .institutional-motto__city { margin: 1.1rem auto 0; max-width: none; color: var(--sunshine); font-size: .82rem; font-weight: 600; text-transform: uppercase; }
+.quote { padding-block: clamp(3rem, 6vw, 5rem); background: #0A332B; }
+.quote::before { background: radial-gradient(ellipse at 50% 45%, rgba(33, 96, 85, .7), transparent 72%); }
+.quote .institutional-motto { margin: 0 auto; max-width: 62rem; }
+.quote .institutional-motto__label { display: inline-flex; align-items: center; gap: .9rem; margin: 0 auto 1.8rem; text-align: left; line-height: 1.5; text-transform: none; letter-spacing: normal; color: #F8F7F4; }
+.institutional-motto__crest { display: block; width: 56px; height: 64px; object-fit: contain; flex: none; }
+.institutional-motto__school { display: block; font-size: .95rem; font-weight: 600; }
+.institutional-motto__caption { display: block; margin-top: .2rem; font-size: .72rem; font-weight: 400; color: #EBEBDF; letter-spacing: .04em; }
+.quote .institutional-motto blockquote { margin: 0 auto; max-width: 22ch; font-size: clamp(2.6rem, 5.5vw, 4.5rem); line-height: 1.15; font-weight: 700; text-wrap: balance; color: #F8F7F4; }
+.quote .institutional-motto__city { display: flex; justify-content: center; align-items: center; gap: 1rem; margin: 1.6rem auto 0; max-width: none; color: var(--sunshine); font-size: .75rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
+.institutional-motto__city::before, .institutional-motto__city::after { content: ""; width: 2.5rem; height: 1px; background: currentColor; opacity: .55; }
+@media (max-width: 600px) {
+  .quote .institutional-motto__label { margin-bottom: 1.5rem; gap: .75rem; }
+  .institutional-motto__crest { width: 44px; height: 52px; }
+  .institutional-motto__school { font-size: .85rem; }
+  .quote .institutional-motto blockquote { max-width: 12ch; }
+  .quote .institutional-motto__city { margin-top: 1.25rem; }
+}
 .home-next__actions { max-width: 27rem; }
 .home-next__actions .btn { width: 100%; justify-content: space-between; gap: 1rem; white-space: normal; text-align: left; min-height: 48px; line-height: 1.5; }
 
