@@ -486,3 +486,94 @@ main { overflow-x: clip; }
   -webkit-mask-image: linear-gradient(#000 75%, transparent 100%);
   mask-image: linear-gradient(#000 75%, transparent 100%);
 }
+
+/* Da presencia visual al bloque de Computación sin aparentar una foto del aula. */
+.innovation-computing {
+  min-height: 28rem;
+  overflow: hidden;
+}
+
+.innovation-computing__art {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  flex: 1;
+  min-height: 10rem;
+  place-items: center;
+}
+
+.innovation-computing__art::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 9rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(248, 247, 244, .25);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1rem rgba(248, 247, 244, .035), 0 0 0 2rem rgba(248, 247, 244, .025);
+}
+
+.innovation-computing__device {
+  display: grid;
+  width: 8rem;
+  height: 6rem;
+  place-items: center;
+  border: 1px solid rgba(248, 247, 244, .44);
+  border-radius: 1.35rem;
+  background: linear-gradient(145deg, rgba(248, 247, 244, .2), rgba(248, 247, 244, .08));
+  box-shadow: 0 1rem 2.5rem rgba(10, 51, 43, .24), inset 0 1px 0 rgba(248, 247, 244, .18);
+  color: var(--sunshine);
+  font-size: 3.7rem;
+}
+
+.innovation-computing__spark {
+  position: absolute;
+  display: grid;
+  width: 2.6rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(248, 247, 244, .24);
+  border-radius: 50%;
+  background: rgba(10, 51, 43, .24);
+  color: var(--sunshine);
+  font-size: 1.15rem;
+}
+
+.innovation-computing__spark--one { top: 12%; left: 23%; }
+.innovation-computing__spark--two { top: 26%; right: 20%; }
+.innovation-computing__spark--three { bottom: 9%; left: 25%; }
+
+.innovation-computing__principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.innovation-computing__principles li {
+  display: grid;
+  min-height: 2.6rem;
+  place-items: center;
+  padding: .35rem .55rem;
+  border: 1px solid rgba(248, 247, 244, .27);
+  border-radius: 999px;
+  background: rgba(248, 247, 244, .08);
+  color: #F8F7F4;
+  font-size: .68rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .innovation-computing { min-height: 23rem; }
+  .innovation-computing__art { min-height: 8rem; }
+  .innovation-computing__device { width: 6.8rem; height: 5rem; font-size: 3rem; }
+  .innovation-computing__spark--one { left: 17%; }
+  .innovation-computing__spark--two { right: 15%; }
+  .innovation-computing__spark--three { left: 19%; }
+  .innovation-computing__principles { gap: .35rem; }
+  .innovation-computing__principles li { min-height: 2.5rem; padding-inline: .3rem; font-size: .62rem; }
+}
