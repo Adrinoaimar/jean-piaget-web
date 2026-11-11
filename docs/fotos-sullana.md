@@ -10,7 +10,7 @@ La selección usa diez escenas representativas de las fotografías entregadas pa
 | Vida escolar, danza | danza-compartida | IMG_5255.JPEG | Fotografía completa: ambas participantes. |
 | Vida escolar, equipo | ritmo-en-equipo | IMG_5335.JPEG | Fotografía completa: movimiento y escenario. |
 | Vida escolar, acompañamiento | acompanamiento-en-escena | IMG_5285.JPEG | Cuadrado: docente y dos participantes; se retira pared y suelo vacíos. |
-| Galería, comunidad | companeros-con-uniforme | IMG_9806.JPG | Fotografía horizontal completa. |
+| Retirada: pertenece a Tambogrande (confirmado por usuario el 2026-11-11) | companeros-con-uniforme | IMG_9806.JPG | No usar en Sullana. |
 | Galería, comunidad | logros-compartidos | IMG_0303.JPG.jpeg | Fotografía horizontal completa. |
 | Galería, talento | una-voz-propia | IMG_5291.JPEG | Fotografía completa: participante con micrófono. |
 | Galería, talento | talento-en-compania | IMG_5327.JPEG | Fotografía completa: trío de participantes. |
