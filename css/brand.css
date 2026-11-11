@@ -1,6 +1,79 @@
+/* Jean Piaget: identidad compartida por sus sedes de Sullana y Tambogrande. */
+:root {
+  /* Primitives */
+  --jp-forest: #0A332B;
+  --jp-green: #216055;
+  --jp-ivory: #F8F7F4;
+  --jp-cream: #EBEBDF;
+  --jp-gold: #F8B815;
+  --jp-gold-bright: #F8D200;
+
+  /* Shared brand and type aliases */
+  --brand-green: var(--jp-green);
+  --brand-green-deep: var(--jp-forest);
+  --brand-cream: var(--jp-cream);
+  --brand-red: var(--jp-gold);
+  --brand-ink: var(--jp-forest);
+  --sunshine: var(--jp-gold);
+  --lime: var(--jp-gold-bright);
+  --jp-font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --jp-font-accent: "Source Serif 4", Georgia, serif;
+}
+
+body { font-family: var(--jp-font-sans); }
+h1, h2, h3, h4 { font-family: var(--jp-font-sans); }
+
 .site-header .brand { display:flex;align-items:center;gap:.7rem;flex-shrink:0; }
 .site-header .brand__mark { width:auto;height:54px;object-fit:contain;flex:0 0 auto; }
-.site-header .brand__name { font-family:"Montserrat",sans-serif;font-size:1rem;font-weight:700;line-height:1.2;letter-spacing:-.025em;color:var(--text-strong);white-space:nowrap; }
-.site-header .brand__name span { display:block;margin-top:.3rem;font-family:"Montserrat",sans-serif;font-size:.65rem;font-weight:500;line-height:1.25;letter-spacing:.14em;text-transform:uppercase;color:var(--text); }
-@media(max-width:600px) { .site-header .brand { gap:.5rem; } .site-header .brand__mark { height:44px; } .site-header .brand__name { font-size:.9rem; } .site-header .brand__name span { font-size:.58rem; } }
-@media(max-width:380px) { .site-header .brand { gap:.35rem; } .site-header .brand__mark { height:36px; } .site-header .brand__name { font-size:.75rem; } .site-header .brand__name span { font-size:.5rem; } }
+.site-header .brand__name { font-family:var(--jp-font-sans);font-size:1rem;font-weight:700;line-height:1.2;letter-spacing:-.025em;color:var(--text-strong);white-space:nowrap; }
+.site-header .brand__name span { display:block;margin-top:.3rem;font-family:var(--jp-font-sans);font-size:.65rem;font-weight:500;line-height:1.25;letter-spacing:.14em;text-transform:uppercase;color:var(--text); }
+
+/* El mismo tratamiento de hero, color y geometría en las dos sedes. */
+.hero, .page-hero, .tb-hero {
+  background: radial-gradient(circle at 65% 40%, var(--jp-green), var(--jp-forest));
+}
+.tb-hero { isolation:isolate;overflow:hidden; }
+.tb-hero::before {
+  content:"";position:absolute;z-index:-1;inset:-10%;
+  background:repeating-linear-gradient(120deg,transparent 0,transparent 119px,rgba(248,247,244,.035) 120px,transparent 121px);
+  transform:rotate(-5deg);pointer-events:none;
+}
+.tb-hero::after {
+  content:"";position:absolute;z-index:-1;width:36rem;height:36rem;right:-22rem;top:-12rem;
+  border:55px solid rgba(235,235,223,.14);border-radius:50%;pointer-events:none;opacity:.45;
+}
+.tb-hero .eyebrow { display:inline-flex;align-items:center;gap:.6rem;color:var(--jp-ivory); }
+.tb-hero .eyebrow::before { content:"";width:.65rem;height:.65rem;flex:0 0 auto;border-radius:50%;background:var(--jp-gold);box-shadow:0 0 0 5px rgba(248,184,21,.13); }
+.tb-hero .tb-button { background:linear-gradient(120deg,var(--jp-gold),var(--jp-gold-bright));color:var(--jp-forest); }
+.tb-hero .tb-button:hover { background:var(--jp-gold-bright); }
+.tb-home-hero h1 { max-width:11ch;font-size:clamp(3.3rem,5.7vw,5.8rem);color:var(--jp-cream); }
+.tb-home-hero h1 em { color:var(--jp-gold);font-family:var(--jp-font-accent);font-style:italic;font-weight:700; }
+.tb-home-hero .tb-hero__portrait img { height:clamp(24rem,34vw,33rem); }
+.tb-home-hero .tb-hero-link.btn--ghost { min-height:48px;padding:.8rem 1.2rem;border-color:rgba(248,247,244,.5);border-radius:16px;background:rgba(248,247,244,.06);color:var(--jp-ivory);text-decoration:none; }
+.tb-home-hero .tb-hero-link.btn--ghost:hover,
+.tb-home-hero .tb-hero-link.btn--ghost:focus-visible { border-color:var(--jp-ivory);background:rgba(248,247,244,.14);color:var(--jp-ivory); }
+
+.tb-nav-cta { margin-left:.2rem; }
+@media(max-width:1020px) {
+  .tambogrande-page .nav__toggle { order:3; }
+  .tambogrande-page .tb-nav-cta { order:2; }
+}
+@media(max-width:760px) {
+  .tb-home-hero .tb-hero__portrait img { height:clamp(20rem,85vw,30rem); }
+}
+@media(max-width:600px) {
+  .site-header .brand { gap:.5rem; }
+  .site-header .brand__mark { height:44px; }
+  .site-header .brand__name { font-size:.9rem; }
+  .site-header .brand__name span { font-size:.58rem; }
+  .tambogrande-page .tb-nav-cta { padding:.55rem .7rem;font-size:.68rem; }
+}
+@media(max-width:380px) {
+  .site-header .brand { gap:.35rem; }
+  .site-header .brand__mark { height:36px; }
+  .site-header .brand__name { font-size:.75rem; }
+  .site-header .brand__name span { font-size:.5rem; }
+}
+@media(max-width:600px) {
+  .tb-home-hero h1 { font-size:clamp(2.25rem,10vw,3.6rem);line-height:1.1;max-width:15ch; }
+}
