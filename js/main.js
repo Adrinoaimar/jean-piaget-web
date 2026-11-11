@@ -5,7 +5,6 @@
   var FORM = {
     ACCESS_KEY: "",
     ENDPOINT: "https://api.web3forms.com/submit",
-    EMAIL: "informes@jeanpiagetsullana.edu.pe",
     WHATSAPP: "https://wa.me/51959425312"
   };
 
@@ -176,6 +175,11 @@
       var fields = Array.prototype.slice.call(form.querySelectorAll("input, select, textarea"));
       var status = form.querySelector(".form__status");
       var submit = form.querySelector('button[type="submit"]');
+      var help = form.querySelector("[data-form-help]");
+      if (FORM.ACCESS_KEY) {
+        if (submit) submit.textContent = submit.dataset.emailLabel || "Enviar consulta";
+        if (help) help.textContent = "Tu consulta se enviará al colegio mediante el formulario.";
+      }
       var submitLabel = submit ? submit.textContent : "";
 
       fields.forEach(function (input) {
@@ -230,7 +234,7 @@
           .then(function (data) {
             if (submit) { submit.disabled = false; submit.textContent = submitLabel; }
             if (data && data.success) {
-              setStatus(status, "Recibimos tu mensaje. Te respondemos dentro de las próximas 48 horas hábiles.", "ok");
+              setStatus(status, "Recibimos tu mensaje. El colegio se pondrá en contacto contigo.", "ok");
               form.reset();
               fields.forEach(function (input) {
                 input.setAttribute("aria-invalid", "false");
@@ -238,12 +242,12 @@
                 if (slot) slot.textContent = "";
               });
             } else {
-              setStatus(status, "No pudimos enviar el mensaje. Escríbenos a " + FORM.EMAIL + " o por WhatsApp.", "error");
+              setStatus(status, "No pudimos enviar el mensaje. Escríbenos por WhatsApp.", "error");
             }
           })
           .catch(function () {
             if (submit) { submit.disabled = false; submit.textContent = submitLabel; }
-            setStatus(status, "No pudimos enviar el mensaje. Revisa tu conexión, o escríbenos a " + FORM.EMAIL + ".", "error");
+            setStatus(status, "No pudimos enviar el mensaje. Revisa tu conexión o escríbenos por WhatsApp.", "error");
           });
       });
     });

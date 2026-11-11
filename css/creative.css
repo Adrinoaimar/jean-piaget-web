@@ -480,3 +480,9 @@ main { overflow-x: clip; }
 .ambient-hidden .hero::before, .ambient-hidden .hero::after,
 .ambient-hidden .page-hero::before, .ambient-hidden .page-hero::after,
 .ambient-hidden .tb-hero::before, .ambient-hidden .tb-hero::after { animation-play-state: paused; }
+
+/* Suaviza el borde inferior del retrato de Primaria. */
+.home-page .school-levels > :nth-child(2) .card-portrait img {
+  -webkit-mask-image: linear-gradient(#000 75%, transparent 100%);
+  mask-image: linear-gradient(#000 75%, transparent 100%);
+}
