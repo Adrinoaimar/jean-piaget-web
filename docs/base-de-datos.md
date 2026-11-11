@@ -34,7 +34,7 @@ Nota de revisión del proyecto compartido: `concurso_sheet_sync_state` tiene RLS
 
 ## Panel web de administración
 
-URL: https://adrinoaimar.github.io/jean-piaget-web/admin.html (también enlazado desde el pie del sitio). Acceso inicial autorizado: `adriano.aimar12@gmail.com`, con la contraseña de su cuenta existente de Supabase Auth en este proyecto. La cuenta ya estaba confirmada; no se cambió su contraseña.
+URL: https://adrinoaimar.github.io/jean-piaget-web/admin.html (sin enlaces públicos de navegación; guardar la URL en los favoritos personales). Acceso inicial autorizado: `adriano.aimar12@gmail.com`, con la contraseña de su cuenta existente de Supabase Auth en este proyecto. La cuenta ya estaba confirmada; no se cambió su contraseña.
 
 El panel permite buscar nombre, correo o postulante; filtrar Contacto/Admisión y estado; paginar de 20 en 20; ver detalles; abrir correo o WhatsApp sin enviar automáticamente; guardar notas internas y estados; archivar/restaurar. Los contadores muestran todos los registros autorizados, independientemente del filtro.
 
