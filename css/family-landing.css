@@ -365,3 +365,12 @@
   .family-button:hover .ph-arrow-right, .family-activity:hover > img { transform: none; }
   .family-highlights li:hover i { animation: none; }
 }
+
+/* Contiene la decoración para evitar el desplazamiento horizontal. */
+.family-signup { overflow: clip; }
+
+.family-contact__heading > p:last-child { font-size: .875rem; line-height: 1.6; }
+.family-contact-wrap > .family-button { display: flex; justify-content: center; width: calc(100% - 2rem); margin: 1rem; min-height: 48px; }
+@media (max-width: 600px) { .family-contact__heading > p:last-child { font-size: .85rem; } }
+.family-info-band { overflow: clip; }
+.family-page main { overflow-x: clip; }
