@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://ignwxkpzpilecbkdzfpt.supabase.co; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<title>Solicitudes · Administración Jean Piaget</title>
+<link rel="icon" href="img/favicon.png"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css/admin.css?v=20261111-admin1">
+<script src="js/form-config.js?v=20261111-db" defer></script><script src="js/admin.js?v=20261111-admin1" defer></script>
+</head>
+<body>
+<header class="admin-header"><a class="brand" href="index.html"><img src="img/escudo.png" width="42" height="50" alt="Escudo Jean Piaget"><span>Jean Piaget <small>Administración · Sullana</small></span></a><div id="session-tools" hidden><span id="session-email"></span><button id="logout" class="button button--quiet">Cerrar sesión</button></div></header>
+<main class="admin-shell">
+<section id="login-view" class="login-layout">
+ <div class="login-intro"><p class="eyebrow">Atención a las familias</p><h1>Cada solicitud,<br>bien acompañada.</h1><p>Un espacio para revisar consultas, coordinar admisiones y dar seguimiento a cada familia.</p><ul><li>Contacto y Admisión en una sola bandeja</li><li>Estados y notas para organizar la atención</li><li>Acceso exclusivo para administradores</li></ul></div>
+ <form id="login-form" class="login-card"><h2>Acceder al panel</h2><p>Ingresa con tu cuenta autorizada.</p><label for="email">Correo electrónico</label><input id="email" type="email" autocomplete="username" required maxlength="254"><label for="password">Contraseña</label><input id="password" type="password" autocomplete="current-password" required><button type="submit" class="button">Entrar</button><p id="login-status" class="status" role="status"></p><p class="muted">Por privacidad, la sesión se conserva solo mientras esta página está abierta. Al recargar deberás ingresar de nuevo.</p></form>
+</section>
+<section id="dashboard" hidden>
+ <div class="page-heading"><div><p class="eyebrow">Bandeja de atención</p><h1>Solicitudes</h1><p>Revisa, coordina y registra el siguiente paso.</p></div><button id="refresh" class="button button--quiet">Actualizar</button></div>
+ <div class="metrics" aria-label="Resumen de solicitudes"><div><span>Pendientes</span><strong id="count-pendiente">—</strong></div><div><span>En contacto</span><strong id="count-en_contacto">—</strong></div><div><span>Atendidas</span><strong id="count-atendida">—</strong></div><div><span>Archivadas</span><strong id="count-archivada">—</strong></div></div>
+ <form id="filters" class="filters" role="search"><div class="search-field"><label for="search">Buscar familia</label><input id="search" type="search" placeholder="Nombre, correo o postulante" maxlength="80"></div><div><label for="type">Tipo</label><select id="type"><option value="">Todos</option><option value="contacto">Contacto</option><option value="admision">Admisión</option></select></div><div><label for="state">Estado</label><select id="state"><option value="">Todos</option><option value="pendiente">Pendiente</option><option value="en_contacto">En contacto</option><option value="atendida">Atendida</option><option value="archivada">Archivada</option></select></div><button class="button" type="submit">Filtrar</button><button class="button button--quiet" id="clear" type="button">Limpiar</button></form>
+ <p id="dashboard-status" class="status" role="status"></p>
+ <div class="table-card"><table><caption class="sr-only">Solicitudes recibidas, ordenadas de más reciente a más antigua</caption><thead><tr><th>Familia</th><th>Tipo</th><th>Recibida</th><th>Estado</th><th><span class="sr-only">Acción</span></th></tr></thead><tbody id="requests"></tbody></table><div id="empty" class="empty" hidden><h2>Sin solicitudes para estos filtros</h2><p>Prueba con otro nombre o selecciona todos los estados.</p></div></div>
+ <nav class="pagination" aria-label="Paginación"><span id="result-count"></span><div><button id="previous" class="button button--quiet">Anterior</button><span id="page-number"></span><button id="next" class="button button--quiet">Siguiente</button></div></nav>
+</section>
+<noscript><p>Activa JavaScript para acceder al panel. Las solicitudes también pueden revisarse desde el panel autorizado de Supabase.</p></noscript>
+</main>
+<dialog id="detail" aria-labelledby="detail-title"><div class="dialog-heading"><div><p class="eyebrow" id="detail-kind"></p><h2 id="detail-title">Detalle de solicitud</h2></div><button id="close-detail" class="button button--quiet" type="button">Cerrar</button></div><p class="muted" id="detail-date"></p><dl id="detail-fields" class="detail-fields"></dl><div class="contact-actions" id="contact-actions"></div><form id="manage-form"><label for="detail-state">Estado de atención</label><select id="detail-state"><option value="pendiente">Pendiente</option><option value="en_contacto">En contacto</option><option value="atendida">Atendida</option><option value="archivada">Archivada</option></select><label for="notes">Notas internas</label><textarea id="notes" rows="5" maxlength="5000" placeholder="Acuerdos, llamada pendiente o siguiente paso…"></textarea><p class="muted">Las notas son visibles solo para los administradores autorizados.</p><div class="manage-actions"><button id="save" class="button" type="submit">Guardar cambios</button><button id="archive" class="button button--quiet" type="button">Archivar solicitud</button></div><p class="status" id="detail-status" role="status"></p></form></dialog>
+</body></html>
