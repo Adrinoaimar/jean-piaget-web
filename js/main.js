@@ -2,11 +2,7 @@
 (function () {
   "use strict";
 
-  var FORM = {
-    ACCESS_KEY: "",
-    ENDPOINT: "https://api.web3forms.com/submit",
-    WHATSAPP: "https://wa.me/51959425312"
-  };
+  var FORM = window.JEAN_PIAGET_FORMS || {};
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -176,12 +172,10 @@
       var status = form.querySelector(".form__status");
       var submit = form.querySelector('button[type="submit"]');
       var help = form.querySelector("[data-form-help]");
-      if (FORM.ACCESS_KEY) {
-        if (submit) submit.textContent = submit.dataset.emailLabel || "Enviar consulta";
-        if (help) help.textContent = "Tu consulta se enviará al colegio mediante el formulario.";
-      }
       var submitLabel = submit ? submit.textContent : "";
 
+      var requestId = crypto.randomUUID();
+      var sending = false;
       fields.forEach(function (input) {
         input.addEventListener("blur", function () { validate(input); });
         input.addEventListener("input", function () { if (input.getAttribute("aria-invalid") === "true") validate(input); });
@@ -196,59 +190,54 @@
           firstBad.focus();
           return;
         }
-        if (!FORM.ACCESS_KEY) {
-          var subject = form.dataset.subject || "Consulta desde la web";
-          var lines = ["Hola, envío mi " + subject.toLowerCase() + " (I.E.P. Jean Piaget Sullana):"];
-          fields.forEach(function (input) {
-            var val = input.tagName === "SELECT" && input.selectedOptions && input.selectedOptions[0]
-              ? input.selectedOptions[0].textContent.trim()
-              : (input.value || "").trim();
-            if (!val) return;
-            var labelEl = form.querySelector('label[for="' + input.id + '"]');
-            var label = labelEl ? labelEl.textContent.trim() : input.name;
-            lines.push("• " + label + ": " + val);
-          });
-          var waUrl = FORM.WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n"));
-          window.open(waUrl, "_blank", "noopener,noreferrer");
-          setStatus(status, "Revisa el mensaje en WhatsApp y pulsa Enviar para completar tu consulta. Si no se abre, ", "info");
-          if (status) {
-            var waLink = document.createElement("a");
-            waLink.href = waUrl;
-            waLink.target = "_blank";
-            waLink.rel = "noopener noreferrer";
-            waLink.textContent = "abre WhatsApp desde aquí";
-            status.appendChild(waLink);
-          }
+        if (sending) return;
+        if (!FORM.endpoint || !FORM.publicToken) {
+          setStatus(status, "El formulario no está disponible. Escríbenos por WhatsApp al +51 959 425 312.", "error");
           return;
         }
-
-        var payload = new FormData(form);
-        payload.append("access_key", FORM.ACCESS_KEY);
-        payload.append("subject", form.dataset.subject || "Mensaje desde la web del colegio");
-        payload.append("from_name", "Web I.E.P. Jean Piaget Sullana");
-        if (submit) { submit.disabled = true; submit.textContent = "Enviando"; }
-        setStatus(status, "Enviando tu mensaje.", "info");
-
-        fetch(FORM.ENDPOINT, { method: "POST", body: payload })
-          .then(function (res) { return res.json().catch(function () { return {}; }); })
-          .then(function (data) {
-            if (submit) { submit.disabled = false; submit.textContent = submitLabel; }
-            if (data && data.success) {
-              setStatus(status, "Recibimos tu mensaje. El colegio se pondrá en contacto contigo.", "ok");
-              form.reset();
-              fields.forEach(function (input) {
-                input.setAttribute("aria-invalid", "false");
-                var slot = document.getElementById(input.id + "-error");
-                if (slot) slot.textContent = "";
-              });
-            } else {
-              setStatus(status, "No pudimos enviar el mensaje. Escríbenos por WhatsApp.", "error");
-            }
-          })
-          .catch(function () {
-            if (submit) { submit.disabled = false; submit.textContent = submitLabel; }
-            setStatus(status, "No pudimos enviar el mensaje. Revisa tu conexión o escríbenos por WhatsApp.", "error");
+        var values = new FormData(form);
+        var admission = form.dataset.formType === "admision";
+        var payload = {
+          id: requestId,
+          tipo: admission ? "admision" : "contacto",
+          nombre: values.get(admission ? "apoderado" : "nombre"),
+          email: values.get(admission ? "correo" : "email"),
+          telefono: values.get(admission ? "telefono" : "fono") || "",
+          postulante: values.get("postulante") || "",
+          grado: values.get("grado") || "",
+          motivo: values.get("motivo") || "",
+          mensaje: values.get("mensaje") || "",
+          consentimiento: values.get("consentimiento") === "si",
+          website: values.get("website") || ""
+        };
+        sending = true;
+        if (submit) { submit.disabled = true; submit.textContent = "Enviando…"; }
+        setStatus(status, "Guardando tu consulta…", "info");
+        fetch(FORM.endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Authorization": "Bearer " + FORM.publicToken, "apikey": FORM.publicToken },
+          body: JSON.stringify(payload),
+          signal: AbortSignal.timeout(20000)
+        }).then(function (res) {
+          return res.json().then(function (data) {
+            if (!res.ok || !data.success) throw new Error(data.message || "No se pudo guardar la consulta.");
+            return data;
           });
+        }).then(function (data) {
+          setStatus(status, data.message, "ok");
+          form.reset();
+          requestId = crypto.randomUUID();
+          fields.forEach(function (input) {
+            input.removeAttribute("aria-invalid");
+            var slot = document.getElementById(input.id + "-error");
+            if (slot) slot.textContent = "";
+          });
+        }).catch(function (error) {
+          setStatus(status, (error.name === "TimeoutError" || error.name === "TypeError" ? "No pudimos confirmar el registro. Puedes reintentar sin duplicar tu consulta." : error.message) + " También puedes escribirnos por WhatsApp al +51 959 425 312.", "error");
+        }).finally(function () {
+          sending = false;
+          if (submit) { submit.disabled = false; submit.textContent = submitLabel; }
+        });
       });
     });
   }

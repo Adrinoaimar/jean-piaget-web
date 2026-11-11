@@ -1,0 +1,4 @@
+project_id = "ignwxkpzpilecbkdzfpt"
+
+[functions.jean-piaget-intake]
+verify_jwt = true
