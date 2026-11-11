@@ -123,3 +123,18 @@
   .talent-grid--photos { grid-template-columns: 1fr; gap: 1.5rem; max-width: 28rem; margin-inline: auto; }
   .talent-card--photo .talent-card__body, .talent-card--photo:first-child .talent-card__body { padding: 1.3rem; }
 }
+
+/* Galería alineada: mismas bases, alturas y separación entre imágenes. */
+.gallery--school-community { grid-template-columns: minmax(0, 48rem); justify-content: center; }
+.gallery-school-moments.gallery--moments { display:grid; columns:auto; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; }
+.gallery-school-moments.gallery--moments > .photo-card { margin:0; height:100%; }
+.gallery-school-moments.gallery--moments .photo-card > img { aspect-ratio:3/4; height:auto; object-fit:cover; }
+.gallery--school-talent > :nth-child(2) { margin-top:0; }
+.event-photos { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:1.5rem; align-items:stretch; }
+.event-card { grid-column:span 2; margin:0; min-width:0; overflow:hidden; border:1px solid var(--line); border-radius:18px; background:var(--surface-raised); }
+.event-card--group { grid-column:span 3; }
+.event-card__stage { display:flex; align-items:flex-end; justify-content:center; height:25rem; padding:1.5rem 1.25rem 0; background:var(--portrait-stage,var(--surface-sunken)); }
+.event-card__stage svg { display:block; width:100%; height:100%; overflow:hidden; }
+.event-card figcaption { display:flex; align-items:center; min-height:4.3rem; padding:1rem 1.2rem; border-top:2px solid rgba(248,184,21,.5); color:var(--text-strong); font-size:.9rem; font-weight:600; line-height:1.5; }
+@media(max-width:800px) { .event-photos { grid-template-columns:repeat(2,minmax(0,1fr)); } .event-card,.event-card--group { grid-column:span 1; } .event-card:last-child { grid-column:1/-1; } .event-card__stage { height:23rem; } }
+@media(max-width:600px) { .gallery-school-moments.gallery--moments { grid-template-columns:1fr; } .event-photos { grid-template-columns:1fr; gap:1.25rem; } .event-card,.event-card--group,.event-card:last-child { grid-column:1; } .event-card__stage { height:25rem; } .event-card--group .event-card__stage { height:20rem; } }
