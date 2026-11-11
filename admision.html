@@ -18,7 +18,7 @@
 <link rel="preload" href="fonts/source-serif-4-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css?v=20261021-palette1">
-<link rel="stylesheet" href="css/creative.css?v=20261111-photos">
+<link rel="stylesheet" href="css/creative.css?v=20261111-db">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -143,7 +143,7 @@
       <div class="contact-grid">
         <div class="reveal">
           <h2>Solicita tu vacante</h2>
-          <p>Completa el formulario y te contactamos para coordinar la visita. También puedes escribirnos directamente por WhatsApp.</p>
+          <p>Completa el formulario para registrar tu solicitud y coordinar una visita con el colegio. También puedes escribirnos directamente por WhatsApp.</p>
           <dl class="data-list stack-top">
             <dt>WhatsApp</dt>
             <dd><a href="https://wa.me/51959425312">+51 959 425 312</a></dd>
@@ -153,7 +153,7 @@
         </div>
 
         <noscript><style>.form--requires-js { display: none; }</style><p>Para enviar tu consulta sin JavaScript, <a href="https://wa.me/51959425312">escríbenos por WhatsApp</a>.</p></noscript>
-        <form class="form form--requires-js reveal" novalidate data-subject="Solicitud de admisión desde la web">
+        <form class="form form--requires-js reveal" novalidate data-form-type="admision" data-subject="Solicitud de admisión desde la web">
           <div class="field">
             <label for="apoderado">Nombre del padre, madre o apoderado</label>
             <input type="text" id="apoderado" name="apoderado" required autocomplete="name">
@@ -190,8 +190,10 @@
             <input type="email" id="correo" name="correo" required autocomplete="email">
             <span class="field__error" id="correo-error" role="alert"></span>
           </div>
-          <p class="form__help" data-form-help>Se abrirá WhatsApp con tus datos para que revises el mensaje y decidas enviarlo.</p>
-          <button class="btn btn--primary" type="submit" data-email-label="Enviar solicitud">Continuar por WhatsApp</button>
+          <div class="field"><label for="consentimiento"><input id="consentimiento" type="checkbox" name="consentimiento" value="si" required> Acepto que el colegio utilice estos datos para atender mi consulta. He leído la <a href="privacidad.html">información de privacidad</a>.</label><span class="field__error" id="consentimiento-error" role="alert"></span></div>
+          <div hidden aria-hidden="true"><label for="website">Sitio web</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <p class="form__help" data-form-help>Tu consulta quedará registrada para que el colegio pueda responderte.</p>
+          <button class="btn btn--primary" type="submit" data-email-label="Enviar solicitud">Enviar solicitud</button>
           <p class="form__status" role="status"></p>
         </form>
       </div>
@@ -259,6 +261,7 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261111-photos" defer></script>
+<script src="js/form-config.js?v=20261111-db" defer></script>
+<script src="js/main.js?v=20261111-db" defer></script>
 </body>
 </html>

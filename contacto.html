@@ -18,7 +18,7 @@
 <link rel="preload" href="fonts/source-serif-4-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css?v=20261021-palette1">
-<link rel="stylesheet" href="css/creative.css?v=20261111-photos">
+<link rel="stylesheet" href="css/creative.css?v=20261111-db">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -93,7 +93,7 @@
         </div>
 
         <noscript><style>.form--requires-js { display: none; }</style><p>Para enviar tu consulta sin JavaScript, <a href="https://wa.me/51959425312">escríbenos por WhatsApp</a>.</p></noscript>
-        <form class="form form--requires-js reveal" novalidate data-subject="Consulta desde la web">
+        <form class="form form--requires-js reveal" novalidate data-form-type="contacto" data-subject="Consulta desde la web">
           <div class="field">
             <label for="nombre">Nombre y apellido</label>
             <input type="text" id="nombre" name="nombre" required autocomplete="name">
@@ -125,8 +125,10 @@
             <textarea id="mensaje" name="mensaje" required minlength="10"></textarea>
             <span class="field__error" id="mensaje-error" role="alert"></span>
           </div>
-          <p class="form__help" data-form-help>Se abrirá WhatsApp con tus datos para que revises el mensaje y decidas enviarlo.</p>
-          <button class="btn btn--primary" type="submit" data-email-label="Enviar consulta">Continuar por WhatsApp</button>
+          <div class="field"><label for="consentimiento"><input id="consentimiento" type="checkbox" name="consentimiento" value="si" required> Acepto que el colegio utilice estos datos para atender mi consulta. He leído la <a href="privacidad.html">información de privacidad</a>.</label><span class="field__error" id="consentimiento-error" role="alert"></span></div>
+          <div hidden aria-hidden="true"><label for="website">Sitio web</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <p class="form__help" data-form-help>Tu consulta quedará registrada para que el colegio pueda responderte.</p>
+          <button class="btn btn--primary" type="submit" data-email-label="Enviar consulta">Enviar consulta</button>
           <p class="form__status" role="status"></p>
         </form>
       </div>
@@ -172,6 +174,7 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261111-photos" defer></script>
+<script src="js/form-config.js?v=20261111-db" defer></script>
+<script src="js/main.js?v=20261111-db" defer></script>
 </body>
 </html>
