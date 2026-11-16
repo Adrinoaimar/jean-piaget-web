@@ -110,3 +110,36 @@ test('browser: sends only allowlisted dimensions, never query strings or form co
   assert.equal(JSON.parse(contact.sent[1][1].body).event, 'contact_success');
   assert.equal(contact.sent[1][1].body.includes('private'), false);
 });
+
+test('private dashboard: stale reports are discarded on logout and errors clear previous totals', async () => {
+  const nodes = new Map();
+  function element() { return { textContent: '', value: '28', children: [], replaceChildren(...items) { this.children = items; }, append(...items) { this.children.push(...items); } }; }
+  const document = { getElementById(id) { if (!nodes.has(id)) nodes.set(id, element()); return nodes.get(id); }, createElement: element };
+  let finish;
+  let pending = true;
+  const data = { start: '2026-11-01', end: '2026-11-16', events: [{ event: 'page_view', count: 7 }], pages: [{ page: '/', count: 7 }], sources: [{ source: 'direct', count: 7 }], devices: [{ device: 'desktop', count: 7 }], daily: [{ day: '2026-11-16', count: 7 }] };
+  const context = { window: {}, document, Number, Object, Error, AbortSignal,
+    fetch: async (target, options) => {
+      assert.equal(target, 'https://jeanpiagetsullana.pages.dev/api/metrics?days=28');
+      assert.equal(options.headers.Authorization, 'Bearer sample-session');
+      if (pending) await new Promise(resolve => { finish = resolve; });
+      return { ok: true, json: async () => data };
+    }
+  };
+  vm.runInNewContext(readFileSync('js/admin-metrics.js', 'utf8'), context);
+  const panel = context.window.JP_ADMIN_METRICS;
+  const first = panel.load('sample-session');
+  panel.clear();
+  finish();
+  await first;
+  assert.equal(nodes.get('web-views').textContent, '—');
+  assert.equal(nodes.get('web-pages').children.length, 0);
+  pending = false;
+  await panel.load('sample-session');
+  assert.equal(nodes.get('web-views').textContent, '7');
+  assert.equal(nodes.get('web-pages').children.length, 1);
+  context.fetch = async () => ({ ok: false, status: 401 });
+  await panel.load('sample-session');
+  assert.equal(nodes.get('web-views').textContent, '—');
+  assert.equal(nodes.get('web-pages').children.length, 0);
+});

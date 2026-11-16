@@ -10,7 +10,7 @@ cp -R img fonts dist/
 mkdir -p dist/css dist/js
 for file in styles creative brand fonts school-photos family-landing; do cp "css/$file.css" dist/css/; done
 for file in main form-config family-landing metrics; do cp "js/$file.js" dist/js/; done
-for file in robots.txt sitemap.xml _headers _routes.json; do
+for file in robots.txt sitemap.xml _headers _routes.json datos-institucionales.json contacto.vcf; do
   if [ -f "$file" ]; then cp "$file" dist/; fi
 done
 # Search Console verification files are public by design.

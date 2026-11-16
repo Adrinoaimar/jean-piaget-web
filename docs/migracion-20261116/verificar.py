@@ -27,15 +27,28 @@ def asset(url):
   r=urllib.request.urlopen(url,timeout=30);r.read();return None if r.status==200 else [url,r.status]
  except Exception as e:return [url,str(e)]
 with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:failures=[x for x in pool.map(asset,assets) if x]
-# All original visible markup, styles and scripts remain identical.
+# Preserve the approved public body, allowing only the metrics script/version and privacy notice.
+def public_body(value):
+ value=value.split('<body',1)[-1]
+ value=re.sub(r'<script src="js/metrics\.js\?v=[^"]+" defer></script>\n?', '', value)
+ value=re.sub(r'js/main\.js\?v=[^" ]+', 'js/main.js', value)
+ value=re.sub(r'        <h2 class="stack-top">Estadísticas de uso de la web</h2>.*?(?=        <h2 class="stack-top">Imágenes de estudiantes</h2>)', '', value, flags=re.S)
+ return value
 for file in Path('.').glob('*.html'):
+ if file.name=='admin.html':continue
  old=subprocess.check_output(['git','show','915a44d:'+str(file)]).decode()
- assert old.split('<body',1)[-1]==file.read_text().split('<body',1)[-1],str(file)
-assert not subprocess.check_output(['git','diff','915a44d','--','css','js','img','fonts'])
+ assert public_body(old)==public_body(file.read_text()),str(file)
+for directory in ['css','img','fonts']:
+ changed=subprocess.check_output(['git','diff','915a44d','--name-only','--',directory]).decode().splitlines()
+ assert all(name=='css/admin.css' for name in changed),changed
+old_main=subprocess.check_output(['git','show','915a44d:js/main.js']).decode()
+current_main=Path('js/main.js').read_text()
+current_main=re.sub(r'^          document\.dispatchEvent\(new CustomEvent\("jp:form-success".*?\n','',current_main,flags=re.M)
+assert current_main==old_main
 private={}
 for route in ['admin','admin.html','js/admin.js','css/admin.css','docs/base-de-datos.md','supabase/config.toml','README.md']:
  try:r=urllib.request.urlopen(root+route);private[route]=r.status
  except urllib.error.HTTPError as e:private[route]=e.code
 assert all(x==404 for x in private.values()),private
 assert not failures,failures
-print(json.dumps({'pages':results,'assets_checked':len(assets),'asset_failures':failures,'private_routes':private,'visible_content_and_assets_unchanged':True},ensure_ascii=False,indent=2))
+print(json.dumps({'pages':results,'assets_checked':len(assets),'asset_failures':failures,'private_routes':private,'approved_public_design_unchanged':True,'allowed_changes':['metrics script','form-success event','privacy notice','private admin metrics']},ensure_ascii=False,indent=2))

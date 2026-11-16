@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:4.0
+FN:I.E.P. Jean Piaget Sullana
+ORG:I.E.P. Jean Piaget Sullana
+TEL;TYPE=work,voice;VALUE=uri:tel:+51959425312
+ADR;TYPE=work:;;Av. José de Lama 489;Sullana;Piura;;Perú
+URL:https://jeanpiagetsullana.pages.dev/
+NOTE:Fuente de contacto: https://jeanpiagetsullana.pages.dev/contacto
+END:VCARD

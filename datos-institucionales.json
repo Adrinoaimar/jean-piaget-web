@@ -1,0 +1,20 @@
+{
+  "@context": "https://schema.org",
+  "@type": "School",
+  "@id": "https://jeanpiagetsullana.pages.dev/#school",
+  "name": "I.E.P. Jean Piaget Sullana",
+  "alternateName": "Colegio Jean Piaget Sullana",
+  "url": "https://jeanpiagetsullana.pages.dev/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://jeanpiagetsullana.pages.dev/img/escudo.png"
+  },
+  "telephone": "+51 959 425 312",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. José de Lama 489",
+    "addressLocality": "Sullana",
+    "addressRegion": "Piura",
+    "addressCountry": "PE"
+  }
+}
