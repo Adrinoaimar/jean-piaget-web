@@ -1,6 +1,7 @@
 #!/bin/sh
 # Cloudflare Pages: publish only the institutional site, never admin or backend.
 set -eu
+rm -rf dist
 mkdir -p dist
 for page in index nosotros niveles admision contacto galeria vida-escolar innovacion jean-piaget taller-familiar privacidad terminos tambogrande 404; do
   cp "$page.html" dist/

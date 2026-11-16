@@ -1,0 +1,76 @@
+{
+  "pages": [
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/nosotros",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/niveles",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/admision",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/contacto",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/galeria",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/vida-escolar",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/innovacion",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/jean-piaget",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/taller-familiar",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/privacidad",
+      "http": 200,
+      "canonical": "OK"
+    },
+    {
+      "url": "https://jeanpiagetsullana.pages.dev/terminos",
+      "http": 200,
+      "canonical": "OK"
+    }
+  ],
+  "assets_checked": 54,
+  "asset_failures": [],
+  "private_routes": {
+    "admin": 404,
+    "admin.html": 404,
+    "js/admin.js": 404,
+    "css/admin.css": 404,
+    "docs/base-de-datos.md": 404,
+    "supabase/config.toml": 404,
+    "README.md": 404
+  },
+  "visible_content_and_assets_unchanged": true
+}
