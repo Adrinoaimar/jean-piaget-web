@@ -17,3 +17,12 @@ done
 for file in google*.html; do
   if [ -f "$file" ]; then cp "$file" dist/; fi
 done
+
+# Cloudflare canonical paths: avoid a redirect for every internal navigation.
+# Source HTML retains .html links so GitHub Pages continues to work as backup.
+for page in dist/*.html; do
+  sed -i 's/href="index.html/href=".\//g' "$page"
+  for route in nosotros niveles admision contacto galeria vida-escolar innovacion jean-piaget taller-familiar privacidad terminos; do
+    sed -i "s/href=\"$route.html/href=\"$route/g" "$page"
+  done
+done
