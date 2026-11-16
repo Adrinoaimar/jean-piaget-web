@@ -1,4 +1,4 @@
-const origins = new Set(['https://adrinoaimar.github.io', 'http://127.0.0.1:8874', 'http://localhost:8874']);
+const origins = new Set(['https://adrinoaimar.github.io', 'https://jeanpiagetsullana.pages.dev', 'http://127.0.0.1:8874', 'http://localhost:8874']);
 Deno.serve(async (req: Request) => {
   const origin = req.headers.get('origin') || '';
   const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': origins.has(origin) ? origin : 'https://adrinoaimar.github.io', 'Access-Control-Allow-Headers': 'authorization, apikey, content-type', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Vary': 'Origin', 'Cache-Control': 'no-store' };

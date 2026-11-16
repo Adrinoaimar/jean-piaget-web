@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jeanpiagetsullana.pages.dev/sitemap.xml
