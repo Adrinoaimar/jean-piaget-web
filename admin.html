@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://ignwxkpzpilecbkdzfpt.supabase.co; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://ignwxkpzpilecbkdzfpt.supabase.co https://jeanpiagetsullana.pages.dev; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <title>Solicitudes · Administración Jean Piaget</title>
-<link rel="icon" href="img/favicon.png"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css/admin.css?v=20261111-admin1">
-<script src="js/form-config.js?v=20261111-db" defer></script><script src="js/admin.js?v=20261111-admin2" defer></script>
+<link rel="icon" href="img/favicon.png"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css/admin.css?v=20261116-metrics1">
+<script src="js/form-config.js?v=20261111-db" defer></script><script src="js/admin-metrics.js?v=20261116-metrics1" defer></script><script src="js/admin.js?v=20261116-metrics1" defer></script>
 </head>
 <body>
 <header class="admin-header"><a class="brand" href="index.html"><img src="img/escudo.png" width="42" height="50" alt="Escudo Jean Piaget"><span>Jean Piaget <small>Administración · Sullana</small></span></a><div id="session-tools" hidden><span id="session-email"></span><button id="logout" class="button button--quiet">Cerrar sesión</button></div></header>
@@ -18,6 +18,17 @@
 <section id="dashboard" hidden>
  <div class="page-heading"><div><p class="eyebrow">Bandeja de atención</p><h1>Solicitudes</h1><p>Revisa, coordina y registra el siguiente paso.</p></div><button id="refresh" class="button button--quiet">Actualizar</button></div>
  <div class="metrics" aria-label="Resumen de solicitudes"><div><span>Pendientes</span><strong id="count-pendiente">—</strong></div><div><span>En contacto</span><strong id="count-en_contacto">—</strong></div><div><span>Atendidas</span><strong id="count-atendida">—</strong></div><div><span>Archivadas</span><strong id="count-archivada">—</strong></div></div>
+ <section class="web-metrics" aria-labelledby="web-metrics-title">
+  <div class="page-heading"><div><p class="eyebrow">Alcance de la web</p><h2 id="web-metrics-title">Visitas y acciones</h2><p class="muted" id="web-period-label"></p></div><div><label for="web-metric-period">Período</label><select id="web-metric-period"><option value="7">Últimos 7 días</option><option value="28" selected>Últimos 28 días</option><option value="90">Últimos 90 días</option></select></div></div>
+  <div class="metrics"><div><span>Páginas vistas</span><strong id="web-views">—</strong></div><div><span>Clics en WhatsApp</span><strong id="web-whatsapp">—</strong></div><div><span>Clics para llamar</span><strong id="web-phone">—</strong></div><div><span>Clics hacia Admisión</span><strong id="web-admission">—</strong></div><div><span>Contacto confirmado en navegador</span><strong id="web-contact-success">—</strong></div><div><span>Admisión confirmada en navegador</span><strong id="web-admission-success">—</strong></div></div>
+  <p class="status" id="web-metric-status" role="status"></p><p class="muted">Los contadores comienzan el 16 de noviembre de 2026. Son vistas y acciones, no personas únicas ni matrículas confirmadas. Los bloqueadores o la preferencia de no seguimiento pueden reducir el recuento. Las solicitudes reales se consultan en la bandeja.</p>
+  <div class="web-metric-tables">
+   <div class="table-card"><table><caption>Páginas más vistas</caption><thead><tr><th>Página</th><th>Vistas</th></tr></thead><tbody id="web-pages"></tbody></table></div>
+   <div class="table-card"><table><caption>Procedencia de las vistas</caption><thead><tr><th>Fuente</th><th>Vistas</th></tr></thead><tbody id="web-sources"></tbody></table></div>
+   <div class="table-card"><table><caption>Dispositivos</caption><thead><tr><th>Tipo</th><th>Vistas</th></tr></thead><tbody id="web-devices"></tbody></table></div>
+   <div class="table-card"><table><caption>Vistas por día</caption><thead><tr><th>Fecha</th><th>Vistas</th></tr></thead><tbody id="web-days"></tbody></table></div>
+  </div>
+ </section>
  <form id="filters" class="filters" role="search"><div class="search-field"><label for="search">Buscar familia</label><input id="search" type="search" placeholder="Nombre, correo o postulante" maxlength="80"></div><div><label for="type">Tipo</label><select id="type"><option value="">Todos</option><option value="contacto">Contacto</option><option value="admision">Admisión</option></select></div><div><label for="state">Estado</label><select id="state"><option value="">Todos</option><option value="pendiente">Pendiente</option><option value="en_contacto">En contacto</option><option value="atendida">Atendida</option><option value="archivada">Archivada</option></select></div><button class="button" type="submit">Filtrar</button><button class="button button--quiet" id="clear" type="button">Limpiar</button></form>
  <p id="dashboard-status" class="status" role="status"></p>
  <div class="table-card"><table><caption class="sr-only">Solicitudes recibidas, ordenadas de más reciente a más antigua</caption><thead><tr><th>Familia</th><th>Tipo</th><th>Recibida</th><th>Estado</th><th><span class="sr-only">Acción</span></th></tr></thead><tbody id="requests"></tbody></table><div id="empty" class="empty" hidden><h2>Sin solicitudes para estos filtros</h2><p>Prueba con otro nombre o selecciona todos los estados.</p></div></div>

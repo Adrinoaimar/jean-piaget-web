@@ -225,6 +225,7 @@
           });
         }).then(function (data) {
           setStatus(status, data.message, "ok");
+          document.dispatchEvent(new CustomEvent("jp:form-success", { detail: { type: admission ? "admision" : "contacto" } }));
           form.reset();
           requestId = crypto.randomUUID();
           fields.forEach(function (input) {
