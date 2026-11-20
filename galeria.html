@@ -16,11 +16,13 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/source-serif-4-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/styles.css?v=20261021-palette1">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/styles.css?v=20261120-seo1">
 <link rel="stylesheet" href="css/creative.css?v=20261111-ordered">
 <link rel="stylesheet" href="css/school-photos.css?v=20261111-recortes">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="css/phosphor-site.css?v=2.1.1-site1">
 <script>document.documentElement.classList.add("js");</script>
 <link rel="stylesheet" href="css/brand.css?v=20261111-campus-identity">
 <link rel="canonical" href="https://jeanpiagetsullana.pages.dev/galeria">
@@ -35,7 +37,7 @@
 <header class="site-header">
   <nav class="nav shell" aria-label="Navegación principal">
     <a class="brand" href="index.html">
-      <img class="brand__mark" src="img/escudo.png" width="354" height="426" alt="Escudo del I.E.P. Jean Piaget Sullana">
+      <img class="brand__mark" src="img/escudo.png" fetchpriority="high" width="354" height="426" alt="Escudo del I.E.P. Jean Piaget Sullana">
       <span class="brand__name">Jean Piaget<span>Sullana</span></span>
     </a>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><i class="ph ph-list" aria-hidden="true"></i></button>
@@ -123,12 +125,12 @@
   <div class="shell">
     <div class="footer-top">
       <div>
-        <h4>I.E.P. Jean Piaget Sullana</h4>
+        <h2 class="footer-heading">I.E.P. Jean Piaget Sullana</h2>
         <p>Av. José de Lama #489, Sullana, Piura, Perú.</p>
         <p class="footer-motto">Dios, labor y lealtad</p>
       </div>
       <div>
-        <h4>Secciones</h4>
+        <h2 class="footer-heading">Secciones</h2>
         <ul class="footer-list">
           <li><a href="jean-piaget.html">Quién fue Jean Piaget</a></li>
           <li><a href="niveles.html">Niveles</a></li>
@@ -138,7 +140,7 @@
         </ul>
       </div>
       <div>
-        <h4>Contacto</h4>
+        <h2 class="footer-heading">Contacto</h2>
         <ul class="footer-list">
           <li><a href="tel:+51959425312">+51 959 425 312</a></li>
           <li><a href="https://wa.me/51959425312">WhatsApp +51 959 425 312</a></li>

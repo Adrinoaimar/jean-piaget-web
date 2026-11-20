@@ -5,7 +5,7 @@
    Tipografia: Source Serif 4 (titulos), Montserrat (textos).
    ========================================================================= */
 
-@import url("fonts.css");
+/* Font declarations are linked directly in HTML to avoid a serial CSS request. */
 
 /* ---------- 1. Tokens ---------------------------------------------------- */
 
@@ -1007,7 +1007,8 @@ p:last-child { margin-bottom: 0; }
   border-bottom: 1px solid rgba(248, 247, 244, 0.14);
 }
 
-.site-footer h4 {
+.site-footer .footer-heading {
+  line-height: 1.35;
   color: var(--brand-cream);
   font-size: 0.78rem;
   font-family: "Montserrat", sans-serif;

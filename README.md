@@ -66,7 +66,11 @@ La capa `css/creative.css` incorpora degradados de verde profundo, lima y dorado
 
 **Tipografía.** Montserrat para títulos y textos, Source Serif 4 para firmas y citas, autoalojadas en `fonts/` con `font-display: swap`. No hay pedidos a servidores de terceros para cargar fuentes.
 
-**Iconografía.** Phosphor Icons por CDN. Es la única dependencia externa del sitio.
+**Iconografía.** Phosphor Icons 2.1.1 autoalojados: los mismos 25 glifos usados por el sitio, con contornos y métricas originales. `fonts/PHOSPHOR-LICENSE.txt` conserva la licencia MIT. No se descarga CSS ni la fuente de iconos desde un CDN.
+
+Para regenerar el subconjunto al añadir un icono: obtener el paquete oficial `@phosphor-icons/web@2.1.1` con `npm pack --ignore-scripts`, extraerlo y ejecutar `python scripts/build-icon-subset.py /ruta/al/package` en un entorno de desarrollo con `fonttools==4.68.0` y `brotli==1.2.1`. Los archivos generados se versionan; Cloudflare no instala estas herramientas. Las fuentes institucionales se enlazan directamente desde HTML, evitando una petición CSS encadenada con `@import`.
+
+Los encabezados del pie usan H2 con `.footer-heading`, conservando tipografía, tamaño, color, espaciado e interlineado del diseño aprobado.
 
 **Movimiento.** Entradas al hacer scroll mediante IntersectionObserver, sin escuchar el evento de scroll. Las cabeceras coordinan la entrada de texto, fotografías y marcos. Todo respeta `prefers-reduced-motion`, y sin JavaScript la página se ve completa. La galería incorpora un visor ampliado con botones, flechas de teclado y cierre con Escape.
 
