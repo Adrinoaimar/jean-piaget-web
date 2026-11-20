@@ -1,0 +1,67 @@
+{
+  "site": "https://jeanpiagetsullana.pages.dev/",
+  "baseline_date": "2026-11-20",
+  "priority_paths": [
+    "/",
+    "/admision",
+    "/niveles",
+    "/contacto",
+    "/nosotros",
+    "/jean-piaget"
+  ],
+  "market": {
+    "country": "PE",
+    "language": "es",
+    "city": "Sullana",
+    "location_precision": "textual query and Google displayed city; not a GPS grid"
+  },
+  "cadence_proposed": "weekly manual review; no background job installed",
+  "keywords": [
+    "Jean Piaget",
+    "Jean Piaget Sullana",
+    "Colegio Jean Piaget",
+    "Colegio Jean Piaget Sullana",
+    "IEP Jean Piaget Sullana",
+    "Jean Piaget matrículas",
+    "Jean Piaget admisión 2027",
+    "Colegio privado",
+    "Colegio privado Sullana",
+    "Colegios privados en Sullana",
+    "Colegio particular Sullana",
+    "Mejores colegios privados de Sullana",
+    "Colegios particulares en Sullana",
+    "Colegios en Sullana",
+    "Colegio cerca de mí",
+    "Admisión 2027",
+    "Matrículas 2027 Sullana",
+    "Colegios con admisión 2027 Sullana",
+    "Inscripciones escolares 2027",
+    "Matrícula inicial 2027 Sullana",
+    "Matrícula primaria 2027 Sullana",
+    "Colegio privado matrícula 2027",
+    "Vacantes escolares Sullana 2027",
+    "Colegio inicial Sullana",
+    "Educación inicial Sullana",
+    "Primaria privada Sullana",
+    "Colegio primaria Sullana",
+    "Colegio inicial y primaria Sullana",
+    "Educación para niños en Sullana",
+    "colegio Sullana"
+  ],
+  "sources": {
+    "search_queries": "Google Search Console, Web, country Peru, settled days",
+    "page_views_and_actions": "Cloudflare D1 metric_daily; events, not unique visitors",
+    "received_inquiries": "Supabase jean_piaget_consultas; exclude identified tests",
+    "positions": "GSC average position and dated SERP snapshots stored separately"
+  },
+  "baseline": {
+    "gsc_available_start": "2026-11-15",
+    "gsc_available_end": "2026-11-18",
+    "clicks": 0,
+    "impressions": 0,
+    "ctr": null,
+    "average_position": null,
+    "non_test_inquiries_confirmed": 0
+  },
+  "privacy": "No student data, form content, credentials or visitor identifiers in reports"
+}
