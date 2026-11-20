@@ -113,7 +113,7 @@ Luego abrir `http://localhost:8000`.
 
 ## Publicación
 
-Publicación principal en Cloudflare Pages: https://jeanpiagetsullana.pages.dev/, integración GitHub desde `main`, build `sh scripts/build-public.sh` y salida `dist`. GitHub Pages conserva una copia con canonical hacia Cloudflare.
+Publicación principal en Cloudflare Pages: https://jeanpiagetsullana.pages.dev/, integración GitHub desde `main`, build `sh scripts/build-public.sh` y salida `dist`. GitHub Pages conserva una copia con canonical hacia Cloudflare y `noindex,follow`. El HTML fuente contiene una etiqueta `data-github-backup`; el build público de Cloudflare elimina únicamente esa etiqueta exacta. No publicar la raíz del repositorio directamente en Cloudflare: usar siempre `sh scripts/build-public.sh` y `dist`. Los noindex de 404 y administración se conservan.
 
 El sitemap incluye las 12 URL canónicas públicas y `lastmod` obtenido de la fecha del último commit de cada HTML; debe actualizarse cuando cambie una página. No usar la fecha de cada build como fecha del contenido.
 

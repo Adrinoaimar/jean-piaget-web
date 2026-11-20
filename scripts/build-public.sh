@@ -31,6 +31,9 @@ if [ -f BingSiteAuth.xml ]; then cp BingSiteAuth.xml dist/; fi
 # Cloudflare canonical paths: avoid a redirect for every internal navigation.
 # Source HTML retains .html links so GitHub Pages continues to work as backup.
 for page in dist/*.html; do
+  # GitHub serves the source as a noindex backup; only Cloudflare's public build
+  # removes this exact marker. Other noindex tags (404, admin) stay untouched.
+  sed -i '/<meta name="robots" content="noindex,follow" data-github-backup="true">/d' "$page"
   sed -i 's/href="index.html/href=".\//g' "$page"
   for route in nosotros niveles admision contacto galeria vida-escolar innovacion jean-piaget taller-familiar privacidad terminos; do
     sed -i "s/href=\"$route.html/href=\"$route/g" "$page"
