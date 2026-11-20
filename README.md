@@ -109,7 +109,11 @@ Luego abrir `http://localhost:8000`.
 
 ## Publicación
 
-Publicado con GitHub Pages desde la rama `main`, carpeta raíz.
+Publicación principal en Cloudflare Pages: https://jeanpiagetsullana.pages.dev/, integración GitHub desde `main`, build `sh scripts/build-public.sh` y salida `dist`. GitHub Pages conserva una copia con canonical hacia Cloudflare.
+
+El sitemap incluye las 12 URL canónicas públicas y `lastmod` obtenido de la fecha del último commit de cada HTML; debe actualizarse cuando cambie una página. No usar la fecha de cada build como fecha del contenido.
+
+`indexnow-key.txt` contiene únicamente la clave pública de verificación de host de IndexNow; el build publica `{clave}.txt` en la raíz. No es una contraseña ni una credencial de cuenta. Tras publicar cambios de contenido, enviar las URL canónicas modificadas mediante el protocolo oficial https://www.indexnow.org/documentation. Una respuesta aceptada no confirma indexación. `BingSiteAuth.xml`, si se obtiene de Bing Webmaster Tools, también se conserva en la salida pública. No reemplazar la etiqueta de verificación Google existente.
 
 ## Actualización institucional — noviembre de 2026
 

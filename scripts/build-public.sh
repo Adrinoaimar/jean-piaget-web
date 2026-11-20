@@ -18,6 +18,16 @@ for file in google*.html; do
   if [ -f "$file" ]; then cp "$file" dist/; fi
 done
 
+# IndexNow host verification is intentionally public (not an account credential).
+if [ -f indexnow-key.txt ]; then
+  indexnow_key=$(tr -d '\r\n' < indexnow-key.txt)
+  case "$indexnow_key" in ''|*[!a-zA-Z0-9-]*) echo "Invalid IndexNow key" >&2; exit 1;; esac
+  [ "${#indexnow_key}" -ge 8 ] && [ "${#indexnow_key}" -le 128 ]
+  printf '%s' "$indexnow_key" > "dist/$indexnow_key.txt"
+fi
+# Preserve Bing verification when an official verification file is supplied.
+if [ -f BingSiteAuth.xml ]; then cp BingSiteAuth.xml dist/; fi
+
 # Cloudflare canonical paths: avoid a redirect for every internal navigation.
 # Source HTML retains .html links so GitHub Pages continues to work as backup.
 for page in dist/*.html; do
